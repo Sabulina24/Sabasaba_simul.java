@@ -12,10 +12,10 @@ public class mainFrame extends JFrame{
 		//Toolkit kit = Toolkit.getDefaultToolkit();
 		setSize(1280, 720);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("±³¼ö´Ô »ç¹Ù»ç¹Ù ½Ã¹Ä·¹ÀÌ¼Ç");
+		setTitle("êµìˆ˜ë‹˜ ì‚¬ë°”ì‚¬ë°” ì‹œë®¬ë ˆì´ì…˜");
 		setVisible(true);
-		setResizable(false); // È­¸é Å©±â ÀÓÀÇ Á¶Á¤ ºÒ°¡
-		setLocationRelativeTo(null); // È­¸é Á¤Áß¾Ó¿¡ °íÁ¤
+		setResizable(false); // í™”ë©´ í¬ê¸° ì„ì˜ ì¡°ì • ë¶ˆê°€
+		setLocationRelativeTo(null); // í™”ë©´ ì •ì¤‘ì•™ì— ê³ ì •
 		//Image gameIcon - kit.getImage("icon.gif");
 		//setIconImage(gameIcon);
 	}
