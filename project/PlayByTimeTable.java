@@ -5,9 +5,9 @@ import java.awt.image.BufferedImage;
 public class PlayByTimeTable {
 
 	int[][] table = TimeTable.settable();
-	// ±³¼ö´ÔA : 1,2,3	±³¼ö´ÔB : 6,7,8	±³¼ö´ÔC : 11,12,13
+	// êµìˆ˜ë‹˜A : 1,2,3	êµìˆ˜ë‹˜B : 6,7,8	êµìˆ˜ë‹˜C : 11,12,13
 	
-	mainFrame f = new mainFrame();
+	MainFrame f = new mainFrame();
 	Dialogue_A a = new Dialogue_A();
 	Dialogue_B b = new Dialogue_B();
 	Dialogue_C c = new Dialogue_C();
@@ -31,11 +31,11 @@ public class PlayByTimeTable {
 		
 		for(int i = 0 ; i < 5; i++)
 		{
-			System.out.println("ÇÏ·ç½ÃÀÛ");
+			System.out.println("í•˜ë£¨ì‹œì‘");
 			Background z = new Background();
 			f.add(z);
 			
-			if(table[0][i] == 0 && table[1][i] == 0 && table[2][i] == 0) // Ç®°ø°­ ÀÏ ¶§
+			if(table[0][i] == 0 && table[1][i] == 0 && table[2][i] == 0) // í’€ê³µê°• ì¼ ë•Œ
 			{
 				z.getBackground(i);
 				z.getHoliday();
@@ -43,7 +43,7 @@ public class PlayByTimeTable {
 				w.IsWork_day();
 				Background.isWorked = false;
 				
-				// ÈŞÀÏ ´ëÈ­¸¦ ºÒ·¯¿Â´Ù.
+				// íœ´ì¼ ëŒ€í™”ë¥¼ ë¶ˆëŸ¬ì˜¨ë‹¤.
 				n = (int)(Math.random()*3);
 				if(n == 0)
 				{
@@ -112,7 +112,7 @@ public class PlayByTimeTable {
 		w.IsWork_day();
 		Background.isWorked = false;
 		
-		// ¹Ì´Ï°ÔÀÓ ½ÇÇà
+		// ë¯¸ë‹ˆê²Œì„ ì‹¤í–‰
 		f.add(new DrinkingGame());
 		f.setVisible(true);
 		
@@ -149,7 +149,7 @@ public class PlayByTimeTable {
 		
 		w.IsWork_day();
 		
-		//¹Ì´Ï°ÔÀÓ ½ÇÇà
+		//ë¯¸ë‹ˆê²Œì„ ì‹¤í–‰
 		f.add(new TryNotToSleep());
 		f.setVisible(true);
 		
@@ -160,7 +160,7 @@ public class PlayByTimeTable {
 		
 		w.IsWork_SleepPlay();
 		
-		//°ÔÀÓ °á°ú Ã¢ ½ÇÇà
+		//ê²Œì„ ê²°ê³¼ ì°½ ì‹¤í–‰
 		f.add(new GameResult());
 		f.setVisible(true);
 		*/
@@ -274,7 +274,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void SleepPlay()
@@ -285,7 +285,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void Drink_A()
@@ -296,7 +296,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void Drink_B()
@@ -307,7 +307,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void Drink_C()
@@ -318,7 +318,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void Drinking()
@@ -329,7 +329,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void Day()
@@ -340,7 +340,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void Start()
@@ -351,7 +351,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void ANormal_1()
@@ -362,7 +362,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void ANormal_2()
@@ -373,7 +373,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void ANormal_3()
@@ -384,7 +384,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void ASpecial()
@@ -395,7 +395,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void AHoliday()
@@ -406,7 +406,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void BNormal_1()
@@ -417,7 +417,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void BNormal_2()
@@ -440,7 +440,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void BSpecial()
@@ -451,7 +451,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void BHoliday()
@@ -462,7 +462,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void CNormal_1()
@@ -473,7 +473,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void CNormal_2()
@@ -496,7 +496,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void CSpecial()
@@ -507,7 +507,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 	public synchronized void CHoliday()
@@ -518,7 +518,7 @@ class Work{
 			{
 				Thread.sleep(50);
 			}
-			catch(InterruptedException e) {System.out.println("¿¹¿Ü");}
+			catch(InterruptedException e) {System.out.println("ì˜ˆì™¸");}
 		}
 	}
 }
