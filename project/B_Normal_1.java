@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -17,279 +18,257 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class B_Normal_1 extends JPanel implements ActionListener{
-
+public class B_Normal_1 extends JPanel implements ActionListener {
+	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
-
+	
 	public static boolean isWorked = false;
 	
-	String[] dialogue = ProfessorDialogue.getDialogue_B(); // ±³¼ö´ÔB ´ë»ç¸¦ ÇÑ ÁÙ¾¿ ²÷¾î¼­ String ¹è¿­¿¡ ÀúÀå
-	BufferedImage dialogBackground; // ¹è°æ ÀÌ¹ÌÁö
-	File file1 = new File("./src/images/°­ÀÇ½Çº¹µµ.jpg"); // °­ÀÇ½Çº¹µµ ÀÌ¹ÌÁö¸¦ ÆÄÀÏ¿¡ ÀúÀå
-	File file2 = new File("./src/images/°­ÀÇ½Çº¹µµ_B.jpg"); // °­ÀÇ½Çº¹µµ_B ÀÌ¹ÌÁö¸¦ ÆÄÀÏ¿¡ ÀúÀå
-	JButton button1 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton button2 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton button_C1 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton button_C2 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton button_C2_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton button_C2_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton choose1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01.png")));
-	JButton choose2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02.png")));
-	JButton choose3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B03.png")));
-	JButton choose1_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_1.png")));
-	JButton choose1_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_2.png")));
-	JButton choose1_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_3.png")));
-	JButton choose2_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_1.png")));
-	JButton choose2_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_2.png")));
-	JButton choose2_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_3.png")));
-	JButton chooseEnd = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton EndBtn = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton up = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ »ó½Â.png")));
-	JButton same = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ À¯Áö.png")));
-	JButton down = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ ÇÏ¶ô.png")));
+	BufferedImage backGround;
+	URL url_1 = getClass().getResource("./images/ê°•ì˜ì‹¤ë³µë„.jpg");	// 1ë²ˆì§¸ ì‹œë„
+	File file_2 = new File("./images/ê°•ì˜ì‹¤ë³µë„_B.jpg"); // 2ë²ˆì§¸ ì‹œë„
 	
-	JLabel label01 = new JLabel("(¼ö¾÷À» ¸¶Ä¡°í ³ª¿À´Â ±æ¿¡ º¹µµ¿¡¼­ ±³¼ö´Ô°ú ¸¶ÁÖÃÆ´Ù!)");
-	JLabel label02 = new JLabel("(³ª´Â ±×´ë·Î µµ¸ÁÄ¡µí ±× ÀÚ¸®¸¦ ¶°³µ´Ù.)");
-	JLabel label1 = new JLabel("±³¼ö´ÔB");
-	JLabel label2 = new JLabel(dialogue[0]);
-	JLabel labelC1__1 = new JLabel(dialogue[1]);
-	JLabel labelC2__1 = new JLabel(dialogue[2]);
-	JLabel labelC2__2 = new JLabel(dialogue[3]);
-	JLabel labelC3__1 = new JLabel(dialogue[4]);
-	JLabel labelC1_1__1 = new JLabel(dialogue[5]);
-	JLabel labelC1_2__1 = new JLabel(dialogue[6]);
-	JLabel labelC1_2__2 = new JLabel(dialogue[7]);
-	JLabel labelC1_3__1 = new JLabel(dialogue[8]);
-	JLabel labelC2_0 = new JLabel(dialogue[9]);
-	JLabel labelC2_1__1 = new JLabel(dialogue[10]);
-	JLabel labelC2_2__1 = new JLabel(dialogue[11]);
-	JLabel labelC2_3__1 = new JLabel(dialogue[12]);
-	JLabel labelC2_3__2 = new JLabel(dialogue[13]);
-	JLabel labelC2_End = new JLabel(dialogue[14]);
+	JButton nextBtn_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn_4 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn_5 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn_6 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton end = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton exit = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton up = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìƒìŠ¹.png")));
+	JButton same = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìœ ì§€.png")));
+	JButton down = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ í•˜ë½.png")));
+
+	JButton c1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton c2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton c3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton c1_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton c1_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton c1_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton c2_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton c2_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton c2_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
 	
-	private ImageIcon button1EnteredImage = new ImageIcon(Main.class.getResource("../images/¹öÆ°1_Å¬¸¯.png"));
-	private ImageIcon button1BasicImage = new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png"));
-	private ImageIcon choose1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01.png"));
-	private ImageIcon choose2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02.png"));
-	private ImageIcon choose3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B03.png"));
-	private ImageIcon choose1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_clk.png"));
-	private ImageIcon choose2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_clk.png"));
-	private ImageIcon choose3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B03_clk.png"));
-	private ImageIcon choose1_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_1.png"));
-	private ImageIcon choose1_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_2.png"));
-	private ImageIcon choose1_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_3.png"));
-	private ImageIcon choose1_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_1_clk.png"));
-	private ImageIcon choose1_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_2_clk.png"));
-	private ImageIcon choose1_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B01_3_clk.png"));
-	private ImageIcon choose2_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_1.png"));
-	private ImageIcon choose2_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_2.png"));
-	private ImageIcon choose2_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_3.png"));
-	private ImageIcon choose2_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_1_clk.png"));
-	private ImageIcon choose2_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_2_clk.png"));
-	private ImageIcon choose2_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_B02_3_clk.png"));
+	JLabel name = new JLabel("êµìˆ˜ë‹˜B");
+	JLabel label_1 = new JLabel("(ìˆ˜ì—…ì„ ë§ˆì¹˜ê³  ë‚˜ì˜¤ëŠ” ê¸¸ì— ë³µë„ì—ì„œ êµìˆ˜ë‹˜ê³¼ ë§ˆì£¼ì³¤ë‹¤!)");
+	JLabel label_2 = new JLabel("(ë‚˜ëŠ” ê·¸ëŒ€ë¡œ ë„ë§ì¹˜ë“¯ ê·¸ ìë¦¬ë¥¼ ë– ë‚¬ë‹¤.)");
 	
-	public void paintComponent(Graphics g)
-	{
-		g.drawImage(dialogBackground, 0, 0, null);
+	String[] dialogue = ProfessorLines.getDialogue_B();
+	JLabel d0 = new JLabel(dialogue[0]);
+	JLabel d1 = new JLabel(dialogue[1]);
+	JLabel d2 = new JLabel(dialogue[2]);
+	JLabel d3 = new JLabel(dialogue[3]);
+	JLabel d4 = new JLabel(dialogue[4]);
+	JLabel d5 = new JLabel(dialogue[5]);
+	JLabel d6 = new JLabel(dialogue[6]);
+	JLabel d7 = new JLabel(dialogue[7]);
+	JLabel d8 = new JLabel(dialogue[8]);
+	JLabel d9 = new JLabel(dialogue[9]);
+	JLabel d10 = new JLabel(dialogue[10]);
+	JLabel d11 = new JLabel(dialogue[11]);
+	JLabel d12 = new JLabel(dialogue[12]);
+	JLabel d13 = new JLabel(dialogue[13]);
+	JLabel d14 = new JLabel(dialogue[14]);
+	
+	private ImageIcon nextBtnEntered = new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1_í´ë¦­.png"));
+	private ImageIcon nextBtnBasic = new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1_í´ë¦­.png"));
+	private ImageIcon c1Entered = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B01_clk.png"));
+	private ImageIcon c1Basic = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B01.png"));
+	private ImageIcon c2Entered = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B02_clk.png"));
+	private ImageIcon c2Basic = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B02.png"));
+	private ImageIcon c3Entered = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B03_clk.png"));
+	private ImageIcon c3Basic = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B03.png"));
+	private ImageIcon c1_1Entered = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B01_1_clk.png"));
+	private ImageIcon c1_1Basic = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B01_1.png"));
+	private ImageIcon c1_2Entered = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B01_2_clk.png"));
+	private ImageIcon c1_2Basic = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B01_2.png"));
+	private ImageIcon c1_3Entered = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B01_3_clk.png"));
+	private ImageIcon c1_3Basic = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B01_3.png"));
+	private ImageIcon c2_1Entered = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B02_1_clk.png"));
+	private ImageIcon c2_1Basic = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B02_1.png"));
+	private ImageIcon c2_2Entered = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B02_2_clk.png"));
+	private ImageIcon c2_2Basic = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B02_2.png"));
+	private ImageIcon c2_3Entered = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B02_3_clk.png"));
+	private ImageIcon c2_3Basic = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_B02_3.png"));
+	
+	public void paintComponent(Graphics g) {
+		g.drawImage(backGround, 0, 0, null);
 	}
 	
-	public B_Normal_1()
-	{
-		
-		try
-		{
-			dialogBackground = ImageIO.read(file1);
+	public B_Normal_1() {
+		try {
+			backGround = ImageIO.read(url_1);
 		} catch (IOException e) {}
 		
 		super.setLayout(null);
-
-		label01.setBounds(30, 480, 1200, 100);
-		label01.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
 		
-		button1.setBounds(1000,400,300,60); // ¹öÆ°ÀÇ À§Ä¡¿Í Å©±â ÁöÁ¤
-		button1.setBorderPainted(false); // ¹öÆ°ÀÇ ¿Ü°û¼± ¾ø¾Ú
-		button1.setContentAreaFilled(false); // ¹öÆ°ÀÇ ³»¿ë¿µ¿ª Ã¤¿ì±â ¾È ÇÔ
-		button1.setFocusPainted(false); // ¹öÆ°ÀÌ ¼±ÅÃµÇ¾úÀ» ¶§ »ı±â´Â Å×µÎ¸® »ç¿ë ¾È ÇÔ
+		label_1.setBounds(30, 480, 1200, 100);	// ìë§‰ ì¢Œí‘œ ì„¤ì •
+		label_1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));	// ìë§‰ í°íŠ¸ ì„¤ì •
 		
-		super.add(label01);
-		super.add(button1);
-		button1.addActionListener(this);
-		button1.addMouseListener(new MouseAdapter()
-		{
+		nextBtn_1.setBounds(1000, 400, 300, 60); // ë²„íŠ¼ì˜ ìœ„ì¹˜, í¬ê¸° ì„¤ì •
+		nextBtn_1.setBorderPainted(false); // ë²„íŠ¼ ì™¸ê³½ì„  ì œê±°
+		nextBtn_1.setContentAreaFilled(false); // ë²„íŠ¼ ì˜ì—­ ì±„ìš°ê¸° ì œê±°
+		nextBtn_1.setFocusPainted(false); // ë²„íŠ¼ í™œì„±í™” ì‹œ í…Œë‘ë¦¬ ì œê±°
+		
+		super.add(label_1);	// íŒ¨ë„ì— ìë§‰ ì¶”ê°€
+		super.add(nextBtn_1);	// íŒ¨ë„ì— ë²„íŠ¼ ì¶”ê°€
+		
+		nextBtn_1.addActionListener(this);
+		nextBtn_1.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e)
-			{
-				button1.setIcon(button1EnteredImage);
-				button1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			public void mouseEntered(MouseEvent e) {
+				nextBtn_1.setIcon(nextBtnEntered);
+				nextBtn_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
-			public void mouseExited(MouseEvent e)
-			{
-				button1.setIcon(button1BasicImage);
-				button1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			public void mouseExited(MouseEvent e) {
+				nextBtn_1.setIcon(nextBtnBasic);
+				nextBtn_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 			}
 		});
 		
-		up.setBounds(160,100,100,250);
+		up.setBounds(160, 100, 100, 250);	// í˜¸ê°ë„ ìƒìŠ¹ ë²„íŠ¼ ì„¤ì •
 		up.setBorderPainted(false);
 		up.setContentAreaFilled(false);
 		up.setFocusPainted(false);
-		same.setBounds(160,100,100,250);
+		super.add(up);
+		up.setVisible(false);
+		same.setBounds(160, 100, 100, 250);	// í˜¸ê°ë„ ì¼ì • ë²„íŠ¼ ì„¤ì •
 		same.setBorderPainted(false);
 		same.setContentAreaFilled(false);
 		same.setFocusPainted(false);
-		down.setBounds(160,100,100,250);
+		super.add(same);
+		same.setVisible(false);
+		down.setBounds(160, 100, 100, 250);	// í˜¸ê°ë„ í•˜ë½ ë²„íŠ¼ ì„¤ì •
 		down.setBorderPainted(false);
 		down.setContentAreaFilled(false);
 		down.setFocusPainted(false);
-		super.add(up);
-		super.add(same);
 		super.add(down);
-		up.setVisible(false);
-		same.setVisible(false);
 		down.setVisible(false);
 		
-		//´ÙÀ½ È­¸é ½ÇÇà
+		// ë‹¤ìŒ í™”ë©´ ì‹¤í–‰
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-		chooseEnd.setBounds(1000,400,300,60);
-		chooseEnd.setBorderPainted(false);
-		chooseEnd.setContentAreaFilled(false);
-		chooseEnd.setFocusPainted(false);
-		chooseEnd.addActionListener(this);
-		chooseEnd.addMouseListener(new MouseAdapter()
-		{
+	public void actionPerformed(ActionEvent e) {
+		end.setBounds(1000,400,300,60);	// endë²„íŠ¼ ì„¤ì •
+		end.setBorderPainted(false);
+		end.setContentAreaFilled(false);
+		end.setFocusPainted(false);
+		end.addActionListener(this);
+		end.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e)
-			{
-				chooseEnd.setIcon(button1EnteredImage);
-				chooseEnd.setCursor(new Cursor(Cursor.HAND_CURSOR));
+			public void mouseEntered(MouseEvent e) {
+				end.setIcon(nextBtnEntered);
+				end.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
-			public void mouseExited(MouseEvent e)
-			{
-				chooseEnd.setIcon(button1BasicImage);
-				chooseEnd.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+			public void mouseExited(MouseEvent e) {
+				end.setIcon(nextBtnBasic);
+				end.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 			}
 		});
 		
-		if(e.getSource() == button1)
-		{
-			try
-			{
-				dialogBackground = ImageIO.read(file2);
+		if(e.getSource() == nextBtn_1) {	// ë²„íŠ¼ì„ ëˆŒë €ì„ ë•Œ ì´ë²¤íŠ¸ ì‹œì‘
+			try {
+				backGround = ImageIO.read(file_2);	// ë°°ê²½ ë³€ê²½
 				repaint();
 			} catch (IOException e1) {}
-			button1.setVisible(false);
-			label01.setVisible(false);
+			nextBtn_1.setVisible(false);	// ë²„íŠ¼ ìˆ¨ê¸°ê¸°
+			label_1.setVisible(false); 	// ìë§‰ ìˆ¨ê¸°ê¸°
 		
-			label1.setBounds(30, 385, 300, 100);
-			label1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
-			super.add(label1);
+			name.setBounds(30, 385, 300, 100);	// ì´ë¦„ í‘œì‹œ
+			name.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
+			super.add(name);
 			
-			label2.setBounds(30, 480, 1200, 100);
-			label2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			d0.setBounds(30, 480, 1200, 100);	// ëŒ€ì‚¬ í‘œì‹œ
+			d0.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+			super.add(d0);
 			
-			button2.setBounds(1000,400,300,60);
-			button2.setBorderPainted(false);
-			button2.setContentAreaFilled(false);
-			button2.setFocusPainted(false);
-			super.add(label2);
-			super.add(button2);
-			button2.setVisible(true);
-			button2.addActionListener(this);
-			button2.addMouseListener(new MouseAdapter()
-			{
+			nextBtn_2.setBounds(1000,400,300,60);	// ë‹¤ìŒ ë²„íŠ¼ í‘œì‹œ
+			nextBtn_2.setBorderPainted(false);
+			nextBtn_2.setContentAreaFilled(false);
+			nextBtn_2.setFocusPainted(false);
+			super.add(nextBtn_2);
+			nextBtn_2.setVisible(true);
+			nextBtn_2.addActionListener(this);
+			nextBtn_2.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					button2.setIcon(button1EnteredImage);
-					button2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					nextBtn_2.setIcon(nextBtnEntered);
+					nextBtn_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					button2.setIcon(button1BasicImage);
-					button2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					nextBtn_2.setIcon(nextBtnBasic);
+					nextBtn_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 		}
-		if(e.getSource() == button2)
-		{
-			button2.setVisible(false);
+		if(e.getSource() == nextBtn_2) {
+			nextBtn_2.setVisible(false);
 			
-			choose1.setBounds(820,325,500,100);
-			choose1.setBorderPainted(false);
-			choose1.setContentAreaFilled(false);
-			choose1.setFocusPainted(false);
+			c1.setBounds(820,325,500,100);
+			c1.setBorderPainted(false);
+			c1.setContentAreaFilled(false);
+			c1.setFocusPainted(false);
 			
-			super.add(choose1);
-			choose1.setVisible(true);
-			choose1.addActionListener(this);
-			choose1.addMouseListener(new MouseAdapter()
-			{
+			super.add(c1);
+			c1.setVisible(true);
+			c1.addActionListener(this);
+			c1.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					choose1.setIcon(choose1EnteredImage);
-					choose1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					c1.setIcon(c1Entered);
+					c1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					choose1.setIcon(choose1BasicImage);
-					choose1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					c1.setIcon(c1Basic);
+					c1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			
-			choose2.setBounds(820,450,500,100);
-			choose2.setBorderPainted(false);
-			choose2.setContentAreaFilled(false);
-			choose2.setFocusPainted(false);
+			c2.setBounds(820,450,500,100);
+			c2.setBorderPainted(false);
+			c2.setContentAreaFilled(false);
+			c2.setFocusPainted(false);
 			
-			super.add(choose2);
-			choose2.setVisible(true);
-			choose2.addActionListener(this);
-			choose2.addMouseListener(new MouseAdapter()
-			{
+			super.add(c2);
+			c2.setVisible(true);
+			c2.addActionListener(this);
+			c2.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					choose2.setIcon(choose2EnteredImage);
-					choose2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					c2.setIcon(c2Entered);
+					c2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					choose2.setIcon(choose2BasicImage);
-					choose2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					c2.setIcon(c2Basic);
+					c2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			
-			choose3.setBounds(820,575,500,100);
-			choose3.setBorderPainted(false);
-			choose3.setContentAreaFilled(false);
-			choose3.setFocusPainted(false);
+			c3.setBounds(820,575,500,100);
+			c3.setBorderPainted(false);
+			c3.setContentAreaFilled(false);
+			c3.setFocusPainted(false);
 			
-			super.add(choose3);
-			choose3.setVisible(true);
-			choose3.addActionListener(this);
-			choose3.addMouseListener(new MouseAdapter()
-			{
+			super.add(c3);
+			c3.setVisible(true);
+			c3.addActionListener(this);
+			c3.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					choose3.setIcon(choose3EnteredImage);
-					choose3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					c3.setIcon(c3Entered);
+					c3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					choose3.setIcon(choose3BasicImage);
-					choose3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					c3.setIcon(c3Basic);
+					c3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			
@@ -297,468 +276,411 @@ public class B_Normal_1 extends JPanel implements ActionListener{
 			
 			repaint();
 		}
-		if(e.getSource() == choose1 || e.getSource() == choose2 || e.getSource() == choose3)
-		{
-			label2.setVisible(false);
-			choose1.setVisible(false);
-			choose2.setVisible(false);
-			choose3.setVisible(false);
+		if(e.getSource() == c1 || e.getSource() == c2 || e.getSource() == c3) {
+			d0.setVisible(false);
+			c1.setVisible(false);
+			c2.setVisible(false);
+			c3.setVisible(false);
 			
-			if(e.getSource() == choose1)
-			{
-				GoodFeeling.teacher2FeelUp();// È£°¨µµ +1
+			if(e.getSource() == c1) {
+				Feeling.pf2_UP();// í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
-				labelC1__1.setBounds(30, 480, 1200, 100);
-				labelC1__1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(labelC1__1);
+				d1.setBounds(30, 480, 1200, 100);
+				d1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d1);
 				
-				button_C1.setBounds(1000,400,300,60);
-				button_C1.setBorderPainted(false);
-				button_C1.setContentAreaFilled(false);
-				button_C1.setFocusPainted(false);
-				super.add(button_C1);
-				button_C1.setVisible(true);
-				button_C1.addActionListener(this);
-				button_C1.addMouseListener(new MouseAdapter()
-				{
+				nextBtn_3.setBounds(1000,400,300,60);
+				nextBtn_3.setBorderPainted(false);
+				nextBtn_3.setContentAreaFilled(false);
+				nextBtn_3.setFocusPainted(false);
+				super.add(nextBtn_3);
+				nextBtn_3.setVisible(true);
+				nextBtn_3.addActionListener(this);
+				nextBtn_3.addMouseListener(new MouseAdapter() {
 					@Override
-					public void mouseEntered(MouseEvent e)
-					{
-						button_C1.setIcon(button1EnteredImage);
-						button_C1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					public void mouseEntered(MouseEvent e) {
+						nextBtn_3.setIcon(nextBtnEntered);
+						nextBtn_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 					}
 					@Override
-					public void mouseExited(MouseEvent e)
-					{
-						button_C1.setIcon(button1BasicImage);
-						button_C1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					public void mouseExited(MouseEvent e) {
+						nextBtn_3.setIcon(nextBtnBasic);
+						nextBtn_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					}
 				});
 			}
-			else if(e.getSource() == choose2)
-			{
-				GoodFeeling.teacher2FeelUp();// È£°¨µµ +1
+			else if(e.getSource() == c2) {
+				Feeling.pf2_UP();// í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
-				labelC2__1.setBounds(30, 480, 1200, 100);
-				labelC2__1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				labelC2__2.setBounds(30, 550, 1200, 100);
-				labelC2__2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d2.setBounds(30, 480, 1200, 100);
+				d2.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				d3.setBounds(30, 550, 1200, 100);
+				d3.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				
-				super.add(labelC2__1);
-				super.add(labelC2__2);
+				super.add(d3);
+				super.add(d3);
 				
-				button_C2.setBounds(1000,400,300,60);
-				button_C2.setBorderPainted(false);
-				button_C2.setContentAreaFilled(false);
-				button_C2.setFocusPainted(false);
-				super.add(button_C2);
-				button_C2.setVisible(true);
-				button_C2.addActionListener(this);
-				button_C2.addMouseListener(new MouseAdapter()
-				{
+				nextBtn_4.setBounds(1000,400,300,60);
+				nextBtn_4.setBorderPainted(false);
+				nextBtn_4.setContentAreaFilled(false);
+				nextBtn_4.setFocusPainted(false);
+				super.add(nextBtn_4);
+				nextBtn_4.setVisible(true);
+				nextBtn_4.addActionListener(this);
+				nextBtn_4.addMouseListener(new MouseAdapter() {
 					@Override
-					public void mouseEntered(MouseEvent e)
-					{
-						button_C2.setIcon(button1EnteredImage);
-						button_C2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					public void mouseEntered(MouseEvent e) {
+						nextBtn_4.setIcon(nextBtnEntered);
+						nextBtn_4.setCursor(new Cursor(Cursor.HAND_CURSOR));
 					}
 					@Override
-					public void mouseExited(MouseEvent e)
-					{
-						button_C2.setIcon(button1BasicImage);
-						button_C2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					public void mouseExited(MouseEvent e) {
+						nextBtn_4.setIcon(nextBtnBasic);
+						nextBtn_4.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					}
 				});
 			}
-			else
-			{
-				labelC3__1.setBounds(30, 480, 1200, 100);
-				labelC3__1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(labelC3__1);
+			else {
+				d4.setBounds(30, 480, 1200, 100);
+				d4.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d4);
 				
-				GoodFeeling.teacher2FeelDown();// È£°¨µµ -2
+				Feeling.pf2_DOWN();// í˜¸ê°ë„ -2
 				down.setVisible(true);;
 				
-				super.add(chooseEnd);
-				chooseEnd.setVisible(true);
-				repaint();
-				
+				super.add(end);
+				end.setVisible(true);
+				repaint();	
 			}
 		}
-		if(e.getSource() == button_C1)
-		{
-			button_C1.setVisible(false);
+		if(e.getSource() == nextBtn_3) {
+			nextBtn_3.setVisible(false);
 			
-			
-			
-			choose1_1.setBounds(820,325,500,100);
-			choose1_1.setBorderPainted(false);
-			choose1_1.setContentAreaFilled(false);
-			choose1_1.setFocusPainted(false);
-			super.add(choose1_1);
-			choose1_1.setVisible(true);
-			choose1_1.addActionListener(this);
-			choose1_1.addMouseListener(new MouseAdapter()
-			{
+			c1_1.setBounds(820,325,500,100);
+			c1_1.setBorderPainted(false);
+			c1_1.setContentAreaFilled(false);
+			c1_1.setFocusPainted(false);
+			super.add(c1_1);
+			c1_1.setVisible(true);
+			c1_1.addActionListener(this);
+			c1_1.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					choose1_1.setIcon(choose1_1EnteredImage);
-					choose1_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					c1_1.setIcon(c1_1Entered);
+					c1_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					choose1_1.setIcon(choose1_1BasicImage);
-					choose1_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					c1_1.setIcon(c1_1Basic);
+					c1_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			
-			choose1_2.setBounds(820,450,500,100);
-			choose1_2.setBorderPainted(false);
-			choose1_2.setContentAreaFilled(false);
-			choose1_2.setFocusPainted(false);
-			super.add(choose1_2);
-			choose1_2.setVisible(true);
-			choose1_2.addActionListener(this);
-			choose1_2.addMouseListener(new MouseAdapter()
-			{
+			c1_2.setBounds(820,450,500,100);
+			c1_2.setBorderPainted(false);
+			c1_2.setContentAreaFilled(false);
+			c1_2.setFocusPainted(false);
+			super.add(c1_2);
+			c1_2.setVisible(true);
+			c1_2.addActionListener(this);
+			c1_2.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					choose1_2.setIcon(choose1_2EnteredImage);
-					choose1_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					c1_2.setIcon(c1_2Entered);
+					c1_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					choose1_2.setIcon(choose1_2BasicImage);
-					choose1_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					c1_2.setIcon(c1_2Basic);
+					c1_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			
-			choose1_3.setBounds(820,575,500,100);
-			choose1_3.setBorderPainted(false);
-			choose1_3.setContentAreaFilled(false);
-			choose1_3.setFocusPainted(false);
-			super.add(choose1_3);
-			choose1_3.setVisible(true);
-			choose1_3.addActionListener(this);
-			choose1_3.addMouseListener(new MouseAdapter()
-			{
+			c1_3.setBounds(820,575,500,100);
+			c1_3.setBorderPainted(false);
+			c1_3.setContentAreaFilled(false);
+			c1_3.setFocusPainted(false);
+			super.add(c1_3);
+			c1_3.setVisible(true);
+			c1_3.addActionListener(this);
+			c1_3.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					choose1_3.setIcon(choose1_3EnteredImage);
-					choose1_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					c1_3.setIcon(c1_3Entered);
+					c1_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					choose1_3.setIcon(choose1_3BasicImage);
-					choose1_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					c1_3.setIcon(c1_3Basic);
+					c1_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			repaint();
 		}
 		
-		if(e.getSource() == choose1_1 || e.getSource() == choose1_2 || e.getSource() == choose1_3)
-		{
+		if(e.getSource() == c1_1 || e.getSource() == c1_2 || e.getSource() == c1_3) {
 			up.setVisible(false);
-			choose1_1.setVisible(false);
-			choose1_2.setVisible(false);
-			choose1_3.setVisible(false);
-			labelC1__1.setVisible(false);
+			c1_1.setVisible(false);
+			c1_2.setVisible(false);
+			c1_3.setVisible(false);
+			d1.setVisible(false);
 			
-			if(e.getSource() == choose1_1)
-			{
-				GoodFeeling.teacher2FeelSame();// È£°¨µµ +0
+			if(e.getSource() == c1_1) {
+				Feeling.pf2_SAME();// í˜¸ê°ë„ +0
 				same.setVisible(true);
 				
-				labelC1_1__1.setBounds(30, 480, 1200, 100);
-				labelC1_1__1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(labelC1_1__1);
+				d5.setBounds(30, 480, 1200, 100);
+				d5.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d5);
 			}
-			else if(e.getSource() == choose1_2)
-			{
-				GoodFeeling.teacher2FeelDown();// È£°¨µµ -1
+			else if(e.getSource() == c1_2) {
+				Feeling.pf2_DOWN();// í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
-				labelC1_2__1.setBounds(30, 480, 1200, 100);
-				labelC1_2__1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				labelC1_2__2.setBounds(30, 550, 1200, 100);
-				labelC1_2__2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(labelC1_2__1);
-				super.add(labelC1_2__2);
+				d6.setBounds(30, 480, 1200, 100);
+				d6.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d6);
+				d7.setBounds(30, 550, 1200, 100);
+				d7.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d7);
 			}
-			else
-			{
-				GoodFeeling.teacher2FeelDown();// È£°¨µµ -1
+			else {
+				Feeling.pf2_DOWN();// í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
-				labelC1_3__1.setBounds(30, 480, 1200, 100);
-				labelC1_3__1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(labelC1_3__1);
+				d8.setBounds(30, 480, 1200, 100);
+				d8.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d8);
 			}
-			label01.setBounds(30, 480, 1200, 100);
-			label01.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label02);
+			label_1.setBounds(30, 480, 1200, 100);
+			label_1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+			super.add(label_2);
 			
-			super.add(chooseEnd);
-			chooseEnd.setVisible(true);
-			repaint();
-			
+			super.add(end);
+			end.setVisible(true);
+			repaint();	
 		}
 		
-		if(e.getSource() == chooseEnd)
-		{
+		if(e.getSource() == end) {
 			up.setVisible(false);
 			same.setVisible(false);
 			down.setVisible(false);
 			
-			labelC1_1__1.setVisible(false);
-			labelC1_2__1.setVisible(false);
-			labelC1_2__2.setVisible(false);
-			labelC1_3__1.setVisible(false);
-			label1.setVisible(false);
-			labelC2_End.setVisible(false);
-			labelC3__1.setVisible(false);
-			chooseEnd.setVisible(false);
-			try
-			{
-				dialogBackground = ImageIO.read(file1);
+			d5.setVisible(false);
+			d6.setVisible(false);
+			d7.setVisible(false);
+			d8.setVisible(false);
+			name.setVisible(false);
+			d14.setVisible(false);
+			d4.setVisible(false);
+			end.setVisible(false);
+			try	{
+				backGround = ImageIO.read(file_2);
 				repaint();
 			} catch (IOException e1) {}
-			label02.setBounds(30, 480, 1200, 100);
-			label02.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label02);
+			label_2.setBounds(30, 480, 1200, 100);
+			label_2.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+			super.add(label_2);
 			
-			EndBtn.setBounds(1000,400,300,60);
-			EndBtn.setBorderPainted(false);
-			EndBtn.setContentAreaFilled(false);
-			EndBtn.setFocusPainted(false);
-			super.add(EndBtn);
-			EndBtn.setVisible(true);
-			EndBtn.addActionListener(this);
-			EndBtn.addMouseListener(new MouseAdapter()
-			{
+			exit.setBounds(1000,400,300,60);
+			exit.setBorderPainted(false);
+			exit.setContentAreaFilled(false);
+			exit.setFocusPainted(false);
+			super.add(exit);
+			exit.setVisible(true);
+			exit.addActionListener(this);
+			exit.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					EndBtn.setIcon(button1EnteredImage);
-					EndBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					exit.setIcon(nextBtnEntered);
+					exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					EndBtn.setIcon(button1BasicImage);
-					EndBtn.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					exit.setIcon(nextBtnBasic);
+					exit.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 		}
 		
-		if(e.getSource() == EndBtn)
-		{
+		if(e.getSource() == exit) {
 			super.setVisible(false);
 			isWorked = true;
 		}
 		
-		if(e.getSource() == button_C2)
-		{
-			button_C2.setVisible(false);
-			labelC2__1.setVisible(false);
-			labelC2__2.setVisible(false);
-			labelC2_0.setBounds(30, 480, 1200, 100);
-			labelC2_0.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(labelC2_0);
+		if(e.getSource() == nextBtn_4) {
+			nextBtn_4.setVisible(false);
+			d2.setVisible(false);
+			d3.setVisible(false);
+			d9.setBounds(30, 480, 1200, 100);
+			d9.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+			super.add(d9);
 			
-			button_C2_2.setBounds(1000,400,300,60);
-			button_C2_2.setBorderPainted(false);
-			button_C2_2.setContentAreaFilled(false);
-			button_C2_2.setFocusPainted(false);
+			nextBtn_5.setBounds(1000,400,300,60);
+			nextBtn_5.setBorderPainted(false);
+			nextBtn_5.setContentAreaFilled(false);
+			nextBtn_5.setFocusPainted(false);
 			
-			super.add(button_C2_2);
-			button_C2_2.setVisible(true);
-			button_C2_2.addActionListener(this);
-			button_C2_2.addMouseListener(new MouseAdapter()
-			{
+			super.add(nextBtn_5);
+			nextBtn_5.setVisible(true);
+			nextBtn_5.addActionListener(this);
+			nextBtn_5.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					button_C2_2.setIcon(button1EnteredImage);
-					button_C2_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					nextBtn_5.setIcon(nextBtnEntered);
+					nextBtn_5.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					button_C2_2.setIcon(button1BasicImage);
-					button_C2_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					nextBtn_5.setIcon(nextBtnBasic);
+					nextBtn_5.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 		}
 		
-		if(e.getSource() == button_C2_2)
-		{
+		if(e.getSource() == nextBtn_5) {
 			up.setVisible(false);
-			button_C2_2.setVisible(false);
+			nextBtn_5.setVisible(false);
 			
-			choose2_1.setBounds(820,325,500,100);
-			choose2_1.setBorderPainted(false);
-			choose2_1.setContentAreaFilled(false);
-			choose2_1.setFocusPainted(false);
-			super.add(choose2_1);
-			choose2_1.setVisible(true);
-			choose2_1.addActionListener(this);
-			choose2_1.addMouseListener(new MouseAdapter()
-			{
+			c2_1.setBounds(820,325,500,100);
+			c2_1.setBorderPainted(false);
+			c2_1.setContentAreaFilled(false);
+			c2_1.setFocusPainted(false);
+			super.add(c2_1);
+			c2_1.setVisible(true);
+			c2_1.addActionListener(this);
+			c2_1.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					choose2_1.setIcon(choose2_1EnteredImage);
-					choose2_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					c2_1.setIcon(c2_1Entered);
+					c2_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					choose2_1.setIcon(choose2_1BasicImage);
-					choose2_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					c2_1.setIcon(c2_1Basic);
+					c2_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			
-			choose2_2.setBounds(820,450,500,100);
-			choose2_2.setBorderPainted(false);
-			choose2_2.setContentAreaFilled(false);
-			choose2_2.setFocusPainted(false);
-			super.add(choose2_2);
-			choose2_2.setVisible(true);
-			choose2_2.addActionListener(this);
-			choose2_2.addMouseListener(new MouseAdapter()
-			{
+			c2_2.setBounds(820,450,500,100);
+			c2_2.setBorderPainted(false);
+			c2_2.setContentAreaFilled(false);
+			c2_2.setFocusPainted(false);
+			super.add(c2_2);
+			c2_2.setVisible(true);
+			c2_2.addActionListener(this);
+			c2_2.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					choose2_2.setIcon(choose2_2EnteredImage);
-					choose2_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					c2_2.setIcon(c2_2Entered);
+					c2_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					choose2_2.setIcon(choose2_2BasicImage);
-					choose2_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					c2_2.setIcon(c2_2Basic);
+					c2_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			
-			choose2_3.setBounds(820,575,500,100);
-			choose2_3.setBorderPainted(false);
-			choose2_3.setContentAreaFilled(false);
-			choose2_3.setFocusPainted(false);
-			super.add(choose2_3);
-			choose2_3.setVisible(true);
-			choose2_3.addActionListener(this);
-			choose2_3.addMouseListener(new MouseAdapter()
-			{
+			c2_3.setBounds(820,575,500,100);
+			c2_3.setBorderPainted(false);
+			c2_3.setContentAreaFilled(false);
+			c2_3.setFocusPainted(false);
+			super.add(c2_3);
+			c2_3.setVisible(true);
+			c2_3.addActionListener(this);
+			c2_3.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					choose2_3.setIcon(choose2_3EnteredImage);
-					choose2_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					c2_3.setIcon(c2_3Entered);
+					c2_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					choose2_3.setIcon(choose2_3BasicImage);
-					choose2_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					c2_3.setIcon(c2_3Basic);
+					c2_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			repaint();
 		}
 		
-		if(e.getSource() == choose2_1 || e.getSource() == choose2_2 || e.getSource() == choose2_3)
-		{
-			choose2_1.setVisible(false);
-			choose2_2.setVisible(false);
-			choose2_3.setVisible(false);
-			labelC2_0.setVisible(false);
+		if(e.getSource() == c2_1 || e.getSource() == c2_2 || e.getSource() == c2_3) {
+			c2_1.setVisible(false);
+			c2_2.setVisible(false);
+			c2_3.setVisible(false);
+			d9.setVisible(false);
 			
-			if(e.getSource() == choose2_1)
-			{
-				GoodFeeling.teacher2FeelDown();// È£°¨µµ -1
+			if(e.getSource() == c2_1) {
+				Feeling.pf2_DOWN();// í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
-				labelC2_1__1.setBounds(30, 480, 1200, 100);
-				labelC2_1__1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(labelC2_1__1);
+				d10.setBounds(30, 480, 1200, 100);
+				d10.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d10);
 			}
-			else if(e.getSource() == choose2_2)
-			{
-				GoodFeeling.teacher2FeelDown();// È£°¨µµ -1
+			else if(e.getSource() == c2_2) {
+				Feeling.pf2_DOWN();// í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
-				labelC2_2__1.setBounds(30, 480, 1200, 100);
-				labelC2_2__1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(labelC2_2__1);
+				d11.setBounds(30, 480, 1200, 100);
+				d11.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d11);
 			}
-			else
-			{
-				GoodFeeling.teacher2FeelUp();// È£°¨µµ +1
+			else {
+				Feeling.pf2_UP();// í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
-				labelC2_3__1.setBounds(30, 480, 1200, 100);
-				labelC2_3__1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				labelC2_3__2.setBounds(30, 550, 1200, 100);
-				labelC2_3__2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(labelC2_3__1);
-				super.add(labelC2_3__2);
+				d12.setBounds(30, 480, 1200, 100);
+				d12.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d12);
+				d13.setBounds(30, 550, 1200, 100);
+				d13.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d13);
 			}
 			
-			button_C2_3.setBounds(1000,400,300,60);
-			button_C2_3.setBorderPainted(false);
-			button_C2_3.setContentAreaFilled(false);
-			button_C2_3.setFocusPainted(false);
+			nextBtn_6.setBounds(1000,400,300,60);
+			nextBtn_6.setBorderPainted(false);
+			nextBtn_6.setContentAreaFilled(false);
+			nextBtn_6.setFocusPainted(false);
 			
-			super.add(button_C2_3);
-			button_C2_3.setVisible(true);
-			button_C2_3.addActionListener(this);
-			button_C2_3.addMouseListener(new MouseAdapter()
-			{
+			super.add(nextBtn_6);
+			nextBtn_6.setVisible(true);
+			nextBtn_6.addActionListener(this);
+			nextBtn_6.addMouseListener(new MouseAdapter() {
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					button_C2_3.setIcon(button1EnteredImage);
-					button_C2_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				public void mouseEntered(MouseEvent e) {
+					nextBtn_6.setIcon(nextBtnEntered);
+					nextBtn_6.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					button_C2_3.setIcon(button1BasicImage);
-					button_C2_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				public void mouseExited(MouseEvent e) {
+					nextBtn_6.setIcon(nextBtnBasic);
+					nextBtn_6.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			repaint();
 		}
 		
-		if(e.getSource() == button_C2_3)
-		{
+		if(e.getSource() == nextBtn_6) {
 			up.setVisible(false);
 			down.setVisible(false);
-			button_C2_3.setVisible(false);
-			labelC2_1__1.setVisible(false);
-			labelC2_2__1.setVisible(false);
-			labelC2_3__1.setVisible(false);
-			labelC2_3__2.setVisible(false);
+			nextBtn_6.setVisible(false);
+			d10.setVisible(false);
+			d11.setVisible(false);
+			d12.setVisible(false);
+			d13.setVisible(false);
 			
-			labelC2_End.setBounds(30, 480, 1200, 100);
-			labelC2_End.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(labelC2_End);
+			d14.setBounds(30, 480, 1200, 100);
+			d14.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+			super.add(d14);
 			
-			super.add(chooseEnd);
-			chooseEnd.setVisible(true);
+			super.add(end);
+			end.setVisible(true);
 			
-			Dialogue_B.isSpecialDialogue = true; // Æ¯Á¤ ´ëÈ­ Á¶°Ç ¹ßµ¿
+			Dialogue_B.isSpecialDialogue = true; // íŠ¹ì • ëŒ€í™” ì¡°ê±´ ë°œë™
 			repaint();
 		}
 	}
-
 }
