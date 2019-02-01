@@ -218,6 +218,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 
 	public void actionPerformed(ActionEvent e)
 	{
+		Object s = e.getSource();
 		nextBtnEnd.setBounds(1000,400,300,60);
 		nextBtnEnd.setBorderPainted(false);
 		nextBtnEnd.setContentAreaFilled(false);
@@ -239,7 +240,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			}
 		});
 		
-		if(e.getSource() == nextBtn1)
+		if(s == nextBtn1)
 		{
 			try
 			{
@@ -324,7 +325,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c1_1 || e.getSource() == c1_2 || e.getSource() == c1_3)
+		if(s == c1_1 || s == c1_2 || s == c1_3)
 		{
 			c1_1.setVisible(false);
 			c1_2.setVisible(false);
@@ -355,7 +356,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			});
 			super.add(nextBtn2);
 			
-			if(e.getSource() == c1_1)
+			if(s == c1_1)
 			{
 				Feeling.pf2_UP();// 호감도 +1
 				up.setVisible(true);
@@ -364,7 +365,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 				d29.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
 				super.add(d29);
 			}
-			else if(e.getSource() == c1_2)
+			else if(s == c1_2)
 			{
 				Feeling.pf2_DOWN();// 호감도 -1
 				down.setVisible(true);
@@ -385,7 +386,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn2)
+		if(s == nextBtn2)
 		{
 			nextBtn2.setVisible(false);
 			up.setVisible(false);
@@ -423,7 +424,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn3)
+		if(s == nextBtn3)
 		{
 			nextBtn3.setVisible(false);
 			label2.setVisible(false);
@@ -458,7 +459,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn4)
+		if(s == nextBtn4)
 		{
 			nextBtn4.setVisible(false);
 			
@@ -537,14 +538,14 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c2_1 || e.getSource() == c2_2 || e.getSource() == c2_3)
+		if(s == c2_1 || s == c2_2 || s == c2_3)
 		{
 			c2_1.setVisible(false);
 			c2_2.setVisible(false);
 			c2_3.setVisible(false);
 			d32.setVisible(false);
 			
-			if(e.getSource() == c2_1)
+			if(s == c2_1)
 			{
 				d33.setBounds(30, 480, 1200, 100);
 				d33.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
@@ -575,7 +576,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 				});
 				super.add(nextBtn5);
 			}
-			else if(e.getSource() == c2_2)
+			else if(s == c2_2)
 			{
 				d40.setBounds(30, 480, 1200, 100);
 				d40.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
@@ -637,7 +638,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn5) // 선택지 2-1
+		if(s == nextBtn5) // 선택지 2-1
 		{
 			nextBtn5.setVisible(false);
 			d33.setVisible(false);
@@ -674,7 +675,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn8)
+		if(s == nextBtn8)
 		{
 			nextBtn8.setVisible(false);
 			
@@ -753,7 +754,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c2_1_1 || e.getSource() == c2_1_2 || e.getSource() == c2_1_3)
+		if(s == c2_1_1 || s == c2_1_2 || s == c2_1_3)
 		{
 			d35.setVisible(false);
 			d36.setVisible(false);
@@ -761,7 +762,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			c2_1_2.setVisible(false);
 			c2_1_3.setVisible(false);
 			
-			if(e.getSource() == c2_1_1)
+			if(s == c2_1_1)
 			{
 				Feeling.pf2_DOWN();//호감도 -1
 				down.setVisible(true);
@@ -770,7 +771,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 				d37.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
 				super.add(d37);
 			}
-			else if(e.getSource() == c2_1_2)
+			else if(s == c2_1_2)
 			{
 				Feeling.pf2_UP();//호감도 +1
 				up.setVisible(true);
@@ -793,7 +794,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn6) // 선택지 2-2 nextBtn9 부터
+		if(s == nextBtn6) // 선택지 2-2 nextBtn9 부터
 		{
 			nextBtn6.setVisible(false);
 			d40.setVisible(false);
@@ -826,7 +827,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn9)
+		if(s == nextBtn9)
 		{
 			nextBtn9.setVisible(false);
 			
@@ -904,14 +905,14 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c2_2_1 || e.getSource() == c2_2_2 || e.getSource() == c2_2_3)
+		if(s == c2_2_1 || s == c2_2_2 || s == c2_2_3)
 		{
 			d41.setVisible(false);
 			c2_2_1.setVisible(false);
 			c2_2_2.setVisible(false);
 			c2_2_3.setVisible(false);
 			
-			if(e.getSource() == c2_2_1)
+			if(s == c2_2_1)
 			{
 				Feeling.pf2_DOWN();//호감도 -1
 				down.setVisible(true);
@@ -920,7 +921,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 				d42.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
 				super.add(d42);
 			}
-			else if(e.getSource() == c2_2_2)
+			else if(s == c2_2_2)
 			{
 				Feeling.pf2_UP();//호감도 +1
 				up.setVisible(true);
@@ -943,7 +944,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn7) // 선택지 2-3 nextBtn10 부터
+		if(s == nextBtn7) // 선택지 2-3 nextBtn10 부터
 		{
 			nextBtn7.setVisible(false);
 			
@@ -1022,7 +1023,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c2_3_1 || e.getSource() == c2_3_2 || e.getSource() == c2_3_3)
+		if(s == c2_3_1 || s == c2_3_2 || s == c2_3_3)
 		{
 			d45.setVisible(false);
 			d46.setVisible(false);
@@ -1030,7 +1031,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			c2_3_2.setVisible(false);
 			c2_3_3.setVisible(false);
 			
-			if(e.getSource() == c2_3_1)
+			if(s == c2_3_1)
 			{
 				d47.setBounds(30, 480, 1200, 100);
 				d47.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
@@ -1061,7 +1062,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 				});
 				super.add(nextBtn10);
 			}
-			else if(e.getSource() == c2_3_2)
+			else if(s == c2_3_2)
 			{
 				d49.setBounds(30, 480, 1200, 100);
 				d49.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
@@ -1126,7 +1127,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn10)
+		if(s == nextBtn10)
 		{
 			nextBtn10.setVisible(false);
 			
@@ -1205,7 +1206,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c2_3_1_1 || e.getSource() == c2_3_1_2 || e.getSource() == c2_3_1_3)
+		if(s == c2_3_1_1 || s == c2_3_1_2 || s == c2_3_1_3)
 		{
 			d47.setVisible(false);
 			d48.setVisible(false);
@@ -1213,7 +1214,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			c2_3_1_2.setVisible(false);
 			c2_3_1_3.setVisible(false);
 			
-			if(e.getSource() == c2_3_1_1)
+			if(s == c2_3_1_1)
 			{
 				Feeling.pf2_UP(); //호감도 +1
 				up.setVisible(true);
@@ -1236,7 +1237,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn11)
+		if(s == nextBtn11)
 		{
 			nextBtn11.setVisible(false);
 			
@@ -1315,7 +1316,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c2_3_2_1 || e.getSource() == c2_3_2_2 || e.getSource() == c2_3_2_3)
+		if(s == c2_3_2_1 || s == c2_3_2_2 || s == c2_3_2_3)
 		{
 			d49.setVisible(false);
 			d50.setVisible(false);
@@ -1323,7 +1324,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			c2_3_2_2.setVisible(false);
 			c2_3_2_3.setVisible(false);
 			
-			if(e.getSource() == c2_3_2_1)
+			if(s == c2_3_2_1)
 			{
 				Feeling.pf2_UP(); //호감도 +1
 				up.setVisible(true);
@@ -1346,7 +1347,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn12)
+		if(s == nextBtn12)
 		{
 			nextBtn12.setVisible(false);
 			d51.setVisible(false);
@@ -1431,14 +1432,14 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c2_3_3_1 || e.getSource() == c2_3_3_2 || e.getSource() == c2_3_3_3)
+		if(s == c2_3_3_1 || s == c2_3_3_2 || s == c2_3_3_3)
 		{
 			d53.setVisible(false);
 			c2_3_3_1.setVisible(false);
 			c2_3_3_2.setVisible(false);
 			c2_3_3_3.setVisible(false);
 			
-			if(e.getSource() == c2_3_3_3)
+			if(s == c2_3_3_3)
 			{
 				Feeling.pf2_UP(); //호감도 +1
 				up.setVisible(true);
@@ -1461,7 +1462,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtnEnd) // 대화 끝
+		if(s == nextBtnEnd) // 대화 끝
 		{
 			nextBtnEnd.setVisible(false);
 			up.setVisible(false);
@@ -1514,7 +1515,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtnExit)
+		if(s == nextBtnExit)
 		{
 			super.setVisible(false);
 			isWorked = true;
