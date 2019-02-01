@@ -1,8 +1,9 @@
 package project;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class ProfessorLines {
 
@@ -15,9 +16,11 @@ public class ProfessorLines {
 		}
 		
 		try {
-			br = new BufferedReader(new FileReader("./교수님 대사_B.txt")); // 교수님 대사 파일을 읽어온다
+			InputStream in = Main.class.getResourceAsStream("/교수님 대사_B.txt");
+			br = new BufferedReader(new InputStreamReader(in));
+			
 			String line;
-
+			
 			int i;
 			for(i = 0 ; (line = br.readLine()) != null; i++) { // 더 이상 읽을 줄이 없을 때 까지 한 줄씩 line에 String 형태로 저장
 				dialogue[i] = line; // i번째 줄의 대사를 dialogue 배열에 저장
@@ -40,7 +43,8 @@ public class ProfessorLines {
 		}
 		
 		try {
-			br = new BufferedReader(new FileReader("./특정1-1.txt")); // 교수님 대사 파일을 읽어온다
+			InputStream in = Main.class.getResourceAsStream("/특정1-1.txt");
+			br = new BufferedReader(new InputStreamReader(in)); // 교수님 대사 파일을 읽어온다
 			String line;
 
 			int i;
@@ -65,7 +69,8 @@ public class ProfessorLines {
 		}
 		
 		try {
-			br = new BufferedReader(new FileReader("./일반1-1.txt")); // 교수님 대사 파일을 읽어온다
+			InputStream in = Main.class.getResourceAsStream("/일반1-1.txt");
+			br = new BufferedReader(new InputStreamReader(in)); // 교수님 대사 파일을 읽어온다
 			String line;
 
 			int i;
@@ -90,7 +95,8 @@ public class ProfessorLines {
 		}
 		
 		try {
-			br = new BufferedReader(new FileReader("./일반2-1.txt")); // 교수님 대사 파일을 읽어온다
+			InputStream in = Main.class.getResourceAsStream("/일반2-1.txt");
+			br = new BufferedReader(new InputStreamReader(in)); // 교수님 대사 파일을 읽어온다
 			String line;
 
 			int i;
@@ -115,7 +121,8 @@ public class ProfessorLines {
 		}
 		
 		try {
-			br = new BufferedReader(new FileReader("./일반3-1.txt")); // 교수님 대사 파일을 읽어온다
+			InputStream in = Main.class.getResourceAsStream("/일반3-1.txt");
+			br = new BufferedReader(new InputStreamReader(in)); // 교수님 대사 파일을 읽어온다
 			String line;
 
 			int i;
@@ -140,7 +147,8 @@ public class ProfessorLines {
 		}
 		
 		try {
-			br = new BufferedReader(new FileReader("./휴일.txt")); // 교수님 대사 파일을 읽어온다
+			InputStream in = Main.class.getResourceAsStream("/휴일.txt");
+			br = new BufferedReader(new InputStreamReader(in)); // 교수님 대사 파일을 읽어온다
 			String line;
 
 			int i;
@@ -165,7 +173,8 @@ public class ProfessorLines {
 		}
 		
 		try {
-			br = new BufferedReader(new FileReader("./교수님 대화.txt")); // 교수님 대사 파일을 읽어온다
+			InputStream in = Main.class.getResourceAsStream("/교수님 대화.txt");
+			br = new BufferedReader(new InputStreamReader(in)); // 교수님 대사 파일을 읽어온다
 			String line;
 
 			int i;
