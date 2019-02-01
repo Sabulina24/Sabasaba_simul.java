@@ -7,7 +7,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 
 public class DrinkingGame extends JPanel{
@@ -20,12 +19,12 @@ public class DrinkingGame extends JPanel{
 	public DrinkingGame() {
 		setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(DrinkingGame.class.getResource("../images/º≥∏Ì.png")));
+		final JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("ÏÑ§Î™Ö.png")));
 		lblNewLabel.setBounds(0, 0, 1280, 720);
 		add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("");
+		final JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -35,29 +34,28 @@ public class DrinkingGame extends JPanel{
 				screen();
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon(DrinkingGame.class.getResource("../images/¥Ÿ¿Ω.PNG")));
+		btnNewButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("Îã§Ïùå.PNG")));
 		btnNewButton.setBounds(997, 544, 147, 68);
 		add(btnNewButton);
 	
 	}
 	
 	
-	public void screen()
-	{
+	public void screen(){
 		JLabel lbla = new JLabel("\uAD50\uC218A");
-		lbla.setIcon(new ImageIcon(screen1.class.getResource("../images/choice_A.png")));
+		lbla.setIcon(new ImageIcon(getClass().getClassLoader().getResource("choice_A.png")));
 		lbla.setHorizontalAlignment(SwingConstants.CENTER);
 		lbla.setBounds(63, 227, 275, 266);
 		add(lbla);
 		
 		JLabel lblb = new JLabel("\uAD50\uC218B");
-		lblb.setIcon(new ImageIcon(screen1.class.getResource("../images/choice_B.png")));
+		lblb.setIcon(new ImageIcon(getClass().getClassLoader().getResource("choice_B.png")));
 		lblb.setHorizontalAlignment(SwingConstants.CENTER);
 		lblb.setBounds(463, 227, 275, 266);
 		add(lblb);
 		
 		JLabel lblc = new JLabel("\uAD50\uC218C");
-		lblc.setIcon(new ImageIcon(screen1.class.getResource("../images/choice_C.png")));
+		lblc.setIcon(new ImageIcon(getClass().getClassLoader().getResource("choice_C.png")));
 		lblc.setHorizontalAlignment(SwingConstants.CENTER);
 		lblc.setBounds(828, 239, 275, 266);
 		add(lblc);
@@ -65,7 +63,7 @@ public class DrinkingGame extends JPanel{
 		JLabel label = new JLabel("\uAD50\uC218\uC120\uD0DD");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setBounds(321, 100, 553, 93);
-		label.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 40));
+		label.setFont(new Font("ÎßëÏùÄ Í≥†Îîï", Font.PLAIN, 40));
 		add(label);
 		
 		JButton btnNewButton = new JButton("A");
@@ -107,6 +105,4 @@ public class DrinkingGame extends JPanel{
 		
 		
 	}
-	
-	
 }
