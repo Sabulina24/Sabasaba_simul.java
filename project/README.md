@@ -32,3 +32,9 @@ __자바실행파일(.jar 또는 .exe) 변환 시 발생하는 이미지 경로 
 * ImageIcon 지정 방식
   * Main.class.getResource("../images/name.png") -> getClass.getClassLoader().getResource("name")  
 
+지나치게 반복되는 변수 단순화 
+--------------------
+B_Holiday, B_Normal_1, B_Normal_2, B_Normal_3, B_Special 클래스에서 e.getSource()의 비효율적인 반복이 발견됨.  
+Object 클래스에 상속받아 e.getSource()의 변수명을 s로 단순화함.
+* Object s = e.getSource();  
+* 이후의 e.getSource()를 모두 s로 변경
