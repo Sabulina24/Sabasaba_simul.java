@@ -94,7 +94,7 @@ public class TryNotToSleep_Play extends JPanel implements ActionListener{
 					SleepingAlgorithm.DrousyMeter=0;
 					tiredMeter=0;
 					lblNewLabel_2.setBounds(0, 0, 1280, 720);
-					lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("fail.png")));
+					lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("fail.PNG")));
 					Feeling.pf1_DOWN();
 					Feeling.pf2_DOWN();
 					Feeling.pf3_DOWN();
@@ -110,7 +110,7 @@ public class TryNotToSleep_Play extends JPanel implements ActionListener{
 				if(n>=40) {
 					vely=100;
 					velt=100;
-					lblNewLabel_4.setIcon(new ImageIcon(getClass().getClassLoader().getResource("success.png")));
+					lblNewLabel_4.setIcon(new ImageIcon(getClass().getClassLoader().getResource("success.PNG")));
 					Feeling.pf1_UP(); 
 					Feeling.pf2_UP(); 
 					Feeling.pf3_UP(); 
