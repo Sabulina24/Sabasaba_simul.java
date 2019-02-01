@@ -178,6 +178,7 @@ public class B_Special extends JPanel implements ActionListener{
 
 		public void actionPerformed(ActionEvent e)
 		{
+			Object s = e.getSource();
 			nextBtnEnd.setBounds(1000,400,300,60);
 			nextBtnEnd.setBorderPainted(false);
 			nextBtnEnd.setContentAreaFilled(false);
@@ -199,7 +200,7 @@ public class B_Special extends JPanel implements ActionListener{
 				}
 			});
 			
-			if(e.getSource() == nextBtn1)
+			if(s == nextBtn1)
 			{
 				nextBtn1.setVisible(false);
 				label1.setVisible(false);
@@ -243,7 +244,7 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == nextBtn2)
+			if(s == nextBtn2)
 			{
 				nextBtn2.setVisible(false);
 				
@@ -321,14 +322,14 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == c1_1 || e.getSource() == c1_2 || e.getSource() == c1_3)
+			if(s == c1_1 || s == c1_2 || s == c1_3)
 			{
 				c1_1.setVisible(false);
 				c1_2.setVisible(false);
 				c1_3.setVisible(false);
 				d56.setVisible(false);
 				
-				if(e.getSource() == c1_1 || e.getSource() == c1_3)
+				if(s == c1_1 || s == c1_3)
 				{
 					Feeling.pf2_DOWN();//호감도 -1
 					down.setVisible(true);
@@ -375,7 +376,7 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == nextBtn3)
+			if(s == nextBtn3)
 			{
 				nextBtn3.setVisible(false);
 				d57.setVisible(false);
@@ -413,7 +414,7 @@ public class B_Special extends JPanel implements ActionListener{
 				});
 			}
 			
-			if(e.getSource() == nextBtn4)
+			if(s == nextBtn4)
 			{
 				nextBtn4.setVisible(false);
 				
@@ -492,14 +493,14 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == c2_1 || e.getSource() == c2_2 || e.getSource() == c2_3)
+			if(s == c2_1 || s == c2_2 || s == c2_3)
 			{
 				c2_1.setVisible(false);
 				c2_2.setVisible(false);
 				c2_3.setVisible(false);
 				label3.setVisible(false);
 				
-				if(e.getSource() == c2_1 || e.getSource() == c2_2)
+				if(s == c2_1 || s == c2_2)
 				{
 					Feeling.pf2_DOWN();//호감도 -1
 					down.setVisible(true);
@@ -549,7 +550,7 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == nextBtn5)
+			if(s == nextBtn5)
 			{
 				up.setVisible(false);
 				down.setVisible(false);
@@ -597,7 +598,7 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == nextBtn6)
+			if(s == nextBtn6)
 			{
 				nextBtn6.setVisible(false);
 				label8.setVisible(false);
@@ -638,7 +639,7 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == nextBtn7)
+			if(s == nextBtn7)
 			{
 				nextBtn7.setVisible(false);
 				label10.setVisible(false);
@@ -682,7 +683,7 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == nextBtn8)
+			if(s == nextBtn8)
 			{
 				nextBtn8.setVisible(false);
 				label12.setVisible(false);
@@ -720,7 +721,7 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == nextBtn9)
+			if(s == nextBtn9)
 			{
 				nextBtn9.setVisible(false);
 				
@@ -775,14 +776,14 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == c3_1 || e.getSource() == c3_2)
+			if(s == c3_1 || s == c3_2)
 			{
 				c3_1.setVisible(false);
 				c3_2.setVisible(false);
 				label14.setVisible(false);
 				label15.setVisible(false);
 				
-				if(e.getSource() == c3_1)
+				if(s == c3_1)
 				{
 					//호감도 -1 교수님A,C +1
 					Feeling.pf2_DOWN();
@@ -816,7 +817,7 @@ public class B_Special extends JPanel implements ActionListener{
 				repaint();
 			}
 			
-			if(e.getSource() == nextBtnEnd)
+			if(s == nextBtnEnd)
 			{
 				super.setVisible(false);
 				isWorked = true;
