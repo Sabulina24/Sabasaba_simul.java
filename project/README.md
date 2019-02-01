@@ -10,7 +10,7 @@
 메소드 및 변수 명 변경
 -------------
 * Feeling 클래스
-  * teacher1FeelUp() -> pf1_UP(
+  * teacher1FeelUp() -> pf1_UP()
   * teacher1FeelSame() -> pf1_SAME()
   * teacher1FeelDown() -> pf1_DOWN()
     * teacher1Feeling -> pf1_feel
@@ -34,7 +34,7 @@ __자바실행파일(.jar 또는 .exe) 변환 시 발생하는 이미지 경로 
 
 지나치게 반복되는 변수 단순화 
 --------------------
-B_Holiday, B_Normal_1, B_Normal_2, B_Normal_3, B_Special 클래스에서 e.getSource()의 비효율적인 반복이 발견됨.  
-Object 클래스에 상속받아 e.getSource()의 변수명을 s로 단순화함.
+B_Holiday, B_Normal_1, B_Normal_2, B_Normal_3, B_Special 클래스에서 e.getSource()의 비효율적인 반복이 발견 됨.  
+Object 클래스 상속받아 e.getSource()의 변수명을 s로 단순화 함.
 * Object s = e.getSource();  
 * 이후의 e.getSource()를 모두 s로 변경
