@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -23,59 +23,59 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 	public static boolean isWorked = false;
 	
 	BufferedImage background;
-	File file1 = new File("./src/images/Ä·ÆÛ½º.jpg");
-	File file2 = new File("./src/images/Ä·ÆÛ½º_B.jpg");
+	URL url_1 = getClass().getClassLoader().getResource("ìº í¼ìŠ¤.jpg");
+	URL url_2 = getClass().getClassLoader().getResource("ìº í¼ìŠ¤_B.jpg");
 	
-	JButton nextBtn1 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn2 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn3 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn4 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn5 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn6 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn7 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn8 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn9 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn10 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn11 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn12 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtnEnd = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtnExit = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton up = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ »ó½Â.png")));
-	JButton same = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ À¯Áö.png")));
-	JButton down = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ ÇÏ¶ô.png")));
+	JButton nextBtn1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn4 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn5 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn6 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn7 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn8 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn9 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn10 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn11 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn12 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtnEnd = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtnExit = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton up = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìƒìŠ¹.png")));
+	JButton same = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìœ ì§€.png")));
+	JButton down = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ í•˜ë½.png")));
 	
-	JButton c1_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_1_1.png")));
-	JButton c1_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_1_2.png")));
-	JButton c1_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_1_3.png")));
-	JButton c2_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1.png")));
-	JButton c2_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2.png")));
-	JButton c2_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3.png")));
-	JButton c2_1_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_1.png")));
-	JButton c2_1_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_2.png")));
-	JButton c2_1_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_3.png")));
-	JButton c2_2_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_1.png")));
-	JButton c2_2_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_2.png")));
-	JButton c2_2_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_3.png")));
-	JButton c2_3_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1.png")));
-	JButton c2_3_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2.png")));
-	JButton c2_3_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3.png")));
-	JButton c2_3_1_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_1.png")));
-	JButton c2_3_1_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_2.png")));
-	JButton c2_3_1_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_3.png")));
-	JButton c2_3_2_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_1.png")));
-	JButton c2_3_2_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_2.png")));
-	JButton c2_3_2_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_3.png")));
-	JButton c2_3_3_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_1.png")));
-	JButton c2_3_3_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_2.png")));
-	JButton c2_3_3_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_3.png")));
+	JButton c1_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_1_1.png")));
+	JButton c1_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_1_2.png")));
+	JButton c1_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_1_3.png")));
+	JButton c2_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1.png")));
+	JButton c2_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2.png")));
+	JButton c2_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3.png")));
+	JButton c2_1_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_1.png")));
+	JButton c2_1_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_2.png")));
+	JButton c2_1_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_3.png")));
+	JButton c2_2_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_1.png")));
+	JButton c2_2_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_2.png")));
+	JButton c2_2_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_3.png")));
+	JButton c2_3_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1.png")));
+	JButton c2_3_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2.png")));
+	JButton c2_3_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3.png")));
+	JButton c2_3_1_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_1.png")));
+	JButton c2_3_1_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_2.png")));
+	JButton c2_3_1_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_3.png")));
+	JButton c2_3_2_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_1.png")));
+	JButton c2_3_2_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_2.png")));
+	JButton c2_3_2_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_3.png")));
+	JButton c2_3_3_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_1.png")));
+	JButton c2_3_3_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_2.png")));
+	JButton c2_3_3_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_3.png")));
 	
-	JLabel name = new JLabel("±³¼ö´ÔB");
-	JLabel label1 = new JLabel("(Ä·ÆÛ½º¿¡¼­ ±³¼ö´Ô°ú ¸¶ÁÖÃÆ´Ù!)");
-	JLabel label2 = new JLabel("(¾ó¶³°á¿¡ ±³¼ö´Ô°ú ÇÔ²² ÇĞ°ú °Ç¹°·Î °¡°ÔµÇ¾ú´Ù.)");
-	JLabel label3 = new JLabel("(ÇĞ°ú °Ç¹°¿¡ µµÂøÇÑ µÚ, ³ª´Â ±³¼ö´Ô²² °ø¼ÕÈ÷");
-	JLabel label4 = new JLabel("ÀÎ»çÇÏ°í ÃµÃµÈ÷ ´Ù¸¥ ±æ·Î ³ª°¬´Ù.)");	
+	JLabel name = new JLabel("êµìˆ˜ë‹˜B");
+	JLabel label1 = new JLabel("(ìº í¼ìŠ¤ì—ì„œ êµìˆ˜ë‹˜ê³¼ ë§ˆì£¼ì³¤ë‹¤!)");
+	JLabel label2 = new JLabel("(ì–¼ë–¨ê²°ì— êµìˆ˜ë‹˜ê³¼ í•¨ê»˜ í•™ê³¼ ê±´ë¬¼ë¡œ ê°€ê²Œë˜ì—ˆë‹¤.)");
+	JLabel label3 = new JLabel("(í•™ê³¼ ê±´ë¬¼ì— ë„ì°©í•œ ë’¤, ë‚˜ëŠ” êµìˆ˜ë‹˜ê»˜ ê³µì†íˆ");
+	JLabel label4 = new JLabel("ì¸ì‚¬í•˜ê³  ì²œì²œíˆ ë‹¤ë¥¸ ê¸¸ë¡œ ë‚˜ê°”ë‹¤.)");	
 	
-	String[] dialogue = ProfessorDialogue.getDialogue_B(); // ±³¼ö´ÔB ´ë»ç¸¦ ÇÑ ÁÙ¾¿ ²÷¾î¼­ String ¹è¿­¿¡ ÀúÀå
+	String[] dialogue = ProfessorLines.getDialogue_B(); // êµìˆ˜ë‹˜B ëŒ€ì‚¬ë¥¼ í•œ ì¤„ì”© ëŠì–´ì„œ String ë°°ì—´ì— ì €ì¥
 	JLabel d29 = new JLabel(dialogue[29]);
 	JLabel d30 = new JLabel(dialogue[30]);
 	JLabel d31 = new JLabel(dialogue[31]);
@@ -104,68 +104,68 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 	JLabel d54 = new JLabel(dialogue[54]);
 	JLabel d55 = new JLabel(dialogue[55]);
 
-	private ImageIcon nextBtnEnteredImage = new ImageIcon(Main.class.getResource("../images/¹öÆ°1_Å¬¸¯.png"));
-	private ImageIcon nextBtnBasicImage = new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png"));
-	private ImageIcon c1_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_1_1_clk.png"));
-	private ImageIcon c1_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_1_1.png"));
-	private ImageIcon c1_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_1_2_clk.png"));
-	private ImageIcon c1_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_1_2.png"));
-	private ImageIcon c1_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_1_3_clk.png"));
-	private ImageIcon c1_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_1_3.png"));
-	private ImageIcon c2_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_clk.png"));
-	private ImageIcon c2_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1.png"));
-	private ImageIcon c2_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_clk.png"));
-	private ImageIcon c2_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2.png"));
-	private ImageIcon c2_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_clk.png"));
-	private ImageIcon c2_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3.png"));
-	private ImageIcon c2_1_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_1_clk.png"));
-	private ImageIcon c2_1_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_1.png"));
-	private ImageIcon c2_1_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_2_clk.png"));
-	private ImageIcon c2_1_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_2.png"));
-	private ImageIcon c2_1_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_3_clk.png"));
-	private ImageIcon c2_1_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_1_3.png"));
-	private ImageIcon c2_2_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_1_clk.png"));
-	private ImageIcon c2_2_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_1.png"));
-	private ImageIcon c2_2_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_2_clk.png"));
-	private ImageIcon c2_2_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_2.png"));
-	private ImageIcon c2_2_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_3_clk.png"));
-	private ImageIcon c2_2_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_2_3.png"));
-	private ImageIcon c2_3_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_clk.png"));
-	private ImageIcon c2_3_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1.png"));
-	private ImageIcon c2_3_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_clk.png"));
-	private ImageIcon c2_3_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2.png"));
-	private ImageIcon c2_3_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_clk.png"));
-	private ImageIcon c2_3_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3.png"));
-	private ImageIcon c2_3_1_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_1_clk.png"));
-	private ImageIcon c2_3_1_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_1.png"));
-	private ImageIcon c2_3_1_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_2_clk.png"));
-	private ImageIcon c2_3_1_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_2.png"));
-	private ImageIcon c2_3_1_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_3_clk.png"));
-	private ImageIcon c2_3_1_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_1_3.png"));
-	private ImageIcon c2_3_2_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_1_clk.png"));
-	private ImageIcon c2_3_2_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_1.png"));
-	private ImageIcon c2_3_2_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_2_clk.png"));
-	private ImageIcon c2_3_2_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_2.png"));
-	private ImageIcon c2_3_2_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_3_clk.png"));
-	private ImageIcon c2_3_2_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_2_3.png"));
-	private ImageIcon c2_3_3_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_1_clk.png"));
-	private ImageIcon c2_3_3_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_1.png"));
-	private ImageIcon c2_3_3_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_2_clk.png"));
-	private ImageIcon c2_3_3_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_2.png"));
-	private ImageIcon c2_3_3_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_3_clk.png"));
-	private ImageIcon c2_3_3_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Ä·ÆÛ½º_2_3_3_3.png"));
+	private ImageIcon nextBtnEnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1_í´ë¦­.png"));
+	private ImageIcon nextBtnBasicImage = new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png"));
+	private ImageIcon c1_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_1_1_clk.png"));
+	private ImageIcon c1_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_1_1.png"));
+	private ImageIcon c1_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_1_2_clk.png"));
+	private ImageIcon c1_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_1_2.png"));
+	private ImageIcon c1_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_1_3_clk.png"));
+	private ImageIcon c1_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_1_3.png"));
+	private ImageIcon c2_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_clk.png"));
+	private ImageIcon c2_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1.png"));
+	private ImageIcon c2_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_clk.png"));
+	private ImageIcon c2_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2.png"));
+	private ImageIcon c2_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_clk.png"));
+	private ImageIcon c2_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3.png"));
+	private ImageIcon c2_1_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_1_clk.png"));
+	private ImageIcon c2_1_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_1.png"));
+	private ImageIcon c2_1_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_2_clk.png"));
+	private ImageIcon c2_1_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_2.png"));
+	private ImageIcon c2_1_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_3_clk.png"));
+	private ImageIcon c2_1_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_1_3.png"));
+	private ImageIcon c2_2_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_1_clk.png"));
+	private ImageIcon c2_2_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_1.png"));
+	private ImageIcon c2_2_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_2_clk.png"));
+	private ImageIcon c2_2_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_2.png"));
+	private ImageIcon c2_2_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_3_clk.png"));
+	private ImageIcon c2_2_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_2_3.png"));
+	private ImageIcon c2_3_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_clk.png"));
+	private ImageIcon c2_3_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1.png"));
+	private ImageIcon c2_3_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_clk.png"));
+	private ImageIcon c2_3_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2.png"));
+	private ImageIcon c2_3_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_clk.png"));
+	private ImageIcon c2_3_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3.png"));
+	private ImageIcon c2_3_1_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_1_clk.png"));
+	private ImageIcon c2_3_1_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_1.png"));
+	private ImageIcon c2_3_1_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_2_clk.png"));
+	private ImageIcon c2_3_1_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_2.png"));
+	private ImageIcon c2_3_1_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_3_clk.png"));
+	private ImageIcon c2_3_1_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_1_3.png"));
+	private ImageIcon c2_3_2_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_1_clk.png"));
+	private ImageIcon c2_3_2_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_1.png"));
+	private ImageIcon c2_3_2_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_2_clk.png"));
+	private ImageIcon c2_3_2_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_2.png"));
+	private ImageIcon c2_3_2_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_3_clk.png"));
+	private ImageIcon c2_3_2_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_2_3.png"));
+	private ImageIcon c2_3_3_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_1_clk.png"));
+	private ImageIcon c2_3_3_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_1.png"));
+	private ImageIcon c2_3_3_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_2_clk.png"));
+	private ImageIcon c2_3_3_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_2.png"));
+	private ImageIcon c2_3_3_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_3_clk.png"));
+	private ImageIcon c2_3_3_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ìº í¼ìŠ¤_2_3_3_3.png"));
 
 	public B_Normal_3()
 	{
 		try
 		{
-			background = ImageIO.read(file1);
+			background = ImageIO.read(url_1);
 		} catch (IOException e) {}
 		
 		super.setLayout(null);
 		
 		label1.setBounds(30, 480, 1200, 100);
-		label1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+		label1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 		
 		nextBtn1.setBounds(1000,400,300,60);
 		nextBtn1.setBorderPainted(false);
@@ -216,7 +216,6 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 		g.drawImage(background, 0, 0, null);
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e)
 	{
 		nextBtnEnd.setBounds(1000,400,300,60);
@@ -244,7 +243,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 		{
 			try
 			{
-				background = ImageIO.read(file2);
+				background = ImageIO.read(url_2);
 				repaint();
 			} catch (IOException e1) {}
 			
@@ -331,7 +330,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			c1_2.setVisible(false);
 			c1_3.setVisible(false);
 			name.setBounds(30, 385, 300, 100);
-			name.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+			name.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
 			super.add(name);
 	
 			nextBtn2.setBounds(1000,400,300,60);
@@ -358,29 +357,29 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			
 			if(e.getSource() == c1_1)
 			{
-				GoodFeeling.teacher2FeelUp();// È£°¨µµ +1
+				Feeling.pf2_UP();// í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
 				d29.setBounds(30, 480, 1200, 100);
-				d29.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d29.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d29);
 			}
 			else if(e.getSource() == c1_2)
 			{
-				GoodFeeling.teacher2FeelDown();// È£°¨µµ -1
+				Feeling.pf2_DOWN();// í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
 				d30.setBounds(30, 480, 1200, 100);
-				d30.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d30.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d30);
 			}
 			else
 			{
-				GoodFeeling.teacher2FeelSame();// È£°¨µµ +0
+				Feeling.pf2_SAME();// í˜¸ê°ë„ +0
 				same.setVisible(true);
 				
 				d31.setBounds(30, 480, 1200, 100);
-				d31.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d31.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d31);
 			}
 			repaint();
@@ -397,7 +396,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			d31.setVisible(false);
 			
 			label2.setBounds(30, 480, 1200, 100);
-			label2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label2.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label2);
 			
 			nextBtn3.setBounds(1000,400,300,60);
@@ -429,9 +428,9 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			nextBtn3.setVisible(false);
 			label2.setVisible(false);
 			
-			//µÎ¹øÂ° ´ëÈ­ ½ÃÀÛ
+			//ë‘ë²ˆì§¸ ëŒ€í™” ì‹œì‘
 			d32.setBounds(30, 480, 1200, 100);
-			d32.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			d32.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(d32);
 			
 			nextBtn4.setBounds(1000,400,300,60);
@@ -548,10 +547,10 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			if(e.getSource() == c2_1)
 			{
 				d33.setBounds(30, 480, 1200, 100);
-				d33.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d33.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d33);
 				d34.setBounds(30, 550, 1200, 100);
-				d34.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d34.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d34);
 				
 				nextBtn5.setBounds(1000,400,300,60);
@@ -579,7 +578,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			else if(e.getSource() == c2_2)
 			{
 				d40.setBounds(30, 480, 1200, 100);
-				d40.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d40.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d40);
 				
 				nextBtn6.setBounds(1000,400,300,60);
@@ -607,10 +606,10 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			else
 			{
 				d45.setBounds(30, 480, 1200, 100);
-				d45.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d45.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d45);
 				d46.setBounds(30, 550, 1200, 100);
-				d46.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d46.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d46);
 				
 				nextBtn7.setBounds(1000,400,300,60);
@@ -638,17 +637,17 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn5) // ¼±ÅÃÁö 2-1
+		if(e.getSource() == nextBtn5) // ì„ íƒì§€ 2-1
 		{
 			nextBtn5.setVisible(false);
 			d33.setVisible(false);
 			d34.setVisible(false);
 			
 			d35.setBounds(30, 480, 1200, 100);
-			d35.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			d35.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(d35);
 			d36.setBounds(30, 550, 1200, 100);
-			d36.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			d36.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(d36);
 			
 			nextBtn8.setBounds(1000,400,300,60);
@@ -764,29 +763,29 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			
 			if(e.getSource() == c2_1_1)
 			{
-				GoodFeeling.teacher2FeelDown();//È£°¨µµ -1
+				Feeling.pf2_DOWN();//í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
 				d37.setBounds(30, 480, 1200, 100);
-				d37.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d37.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d37);
 			}
 			else if(e.getSource() == c2_1_2)
 			{
-				GoodFeeling.teacher2FeelUp();//È£°¨µµ +1
+				Feeling.pf2_UP();//í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
 				d38.setBounds(30, 480, 1200, 100);
-				d38.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d38.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d38);
 			}
 			else
 			{
-				GoodFeeling.teacher2FeelSame();//È£°¨µµ +0
+				Feeling.pf2_SAME();//í˜¸ê°ë„ +0
 				same.setVisible(true);
 				
 				d39.setBounds(30, 480, 1200, 100);
-				d39.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d39.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d39);
 			}
 			
@@ -794,13 +793,13 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn6) // ¼±ÅÃÁö 2-2 nextBtn9 ºÎÅÍ
+		if(e.getSource() == nextBtn6) // ì„ íƒì§€ 2-2 nextBtn9 ë¶€í„°
 		{
 			nextBtn6.setVisible(false);
 			d40.setVisible(false);
 			
 			d41.setBounds(30, 480, 1200, 100);
-			d41.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			d41.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(d41);
 			
 			nextBtn9.setBounds(1000,400,300,60);
@@ -914,29 +913,29 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			
 			if(e.getSource() == c2_2_1)
 			{
-				GoodFeeling.teacher2FeelDown();//È£°¨µµ -1
+				Feeling.pf2_DOWN();//í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
 				d42.setBounds(30, 480, 1200, 100);
-				d42.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d42.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d42);
 			}
 			else if(e.getSource() == c2_2_2)
 			{
-				GoodFeeling.teacher2FeelUp();//È£°¨µµ +1
+				Feeling.pf2_UP();//í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
 				d43.setBounds(30, 480, 1200, 100);
-				d43.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d43.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d43);
 			}
 			else
 			{
-				GoodFeeling.teacher2FeelUp();//È£°¨µµ +1
+				Feeling.pf2_UP();//í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
 				d44.setBounds(30, 480, 1200, 100);
-				d44.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d44.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d44);
 			}
 			
@@ -944,7 +943,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn7) // ¼±ÅÃÁö 2-3 nextBtn10 ºÎÅÍ
+		if(e.getSource() == nextBtn7) // ì„ íƒì§€ 2-3 nextBtn10 ë¶€í„°
 		{
 			nextBtn7.setVisible(false);
 			
@@ -1034,10 +1033,10 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			if(e.getSource() == c2_3_1)
 			{
 				d47.setBounds(30, 480, 1200, 100);
-				d47.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d47.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d47);
 				d48.setBounds(30, 550, 1200, 100);
-				d48.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d48.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d48);
 				
 				nextBtn10.setBounds(1000,400,300,60);
@@ -1065,10 +1064,10 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			else if(e.getSource() == c2_3_2)
 			{
 				d49.setBounds(30, 480, 1200, 100);
-				d49.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d49.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d49);
 				d50.setBounds(30, 550, 1200, 100);
-				d50.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d50.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d50);
 				
 				nextBtn11.setBounds(1000,400,300,60);
@@ -1096,10 +1095,10 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			else
 			{
 				d51.setBounds(30, 480, 1200, 100);
-				d51.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d51.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d51);
 				d52.setBounds(30, 550, 1200, 100);
-				d52.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d52.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d52);
 				
 				nextBtn12.setBounds(1000,400,300,60);
@@ -1216,20 +1215,20 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			
 			if(e.getSource() == c2_3_1_1)
 			{
-				GoodFeeling.teacher2FeelUp(); //È£°¨µµ +1
+				Feeling.pf2_UP(); //í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
 				d54.setBounds(30, 480, 1200, 100);
-				d54.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d54.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d54);
 			}
 			else
 			{
-				GoodFeeling.teacher2FeelDown(); //È£°¨µµ -1
+				Feeling.pf2_DOWN(); //í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
 				d55.setBounds(30, 480, 1200, 100);
-				d55.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d55.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d55);
 			}
 			
@@ -1326,20 +1325,20 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			
 			if(e.getSource() == c2_3_2_1)
 			{
-				GoodFeeling.teacher2FeelUp(); //È£°¨µµ +1
+				Feeling.pf2_UP(); //í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
 				d54.setBounds(30, 480, 1200, 100);
-				d54.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d54.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d54);
 			}
 			else
 			{
-				GoodFeeling.teacher2FeelDown(); //È£°¨µµ -1
+				Feeling.pf2_DOWN(); //í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
 				d55.setBounds(30, 480, 1200, 100);
-				d55.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d55.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d55);
 			}
 			
@@ -1354,7 +1353,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			d52.setVisible(false);
 			
 			d53.setBounds(30, 480, 1200, 100);
-			d53.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			d53.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(d53);
 			
 			c2_3_3_1.setBounds(820,325,500,100);
@@ -1441,20 +1440,20 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			
 			if(e.getSource() == c2_3_3_3)
 			{
-				GoodFeeling.teacher2FeelUp(); //È£°¨µµ +1
+				Feeling.pf2_UP(); //í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
 				d54.setBounds(30, 480, 1200, 100);
-				d54.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d54.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d54);
 			}
 			else
 			{
-				GoodFeeling.teacher2FeelDown(); //È£°¨µµ -1
+				Feeling.pf2_DOWN(); //í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
 				d55.setBounds(30, 480, 1200, 100);
-				d55.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d55.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d55);
 			}
 			
@@ -1462,7 +1461,7 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtnEnd) // ´ëÈ­ ³¡
+		if(e.getSource() == nextBtnEnd) // ëŒ€í™” ë
 		{
 			nextBtnEnd.setVisible(false);
 			up.setVisible(false);
@@ -1480,14 +1479,14 @@ public class B_Normal_3 extends JPanel implements ActionListener{
 			
 			try
 			{
-				background = ImageIO.read(file1);
+				background = ImageIO.read(url_1);
 			} catch (IOException e1) {}
 			
 			label3.setBounds(30, 480, 1200, 100);
-			label3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label3.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label3);
 			label4.setBounds(30, 550, 1200, 100);
-			label4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label4.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label4);
 			
 			nextBtnExit.setBounds(1000,400,300,60);
