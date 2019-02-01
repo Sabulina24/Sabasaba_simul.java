@@ -13,54 +13,51 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
-public class Simul_start extends JPanel
-{
+public class SimulStart extends JPanel {
 	public static boolean isWorked = false;
 	private static final long serialVersionUID = 1L;
 
-	private ImageIcon startButtonEnteredImage=new ImageIcon(Main.class.getResource("../images/start button2.png"));
-	private ImageIcon startButtonBasicImage=new ImageIcon(Main.class.getResource("../images/start button.png"));
-	private ImageIcon endButtonEnteredImage=new ImageIcon(Main.class.getResource("../images/end button2.png"));
-	private ImageIcon endButtonBasicImage=new ImageIcon(Main.class.getResource("../images/end button.png"));
-	private ImageIcon nextButtonImage=new ImageIcon(Main.class.getResource("../images/nextButton.png"));
-	private ImageIcon passButtonBasicImage=new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png"));
-	private ImageIcon passButtonEnteredImage=new ImageIcon(Main.class.getResource("../images/¹öÆ°1_Å¬¸¯.png"));
+	private ImageIcon startButtonEnteredImage=new ImageIcon(getClass().getClassLoader().getResource("start button2.png"));
+	private ImageIcon startButtonBasicImage=new ImageIcon(getClass().getClassLoader().getResource("start button.png"));
+	private ImageIcon endButtonEnteredImage=new ImageIcon(getClass().getClassLoader().getResource("end button2.png"));
+	private ImageIcon endButtonBasicImage=new ImageIcon(getClass().getClassLoader().getResource("end button.png"));
+	private ImageIcon nextButtonImage=new ImageIcon(getClass().getClassLoader().getResource("nextButton.png"));
+	private ImageIcon passButtonBasicImage=new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png"));
+	private ImageIcon passButtonEnteredImage=new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1_í´ë¦­.png"));
 	
-	private Image background=new ImageIcon(Main.class.getResource("../images/backGround!!.jpg")).getImage();
+	private Image background=new ImageIcon(getClass().getClassLoader().getResource("backGround!!.jpg")).getImage();
 	
 	private JButton startButton=new JButton(startButtonBasicImage);
 	private JButton endButton=new JButton(endButtonBasicImage);
 	private JButton nextButton=new JButton(nextButtonImage);
 	private JButton passButton=new JButton(passButtonBasicImage);
 	
-	private JLabel me=new JLabel("  ³ª");
-	private JLabel sit1=new JLabel("°øºÎ¸¦ ¾Æ¹«¸®ÇØµµ Àß ³ª¿ÀÁö ¾Ê´Â ¼ºÀûÀ¸·Î ±³¼ö´Ô²²");
-	private JLabel sit2=new JLabel("»ç¹Ù»ç¹Ù¶óµµ ÇÏ±â¿¡ ÀÌ¸¥ ³ª... ³²Àº ³¯Â¥´Â ¾ÕÀ¸·Î ÀÏÁÖÀÏ!");
+	private JLabel me=new JLabel("  ë‚˜");
+	private JLabel sit1=new JLabel("ê³µë¶€ë¥¼ ì•„ë¬´ë¦¬í•´ë„ ì˜ ë‚˜ì˜¤ì§€ ì•ŠëŠ” ì„±ì ìœ¼ë¡œ êµìˆ˜ë‹˜ê»˜");
+	private JLabel sit2=new JLabel("ì‚¬ë°”ì‚¬ë°”ë¼ë„ í•˜ê¸°ì— ì´ë¥¸ ë‚˜... ë‚¨ì€ ë‚ ì§œëŠ” ì•ìœ¼ë¡œ ì¼ì£¼ì¼!");
 	
 	JTextField text=new JTextField(10);
 	Music introMusic=new Music("Bruno Mars-04-That`s What I Like-320k.mp3", true);
 	
 	public static String name;
 
-	public Simul_start()
-	{	
+	public SimulStart() {	
 		setLayout(null);
 
 		me.setBounds(30, 385, 300, 100);
 		super.add(me);
 		me.setVisible(false);
-		me.setFont(new Font(null, Font.BOLD, 30));
+		me.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
 
 		sit1.setBounds(30, 480, 1200, 100);
 		super.add(sit1);
 		sit1.setVisible(false);
-		sit1.setFont(new Font(null, Font.BOLD, 40));
+		sit1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 40));
 
 		sit2.setBounds(30, 550, 1200, 100);
 		super.add(sit2);
 		sit2.setVisible(false);
-		sit2.setFont(new Font(null, Font.BOLD, 40));
+		sit2.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 40));
 
 		introMusic.start();
 
@@ -117,7 +114,7 @@ public class Simul_start extends JPanel
 				startButton.setVisible(false);
 				endButton.setVisible(false);
 				
-				background=new ImageIcon(Main.class.getResource("../images/backName.jpg")).getImage();//mainÀ¸·Î ³Ñ¾î¿È						
+				background=new ImageIcon(getClass().getClassLoader().getResource("backName.jpg")).getImage();//mainìœ¼ë¡œ ë„˜ì–´ì˜´						
 
 				Text();
 
@@ -160,37 +157,33 @@ public class Simul_start extends JPanel
 	}
 
 	@SuppressWarnings("deprecation")
-	public void End()
-	{
+	public void End() {
 		introMusic.stop();
 		super.setVisible(false);
 		isWorked = true;
 	}
 
-	public void paint(Graphics g)
-	{
+	public void paint(Graphics g) {
 		g.drawImage(background, 0, 0, null);
 		paintComponents(g);
 		repaint();
 	}
 
-	public void Text()
-	{
+	public void Text() {
 		super.setLayout(null);
 		text.setBounds(500, 500, 300, 60);
 		super.add(text);
 		text.setVisible(true);
-		text.setFont(new Font(null, Font.PLAIN, 25));
+		text.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 25));
 		name=text.getText();	
 		name=String.valueOf(text.getText());
 	}
 
-	public void introduce()
-	{
+	public void introduce()	{
 		nextButton.setVisible(false);
 		text.setVisible(false);
 		
-		background=new ImageIcon(Main.class.getResource("../images/±³¼ö´Ô¼Ò°³.jpg")).getImage();
+		background=new ImageIcon(getClass().getClassLoader().getResource("êµìˆ˜ë‹˜ì†Œê°œ.jpg")).getImage();
 
 		passButton.setBounds(950, 600, 300, 60);
 		passButton.setBorderPainted(false);
@@ -225,11 +218,10 @@ public class Simul_start extends JPanel
 		repaint();
 	}
 
-	public void Situation()
-	{		
+	public void Situation() {		
 		nextButton.setVisible(false);
 		
-		background=new ImageIcon(Main.class.getResource("../images/°­ÀÇ½Çº¹µµ.jpg")).getImage();
+		background=new ImageIcon(getClass().getClassLoader().getResource("ê°•ì˜ì‹¤ë³µë„.jpg")).getImage();
 
 		me.setVisible(true);
 		sit1.setVisible(true);
