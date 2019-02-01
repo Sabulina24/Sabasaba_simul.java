@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -24,59 +24,59 @@ public class B_Holiday extends JPanel implements ActionListener{
 	public static boolean isWorked = false;
 	
 	BufferedImage background;
-	File file1 = new File("./src/images/Ä·ÆÛ½º.jpg");
-	File file2 = new File("./src/images/Ä·ÆÛ½º_B.jpg");
+	URL url_1 = getClass().getClassLoader().getResource("ìº í¼ìŠ¤.jpg");
+	URL url_2 = getClass().getClassLoader().getResource("ìº í¼ìŠ¤_B.jpg");
 	
-	JButton nextBtn1 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn2 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn3 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn4 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn5 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn6 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn7 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn8 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn9 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn10 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn11 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	//JButton nextBtn12 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn13 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtnEnd = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtnExit = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton up = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ »ó½Â.png")));
-	JButton same = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ À¯Áö.png")));
-	JButton down = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ ÇÏ¶ô.png")));
+	JButton nextBtn1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn4 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn5 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn6 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn7 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn8 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn9 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn10 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn11 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	//JButton nextBtn12 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtn13 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtnEnd = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton nextBtnExit = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+	JButton up = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìƒìŠ¹.png")));
+	JButton same = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìœ ì§€.png")));
+	JButton down = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ í•˜ë½.png")));
 	
-	JButton c1_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_1_1.png")));
-	JButton c1_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_1_2.png")));
-	JButton c1_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_1_3.png")));
-	JButton c2_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_2_1.png")));
-	JButton c2_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_2_2.png")));
-	JButton c2_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_2_3.png")));
-	JButton c3_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1.png")));
-	JButton c3_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_2.png")));
-	JButton c3_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_3.png")));
-	JButton c3_1_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_1.png")));
-	JButton c3_1_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_2.png")));
-	JButton c3_1_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_3.png")));
-	JButton doIt = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_µµÀü.png")));
-	JButton notDoIt = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_µµÀü¾ÈÇÔ.png")));
+	JButton c1_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_1_1.png")));
+	JButton c1_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_1_2.png")));
+	JButton c1_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_1_3.png")));
+	JButton c2_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_2_1.png")));
+	JButton c2_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_2_2.png")));
+	JButton c2_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_2_3.png")));
+	JButton c3_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1.png")));
+	JButton c3_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_2.png")));
+	JButton c3_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_3.png")));
+	JButton c3_1_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_1.png")));
+	JButton c3_1_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_2.png")));
+	JButton c3_1_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_3.png")));
+	JButton doIt = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ë„ì „.png")));
+	JButton notDoIt = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ë„ì „ì•ˆí•¨.png")));
 	
-	JLabel name = new JLabel("±³¼ö´ÔB");
-	JLabel label1 = new JLabel("(¿À´ÃÀº Ç®°ø°­ÀÌÁö¸¸ ¾îÂ¼´Ù ÇĞ±³¿¡ ¿À°ÔµÇ¾ú´Âµ¥");
-	JLabel label2 = new JLabel("¹Ù·Î ¾Õ¿¡ ±³¼ö´ÔÀÌ °É¾î °¡°í °è¼Ì´Ù.)");
-	JLabel label3 = new JLabel("(±³¼ö´ÔÀº Æ¼Å¸ÀÓÀ» Áñ±â°í °è¼Å¼­");
-	JLabel label4 = new JLabel("³»°¡ Á¢±ÙÇÏ°í ÀÖ´Â °É ¸ğ¸£½Å°¡ º¸´Ù.)");
-	JLabel label5 = new JLabel("(±³¼ö´ÔÀº ³î¶õ ³ª¸ÓÁö µé°í ÀÖ´ø Ä¿ÇÇÀÜÀ»");
-	JLabel label6 = new JLabel("³õÄ¡¼Ì°í ±×´ë·Î ¿Ê¿¡ ½ñÀ¸¼Ì´Ù.)");
-	JLabel label7 = new JLabel("(±³¼ö´ÔÀº Àá½Ã ³î¶ó½Å °Å °°Áö¸¸");
-	JLabel label8 = new JLabel("´ÙÇàÀÌµµ Ä¿ÇÇÀÜÀ» ³õÄ¡½ÃÁö ¾Ê¾Ò´Ù.)");
-	JLabel label9 = new JLabel("(¿©Â÷ÀúÂ÷ÇØ¼­ ±³¼ö´Ô°ú °°ÀÌ °É¾î°¡°ÔµÆ´Ù..)");
-	JLabel label10 = new JLabel("(±³¼ö´ÔÀÇ ±â³ª±ä Ä¿ÇÇ °­·ĞÀ» µéÀ¸¸é¼­");
-	JLabel label11 = new JLabel("¸¶Ä§³» ¸ñÀûÁö¿¡ µµÂøÇÑ ÈÄ ±³¼ö´Ô²² ÀÎ»çÇß´Ù.)");
-	JLabel label12 = new JLabel("(±³¼ö´Ôµµ ±ä ÀÌ¾ß±â¸¦ Àß µé¾îÁà¼­ ±âºĞÀÌ");
-	JLabel label13 = new JLabel("ÁÁ¾ÆÁö½Åµí ÇÏ´Ù.)");
+	JLabel name = new JLabel("êµìˆ˜ë‹˜B");
+	JLabel label1 = new JLabel("(ì˜¤ëŠ˜ì€ í’€ê³µê°•ì´ì§€ë§Œ ì–´ì©Œë‹¤ í•™êµì— ì˜¤ê²Œë˜ì—ˆëŠ”ë°");
+	JLabel label2 = new JLabel("ë°”ë¡œ ì•ì— êµìˆ˜ë‹˜ì´ ê±¸ì–´ ê°€ê³  ê³„ì…¨ë‹¤.)");
+	JLabel label3 = new JLabel("(êµìˆ˜ë‹˜ì€ í‹°íƒ€ì„ì„ ì¦ê¸°ê³  ê³„ì…”ì„œ");
+	JLabel label4 = new JLabel("ë‚´ê°€ ì ‘ê·¼í•˜ê³  ìˆëŠ” ê±¸ ëª¨ë¥´ì‹ ê°€ ë³´ë‹¤.)");
+	JLabel label5 = new JLabel("(êµìˆ˜ë‹˜ì€ ë†€ë€ ë‚˜ë¨¸ì§€ ë“¤ê³  ìˆë˜ ì»¤í”¼ì”ì„");
+	JLabel label6 = new JLabel("ë†“ì¹˜ì…¨ê³  ê·¸ëŒ€ë¡œ ì˜·ì— ìŸìœ¼ì…¨ë‹¤.)");
+	JLabel label7 = new JLabel("(êµìˆ˜ë‹˜ì€ ì ì‹œ ë†€ë¼ì‹  ê±° ê°™ì§€ë§Œ");
+	JLabel label8 = new JLabel("ë‹¤í–‰ì´ë„ ì»¤í”¼ì”ì„ ë†“ì¹˜ì‹œì§€ ì•Šì•˜ë‹¤.)");
+	JLabel label9 = new JLabel("(ì—¬ì°¨ì €ì°¨í•´ì„œ êµìˆ˜ë‹˜ê³¼ ê°™ì´ ê±¸ì–´ê°€ê²Œëë‹¤..)");
+	JLabel label10 = new JLabel("(êµìˆ˜ë‹˜ì˜ ê¸°ë‚˜ê¸´ ì»¤í”¼ ê°•ë¡ ì„ ë“¤ìœ¼ë©´ì„œ");
+	JLabel label11 = new JLabel("ë§ˆì¹¨ë‚´ ëª©ì ì§€ì— ë„ì°©í•œ í›„ êµìˆ˜ë‹˜ê»˜ ì¸ì‚¬í–ˆë‹¤.)");
+	JLabel label12 = new JLabel("(êµìˆ˜ë‹˜ë„ ê¸´ ì´ì•¼ê¸°ë¥¼ ì˜ ë“¤ì–´ì¤˜ì„œ ê¸°ë¶„ì´");
+	JLabel label13 = new JLabel("ì¢‹ì•„ì§€ì‹ ë“¯ í•˜ë‹¤.)");
 	
-	String[] dialogue = ProfessorDialogue.getDialogue_B(); // ±³¼ö´ÔB ´ë»ç¸¦ ÇÑ ÁÙ¾¿ ²÷¾î¼­ String ¹è¿­¿¡ ÀúÀå
+	String[] dialogue = ProfessorLines.getDialogue_B(); // êµìˆ˜ë‹˜B ëŒ€ì‚¬ë¥¼ í•œ ì¤„ì”© ëŠì–´ì„œ String ë°°ì—´ì— ì €ì¥
 	JLabel d60 = new JLabel(dialogue[60]);
 	JLabel d61 = new JLabel(dialogue[61]);
 	JLabel d62 = new JLabel(dialogue[62]);
@@ -93,50 +93,48 @@ public class B_Holiday extends JPanel implements ActionListener{
 	JLabel d73 = new JLabel(dialogue[73]);
 	JLabel d74 = new JLabel(dialogue[74]);
 	
-	private ImageIcon nextBtnEnteredImage = new ImageIcon(Main.class.getResource("../images/¹öÆ°1_Å¬¸¯.png"));
-	private ImageIcon nextBtnBasicImage = new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png"));
-	private ImageIcon c1_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_1_1_clk.png"));
-	private ImageIcon c1_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_1_1.png"));
-	private ImageIcon c1_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_1_2_clk.png"));
-	private ImageIcon c1_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_1_2.png"));
-	private ImageIcon c1_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_1_3_clk.png"));
-	private ImageIcon c1_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_1_3.png"));
-	private ImageIcon c2_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_2_1_clk.png"));
-	private ImageIcon c2_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_2_1.png"));
-	private ImageIcon c2_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_2_2_clk.png"));
-	private ImageIcon c2_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_2_2.png"));
-	private ImageIcon c2_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_2_3_clk.png"));
-	private ImageIcon c2_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_2_3.png"));
-	private ImageIcon c3_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_clk.png"));
-	private ImageIcon c3_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1.png"));
-	private ImageIcon c3_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_2_clk.png"));
-	private ImageIcon c3_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_2.png"));
-	private ImageIcon c3_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_3_clk.png"));
-	private ImageIcon c3_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_3.png"));
-	private ImageIcon c3_1_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_1_clk.png"));
-	private ImageIcon c3_1_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_1.png"));
-	private ImageIcon c3_1_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_2_clk.png"));
-	private ImageIcon c3_1_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_2.png"));
-	private ImageIcon c3_1_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_3_clk.png"));
-	private ImageIcon c3_1_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_ÈŞÀÏ_3_1_3.png"));
-	private ImageIcon doItEnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_µµÀü_clk.png"));
-	private ImageIcon doItBasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_µµÀü.png"));
-	private ImageIcon notDoItEnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_µµÀü¾ÈÇÔ_clk.png"));
-	private ImageIcon notDoItBasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_µµÀü¾ÈÇÔ.png"));
+	private ImageIcon nextBtnEnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1_í´ë¦­.png"));
+	private ImageIcon nextBtnBasicImage = new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png"));
+	private ImageIcon c1_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_1_1_clk.png"));
+	private ImageIcon c1_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_1_1.png"));
+	private ImageIcon c1_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_1_2_clk.png"));
+	private ImageIcon c1_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_1_2.png"));
+	private ImageIcon c1_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_1_3_clk.png"));
+	private ImageIcon c1_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_1_3.png"));
+	private ImageIcon c2_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_2_1_clk.png"));
+	private ImageIcon c2_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_2_1.png"));
+	private ImageIcon c2_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_2_2_clk.png"));
+	private ImageIcon c2_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_2_2.png"));
+	private ImageIcon c2_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_2_3_clk.png"));
+	private ImageIcon c2_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_2_3.png"));
+	private ImageIcon c3_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_clk.png"));
+	private ImageIcon c3_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1.png"));
+	private ImageIcon c3_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_2_clk.png"));
+	private ImageIcon c3_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_2.png"));
+	private ImageIcon c3_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_3_clk.png"));
+	private ImageIcon c3_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_3.png"));
+	private ImageIcon c3_1_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_1_clk.png"));
+	private ImageIcon c3_1_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_1.png"));
+	private ImageIcon c3_1_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_2_clk.png"));
+	private ImageIcon c3_1_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_2.png"));
+	private ImageIcon c3_1_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_3_clk.png"));
+	private ImageIcon c3_1_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_íœ´ì¼_3_1_3.png"));
+	private ImageIcon doItEnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ë„ì „_clk.png"));
+	private ImageIcon doItBasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ë„ì „.png"));
+	private ImageIcon notDoItEnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ë„ì „ì•ˆí•¨_clk.png"));
+	private ImageIcon notDoItBasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_ë„ì „ì•ˆí•¨.png"));
 	
-	public B_Holiday()
-	{
-		try
-		{
-			background = ImageIO.read(file1);
+	public B_Holiday(){
+		try{
+			background = ImageIO.read(url_1);
 		} catch (IOException e) {}
 		
 		super.setLayout(null);
 		
 		label1.setBounds(30, 480, 1200, 100);
-		label1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+		label1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 		label2.setBounds(30, 550, 1200, 100);
-		label2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+		label2.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 		super.add(label1);
 		super.add(label2);
 		
@@ -147,17 +145,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 		
 		super.add(nextBtn1);
 		nextBtn1.addActionListener(this);
-		nextBtn1.addMouseListener(new MouseAdapter()
-		{
+		nextBtn1.addMouseListener(new MouseAdapter(){
 			@Override
-			public void mouseEntered(MouseEvent e)
-			{
+			public void mouseEntered(MouseEvent e){
 				nextBtn1.setIcon(nextBtnEnteredImage);
 				nextBtn1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
-			public void mouseExited(MouseEvent e)
-			{
+			public void mouseExited(MouseEvent e){
 				nextBtn1.setIcon(nextBtnBasicImage);
 				nextBtn1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 			}
@@ -183,45 +178,38 @@ public class B_Holiday extends JPanel implements ActionListener{
 		down.setVisible(false);
 	}
 	
-	public void paintComponent(Graphics g)
-	{
+	public void paintComponent(Graphics g){
 		g.drawImage(background, 0, 0, null);
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
+	public void actionPerformed(ActionEvent e){
 		nextBtnEnd.setBounds(1000,400,300,60);
 		nextBtnEnd.setBorderPainted(false);
 		nextBtnEnd.setContentAreaFilled(false);
 		nextBtnEnd.setFocusPainted(false);
 		nextBtnEnd.addActionListener(this);
-		nextBtnEnd.addMouseListener(new MouseAdapter()
-		{
+		nextBtnEnd.addMouseListener(new MouseAdapter(){
 			@Override
-			public void mouseEntered(MouseEvent e)
-			{
+			public void mouseEntered(MouseEvent e){
 				nextBtnEnd.setIcon(nextBtnEnteredImage);
 				nextBtnEnd.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
-			public void mouseExited(MouseEvent e)
-			{
+			public void mouseExited(MouseEvent e){
 				nextBtnEnd.setIcon(nextBtnBasicImage);
 				nextBtnEnd.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 			}
 		});
 		
-		if(e.getSource() == nextBtn1)
-		{
+		if(e.getSource() == nextBtn1){
 			nextBtn1.setVisible(false);
 			label1.setVisible(false);
 			label2.setVisible(false);
 			
 			label3.setBounds(30, 480, 1200, 100);
-			label3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label3.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			label4.setBounds(30, 550, 1200, 100);
-			label4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label4.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label3);
 			super.add(label4);
 			
@@ -232,17 +220,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			
 			super.add(nextBtn2);
 			nextBtn2.addActionListener(this);
-			nextBtn2.addMouseListener(new MouseAdapter()
-			{
+			nextBtn2.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					nextBtn2.setIcon(nextBtnEnteredImage);
 					nextBtn2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					nextBtn2.setIcon(nextBtnBasicImage);
 					nextBtn2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -251,8 +236,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn2)
-		{
+		if(e.getSource() == nextBtn2){
 			nextBtn2.setVisible(false);
 			
 			c1_1.setBounds(820,325,500,100);
@@ -263,17 +247,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c1_1);
 			c1_1.setVisible(true);
 			c1_1.addActionListener(this);
-			c1_1.addMouseListener(new MouseAdapter()
-			{
+			c1_1.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c1_1.setIcon(c1_1EnteredImage);
 					c1_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c1_1.setIcon(c1_1BasicImage);
 					c1_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -287,17 +268,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c1_2);
 			c1_2.setVisible(true);
 			c1_2.addActionListener(this);
-			c1_2.addMouseListener(new MouseAdapter()
-			{
+			c1_2.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c1_2.setIcon(c1_2EnteredImage);
 					c1_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c1_2.setIcon(c1_2BasicImage);
 					c1_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -311,17 +289,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c1_3);
 			c1_3.setVisible(true);
 			c1_3.addActionListener(this);
-			c1_3.addMouseListener(new MouseAdapter()
-			{
+			c1_3.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c1_3.setIcon(c1_3EnteredImage);
 					c1_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c1_3.setIcon(c1_3BasicImage);
 					c1_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -329,11 +304,9 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c1_1 || e.getSource() == c1_2 || e.getSource() == c1_3)
-		{
-			try
-			{
-				background = ImageIO.read(file2);
+		if(e.getSource() == c1_1 || e.getSource() == c1_2 || e.getSource() == c1_3){
+			try{
+				background = ImageIO.read(url_2);
 			} catch (IOException e1) {}
 			
 			c1_1.setVisible(false);
@@ -343,13 +316,12 @@ public class B_Holiday extends JPanel implements ActionListener{
 			label4.setVisible(false);
 			
 			name.setBounds(30, 385, 300, 100);
-			name.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
+			name.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
 			super.add(name);
 			
-			if(e.getSource() == c1_1 || e.getSource() == c1_2)
-			{
+			if(e.getSource() == c1_1 || e.getSource() == c1_2){
 				d60.setBounds(30, 480, 1200, 100);
-				d60.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d60.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d60);
 				
 				nextBtn3.setBounds(1000,400,300,60);
@@ -359,26 +331,22 @@ public class B_Holiday extends JPanel implements ActionListener{
 				
 				super.add(nextBtn3);
 				nextBtn3.addActionListener(this);
-				nextBtn3.addMouseListener(new MouseAdapter()
-				{
+				nextBtn3.addMouseListener(new MouseAdapter(){
 					@Override
-					public void mouseEntered(MouseEvent e)
-					{
+					public void mouseEntered(MouseEvent e){
 						nextBtn3.setIcon(nextBtnEnteredImage);
 						nextBtn3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 					}
 					@Override
-					public void mouseExited(MouseEvent e)
-					{
+					public void mouseExited(MouseEvent e){
 						nextBtn3.setIcon(nextBtnBasicImage);
 						nextBtn3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					}
 				});
 			}
-			else
-			{
+			else{
 				d61.setBounds(30, 480, 1200, 100);
-				d61.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d61.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d61);
 				
 				nextBtn4.setBounds(1000,400,300,60);
@@ -388,17 +356,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 				
 				super.add(nextBtn4);
 				nextBtn4.addActionListener(this);
-				nextBtn4.addMouseListener(new MouseAdapter()
-				{
+				nextBtn4.addMouseListener(new MouseAdapter(){
 					@Override
-					public void mouseEntered(MouseEvent e)
-					{
+					public void mouseEntered(MouseEvent e){
 						nextBtn4.setIcon(nextBtnEnteredImage);
 						nextBtn4.setCursor(new Cursor(Cursor.HAND_CURSOR));
 					}
 					@Override
-					public void mouseExited(MouseEvent e)
-					{
+					public void mouseExited(MouseEvent e){
 						nextBtn4.setIcon(nextBtnBasicImage);
 						nextBtn4.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					}
@@ -407,20 +372,19 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn3)
-		{
+		if(e.getSource() == nextBtn3){
 			nextBtn3.setVisible(false);
 			d60.setVisible(false);
 			
-			//È£°¨µµ -1
-			GoodFeeling.teacher2FeelDown();
+			//í˜¸ê°ë„ -1
+			Feeling.pf2_DOWN();
 			down.setVisible(true);
 			
 			label5.setBounds(30, 480, 1200, 100);
-			label5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label5.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label5);
 			label6.setBounds(30, 550, 1200, 100);
-			label6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label6.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label6);
 			
 			nextBtn5.setBounds(1000,400,300,60);
@@ -430,17 +394,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			
 			super.add(nextBtn5);
 			nextBtn5.addActionListener(this);
-			nextBtn5.addMouseListener(new MouseAdapter()
-			{
+			nextBtn5.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					nextBtn5.setIcon(nextBtnEnteredImage);
 					nextBtn5.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					nextBtn5.setIcon(nextBtnBasicImage);
 					nextBtn5.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -448,20 +409,19 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn4)
-		{
+		if(e.getSource() == nextBtn4){
 			nextBtn4.setVisible(false);
 			d61.setVisible(false);
 			
-			//È£°¨µµ +0
-			GoodFeeling.teacher2FeelSame();
+			//í˜¸ê°ë„ +0
+			Feeling.pf2_SAME();
 			same.setVisible(true);
 			
 			label7.setBounds(30, 480, 1200, 100);
-			label7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label7.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label7);
 			label8.setBounds(30, 550, 1200, 100);
-			label8.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label8.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label8);
 			
 			nextBtn5.setBounds(1000,400,300,60);
@@ -471,17 +431,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			
 			super.add(nextBtn5);
 			nextBtn5.addActionListener(this);
-			nextBtn5.addMouseListener(new MouseAdapter()
-			{
+			nextBtn5.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					nextBtn5.setIcon(nextBtnEnteredImage);
 					nextBtn5.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					nextBtn5.setIcon(nextBtnBasicImage);
 					nextBtn5.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -489,8 +446,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn5)
-		{
+		if(e.getSource() == nextBtn5){
 			nextBtn5.setVisible(false);
 			label5.setVisible(false);
 			label6.setVisible(false);
@@ -501,7 +457,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			name.setVisible(false);
 			
 			label9.setBounds(30, 480, 1200, 100);
-			label9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label9.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label9);
 			
 			nextBtn6.setBounds(1000,400,300,60);
@@ -511,17 +467,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			
 			super.add(nextBtn6);
 			nextBtn6.addActionListener(this);
-			nextBtn6.addMouseListener(new MouseAdapter()
-			{
+			nextBtn6.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					nextBtn6.setIcon(nextBtnEnteredImage);
 					nextBtn6.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					nextBtn6.setIcon(nextBtnBasicImage);
 					nextBtn6.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -529,14 +482,13 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn6)
-		{
+		if(e.getSource() == nextBtn6){
 			nextBtn6.setVisible(false);
 			label9.setVisible(false);
 			
 			name.setVisible(true);
 			d62.setBounds(30, 480, 1200, 100);
-			d62.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			d62.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(d62);
 			
 			nextBtn7.setBounds(1000,400,300,60);
@@ -546,17 +498,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			
 			super.add(nextBtn7);
 			nextBtn7.addActionListener(this);
-			nextBtn7.addMouseListener(new MouseAdapter()
-			{
+			nextBtn7.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					nextBtn7.setIcon(nextBtnEnteredImage);
 					nextBtn7.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					nextBtn7.setIcon(nextBtnBasicImage);
 					nextBtn7.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -564,8 +513,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn7)
-		{
+		if(e.getSource() == nextBtn7){
 			nextBtn7.setVisible(false);
 			
 			c2_1.setBounds(820,325,500,100);
@@ -576,17 +524,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c2_1);
 			c2_1.setVisible(true);
 			c2_1.addActionListener(this);
-			c2_1.addMouseListener(new MouseAdapter()
-			{
+			c2_1.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c2_1.setIcon(c2_1EnteredImage);
 					c2_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c2_1.setIcon(c2_1BasicImage);
 					c2_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -600,17 +545,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c2_2);
 			c2_2.setVisible(true);
 			c2_2.addActionListener(this);
-			c2_2.addMouseListener(new MouseAdapter()
-			{
+			c2_2.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c2_2.setIcon(c2_2EnteredImage);
 					c2_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c2_2.setIcon(c2_2BasicImage);
 					c2_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -624,17 +566,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c2_3);
 			c2_3.setVisible(true);
 			c2_3.addActionListener(this);
-			c2_3.addMouseListener(new MouseAdapter()
-			{
+			c2_3.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c2_3.setIcon(c2_3EnteredImage);
 					c2_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c2_3.setIcon(c2_3BasicImage);
 					c2_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -642,47 +581,43 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c2_1 || e.getSource() == c2_2 || e.getSource() == c2_3)
-		{
+		if(e.getSource() == c2_1 || e.getSource() == c2_2 || e.getSource() == c2_3){
 			c2_1.setVisible(false);
 			c2_2.setVisible(false);
 			c2_3.setVisible(false);
 			d62.setVisible(false);
 			
-			if(e.getSource() == c2_1)
-			{
-				//È£°¨µµ +1
-				GoodFeeling.teacher2FeelUp();
+			if(e.getSource() == c2_1){
+				//í˜¸ê°ë„ +1
+				Feeling.pf2_UP();
 				up.setVisible(true);
 				
 				d63.setBounds(30, 480, 1200, 100);
-				d63.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d63.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d63);
 				d64.setBounds(30, 550, 1200, 100);
-				d64.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d64.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d64);
 			}
-			else if(e.getSource() == c2_2)
-			{
-				//È£°¨µµ +0
-				GoodFeeling.teacher2FeelSame();
+			else if(e.getSource() == c2_2){
+				//í˜¸ê°ë„ +0
+				Feeling.pf2_SAME();
 				same.setVisible(true);
 				
 				d65.setBounds(30, 480, 1200, 100);
-				d65.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d65.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d65);
 				d66.setBounds(30, 550, 1200, 100);
-				d66.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d66.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d66);
 			}
-			else
-			{
-				//È£°¨µµ -1
-				GoodFeeling.teacher2FeelDown();
+			else{
+				//í˜¸ê°ë„ -1
+				Feeling.pf2_DOWN();
 				down.setVisible(true);
 				
 				d67.setBounds(30, 480, 1200, 100);
-				d67.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d67.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d67);
 			}
 			
@@ -693,17 +628,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			
 			super.add(nextBtn8);
 			nextBtn8.addActionListener(this);
-			nextBtn8.addMouseListener(new MouseAdapter()
-			{
+			nextBtn8.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					nextBtn8.setIcon(nextBtnEnteredImage);
 					nextBtn8.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					nextBtn8.setIcon(nextBtnBasicImage);
 					nextBtn8.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -712,8 +644,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn8)
-		{
+		if(e.getSource() == nextBtn8){
 			nextBtn8.setVisible(false);
 			up.setVisible(false);
 			same.setVisible(false);
@@ -725,7 +656,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			d67.setVisible(false);
 			
 			d68.setBounds(30, 480, 1200, 100);
-			d68.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			d68.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(d68);
 			
 			nextBtn9.setBounds(1000,400,300,60);
@@ -735,17 +666,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			
 			super.add(nextBtn9);
 			nextBtn9.addActionListener(this);
-			nextBtn9.addMouseListener(new MouseAdapter()
-			{
+			nextBtn9.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					nextBtn9.setIcon(nextBtnEnteredImage);
 					nextBtn9.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					nextBtn9.setIcon(nextBtnBasicImage);
 					nextBtn9.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -753,8 +681,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn9)
-		{
+		if(e.getSource() == nextBtn9){
 			nextBtn9.setVisible(false);
 			
 			c3_1.setBounds(820,325,500,100);
@@ -765,17 +692,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c3_1);
 			c3_1.setVisible(true);
 			c3_1.addActionListener(this);
-			c3_1.addMouseListener(new MouseAdapter()
-			{
+			c3_1.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c3_1.setIcon(c3_1EnteredImage);
 					c3_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c3_1.setIcon(c3_1BasicImage);
 					c3_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -789,17 +713,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c3_2);
 			c3_2.setVisible(true);
 			c3_2.addActionListener(this);
-			c3_2.addMouseListener(new MouseAdapter()
-			{
+			c3_2.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c3_2.setIcon(c3_2EnteredImage);
 					c3_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c3_2.setIcon(c3_2BasicImage);
 					c3_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -813,17 +734,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c3_3);
 			c3_3.setVisible(true);
 			c3_3.addActionListener(this);
-			c3_3.addMouseListener(new MouseAdapter()
-			{
+			c3_3.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c3_3.setIcon(c3_3EnteredImage);
 					c3_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c3_3.setIcon(c3_3BasicImage);
 					c3_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -832,24 +750,22 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c3_1 || e.getSource() == c3_2 || e.getSource() == c3_3)
-		{
+		if(e.getSource() == c3_1 || e.getSource() == c3_2 || e.getSource() == c3_3){
 			c3_1.setVisible(false);
 			c3_2.setVisible(false);
 			c3_3.setVisible(false);
 			d68.setVisible(false);
 			
-			if(e.getSource() == c3_1)
-			{
-				//È£°¨µµ +1
-				GoodFeeling.teacher2FeelUp();
+			if(e.getSource() == c3_1){
+				//í˜¸ê°ë„ +1
+				Feeling.pf2_UP();
 				up.setVisible(true);
 				
 				d69.setBounds(30, 480, 1200, 100);
-				d69.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d69.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d69);
 				d70.setBounds(30, 550, 1200, 100);
-				d70.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d70.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d70);
 				
 				nextBtn10.setBounds(1000,400,300,60);
@@ -859,26 +775,22 @@ public class B_Holiday extends JPanel implements ActionListener{
 				
 				super.add(nextBtn10);
 				nextBtn10.addActionListener(this);
-				nextBtn10.addMouseListener(new MouseAdapter()
-				{
+				nextBtn10.addMouseListener(new MouseAdapter(){
 					@Override
-					public void mouseEntered(MouseEvent e)
-					{
+					public void mouseEntered(MouseEvent e){
 						nextBtn10.setIcon(nextBtnEnteredImage);
 						nextBtn10.setCursor(new Cursor(Cursor.HAND_CURSOR));
 					}
 					@Override
-					public void mouseExited(MouseEvent e)
-					{
+					public void mouseExited(MouseEvent e){
 						nextBtn10.setIcon(nextBtnBasicImage);
 						nextBtn10.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					}
 				});
 			}
-			else if(e.getSource() == c3_2)
-			{
-				//È£°¨µµ +0
-				GoodFeeling.teacher2FeelSame();
+			else if(e.getSource() == c3_2){
+				//í˜¸ê°ë„ +0
+				Feeling.pf2_SAME();
 				same.setVisible(true);
 				
 				nextBtn11.setBounds(1000,400,300,60);
@@ -888,26 +800,22 @@ public class B_Holiday extends JPanel implements ActionListener{
 				
 				super.add(nextBtn11);
 				nextBtn11.addActionListener(this);
-				nextBtn11.addMouseListener(new MouseAdapter()
-				{
+				nextBtn11.addMouseListener(new MouseAdapter(){
 					@Override
-					public void mouseEntered(MouseEvent e)
-					{
+					public void mouseEntered(MouseEvent e){
 						nextBtn11.setIcon(nextBtnEnteredImage);
 						nextBtn11.setCursor(new Cursor(Cursor.HAND_CURSOR));
 					}
 					@Override
-					public void mouseExited(MouseEvent e)
-					{
+					public void mouseExited(MouseEvent e){
 						nextBtn11.setIcon(nextBtnBasicImage);
 						nextBtn11.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					}
 				});
 			}
-			else
-			{
-				//È£°¨µµ -1
-				GoodFeeling.teacher2FeelDown();
+			else{
+				//í˜¸ê°ë„ -1
+				Feeling.pf2_DOWN();
 				down.setVisible(true);
 				
 				nextBtn11.setBounds(1000,400,300,60);
@@ -917,17 +825,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 				
 				super.add(nextBtn11);
 				nextBtn11.addActionListener(this);
-				nextBtn11.addMouseListener(new MouseAdapter()
-				{
+				nextBtn11.addMouseListener(new MouseAdapter(){
 					@Override
-					public void mouseEntered(MouseEvent e)
-					{
+					public void mouseEntered(MouseEvent e){
 						nextBtn11.setIcon(nextBtnEnteredImage);
 						nextBtn11.setCursor(new Cursor(Cursor.HAND_CURSOR));
 					}
 					@Override
-					public void mouseExited(MouseEvent e)
-					{
+					public void mouseExited(MouseEvent e){
 						nextBtn11.setIcon(nextBtnBasicImage);
 						nextBtn11.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					}
@@ -937,8 +842,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn10)
-		{
+		if(e.getSource() == nextBtn10){
 			up.setVisible(false);
 			nextBtn10.setVisible(false);
 			d69.setVisible(false);
@@ -952,17 +856,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(doIt);
 			doIt.setVisible(true);
 			doIt.addActionListener(this);
-			doIt.addMouseListener(new MouseAdapter()
-			{
+			doIt.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					doIt.setIcon(doItEnteredImage);
 					doIt.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					doIt.setIcon(doItBasicImage);
 					doIt.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -976,17 +877,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(notDoIt);
 			notDoIt.setVisible(true);
 			notDoIt.addActionListener(this);
-			notDoIt.addMouseListener(new MouseAdapter()
-			{
+			notDoIt.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					notDoIt.setIcon(notDoItEnteredImage);
 					notDoIt.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					notDoIt.setIcon(notDoItBasicImage);
 					notDoIt.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -995,18 +893,16 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == doIt || e.getSource() == notDoIt)
-		{
+		if(e.getSource() == doIt || e.getSource() == notDoIt){
 			doIt.setVisible(false);
 			notDoIt.setVisible(false);
 			
-			if(e.getSource() == doIt)
-			{
+			if(e.getSource() == doIt){
 				d71.setBounds(30, 480, 1200, 100);
-				d71.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d71.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d71);
 				d72.setBounds(30, 550, 1200, 100);
-				d72.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d72.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d72);
 				
 				nextBtn13.setBounds(1000,400,300,60);
@@ -1016,24 +912,20 @@ public class B_Holiday extends JPanel implements ActionListener{
 				
 				super.add(nextBtn13);
 				nextBtn13.addActionListener(this);
-				nextBtn13.addMouseListener(new MouseAdapter()
-				{
+				nextBtn13.addMouseListener(new MouseAdapter(){
 					@Override
-					public void mouseEntered(MouseEvent e)
-					{
+					public void mouseEntered(MouseEvent e){
 						nextBtn13.setIcon(nextBtnEnteredImage);
 						nextBtn13.setCursor(new Cursor(Cursor.HAND_CURSOR));
 					}
 					@Override
-					public void mouseExited(MouseEvent e)
-					{
+					public void mouseExited(MouseEvent e){
 						nextBtn13.setIcon(nextBtnBasicImage);
 						nextBtn13.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					}
 				});
 			}
-			else
-			{
+			else{
 				nextBtn11.setBounds(1000,400,300,60);
 				nextBtn11.setBorderPainted(false);
 				nextBtn11.setContentAreaFilled(false);
@@ -1041,17 +933,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 				
 				super.add(nextBtn11);
 				nextBtn11.addActionListener(this);
-				nextBtn11.addMouseListener(new MouseAdapter()
-				{
+				nextBtn11.addMouseListener(new MouseAdapter(){
 					@Override
-					public void mouseEntered(MouseEvent e)
-					{
+					public void mouseEntered(MouseEvent e){
 						nextBtn11.setIcon(nextBtnEnteredImage);
 						nextBtn11.setCursor(new Cursor(Cursor.HAND_CURSOR));
 					}
 					@Override
-					public void mouseExited(MouseEvent e)
-					{
+					public void mouseExited(MouseEvent e){
 						nextBtn11.setIcon(nextBtnBasicImage);
 						nextBtn11.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 					}
@@ -1061,8 +950,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn13)
-		{
+		if(e.getSource() == nextBtn13){
 			nextBtn13.setVisible(false);
 			
 			c3_1_1.setBounds(820,325,500,100);
@@ -1073,17 +961,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c3_1_1);
 			c3_1_1.setVisible(true);
 			c3_1_1.addActionListener(this);
-			c3_1_1.addMouseListener(new MouseAdapter()
-			{
+			c3_1_1.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c3_1_1.setIcon(c3_1_1EnteredImage);
 					c3_1_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c3_1_1.setIcon(c3_1_1BasicImage);
 					c3_1_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -1097,17 +982,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c3_1_2);
 			c3_1_2.setVisible(true);
 			c3_1_2.addActionListener(this);
-			c3_1_2.addMouseListener(new MouseAdapter()
-			{
+			c3_1_2.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c3_1_2.setIcon(c3_1_2EnteredImage);
 					c3_1_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c3_1_2.setIcon(c3_1_2BasicImage);
 					c3_1_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -1121,17 +1003,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			super.add(c3_1_3);
 			c3_1_3.setVisible(true);
 			c3_1_3.addActionListener(this);
-			c3_1_3.addMouseListener(new MouseAdapter()
-			{
+			c3_1_3.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					c3_1_3.setIcon(c3_1_3EnteredImage);
 					c3_1_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					c3_1_3.setIcon(c3_1_3BasicImage);
 					c3_1_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -1140,30 +1019,27 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c3_1_1 || e.getSource() == c3_1_2 || e.getSource() == c3_1_3)
-		{
+		if(e.getSource() == c3_1_1 || e.getSource() == c3_1_2 || e.getSource() == c3_1_3){
 			c3_1_1.setVisible(false);
 			c3_1_2.setVisible(false);
 			c3_1_3.setVisible(false);
 			d71.setVisible(false);
 			d72.setVisible(false);
 			
-			if(e.getSource() == c3_1_2)
-			{
-				GoodFeeling.teacher2FeelUp();//È£°¨µµ +1
+			if(e.getSource() == c3_1_2){
+				Feeling.pf2_UP();//í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
 				d73.setBounds(30, 480, 1200, 100);
-				d73.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d73.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d73);
 			}
-			else
-			{
-				GoodFeeling.teacher2FeelDown();//È£°¨µµ -1
+			else{
+				Feeling.pf2_DOWN();//í˜¸ê°ë„ -1
 				down.setVisible(true);
 				
 				d74.setBounds(30, 480, 1200, 100);
-				d74.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+				d74.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 				super.add(d74);
 			}
 			
@@ -1174,17 +1050,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			
 			super.add(nextBtn11);
 			nextBtn11.addActionListener(this);
-			nextBtn11.addMouseListener(new MouseAdapter()
-			{
+			nextBtn11.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					nextBtn11.setIcon(nextBtnEnteredImage);
 					nextBtn11.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					nextBtn11.setIcon(nextBtnBasicImage);
 					nextBtn11.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -1193,8 +1066,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn11)
-		{
+		if(e.getSource() == nextBtn11){
 			nextBtn11.setVisible(false);
 			up.setVisible(false);
 			same.setVisible(false);
@@ -1204,31 +1076,30 @@ public class B_Holiday extends JPanel implements ActionListener{
 			d74.setVisible(false);
 			
 			label10.setBounds(30, 480, 1200, 100);
-			label10.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label10.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label10);
 			label11.setBounds(30, 550, 1200, 100);
-			label11.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label11.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label11);
 			
 			super.add(nextBtnEnd);
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtnEnd)
-		{
+		if(e.getSource() == nextBtnEnd){
 			nextBtnEnd.setVisible(false);
 			label10.setVisible(false);
 			label11.setVisible(false);
 			
 			label12.setBounds(30, 480, 1200, 100);
-			label12.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label12.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label12);
 			label13.setBounds(30, 550, 1200, 100);
-			label13.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+			label13.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			super.add(label13);
 			
-			//È£°¨µµ +1
-			GoodFeeling.teacher2FeelUp();
+			//í˜¸ê°ë„ +1
+			Feeling.pf2_UP();
 			up.setVisible(true);
 			
 			nextBtnExit.setBounds(1000,400,300,60);
@@ -1238,17 +1109,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			
 			super.add(nextBtnExit);
 			nextBtnExit.addActionListener(this);
-			nextBtnExit.addMouseListener(new MouseAdapter()
-			{
+			nextBtnExit.addMouseListener(new MouseAdapter(){
 				@Override
-				public void mouseEntered(MouseEvent e)
-				{
+				public void mouseEntered(MouseEvent e){
 					nextBtnExit.setIcon(nextBtnEnteredImage);
 					nextBtnExit.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
-				public void mouseExited(MouseEvent e)
-				{
+				public void mouseExited(MouseEvent e){
 					nextBtnExit.setIcon(nextBtnBasicImage);
 					nextBtnExit.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
@@ -1257,8 +1125,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtnExit)
-		{
+		if(e.getSource() == nextBtnExit){
 			super.setVisible(false);
 			isWorked = true;
 		}
