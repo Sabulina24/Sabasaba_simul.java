@@ -150,6 +150,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		Object s = e.getSource();
 		end.setBounds(1000,400,300,60);	// end버튼 설정
 		end.setBorderPainted(false);
 		end.setContentAreaFilled(false);
@@ -168,7 +169,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 			}
 		});
 		
-		if(e.getSource() == nextBtn_1) {	// 버튼을 눌렀을 때 이벤트 시작
+		if(s == nextBtn_1) {	// 버튼을 눌렀을 때 이벤트 시작
 			try {
 				backGround = ImageIO.read(url_2);	// 배경 변경
 				repaint();
@@ -204,7 +205,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 				}
 			});
 		}
-		if(e.getSource() == nextBtn_2) {
+		if(s == nextBtn_2) {
 			nextBtn_2.setVisible(false);
 			
 			c1.setBounds(820,325,500,100);
@@ -274,13 +275,13 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 			
 			repaint();
 		}
-		if(e.getSource() == c1 || e.getSource() == c2 || e.getSource() == c3) {
+		if(s == c1 || s == c2 || s == c3) {
 			d0.setVisible(false);
 			c1.setVisible(false);
 			c2.setVisible(false);
 			c3.setVisible(false);
 			
-			if(e.getSource() == c1) {
+			if(s == c1) {
 				Feeling.pf2_UP();// 호감도 +1
 				up.setVisible(true);
 				
@@ -308,7 +309,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 					}
 				});
 			}
-			else if(e.getSource() == c2) {
+			else if(s == c2) {
 				Feeling.pf2_UP();// 호감도 +1
 				up.setVisible(true);
 				
@@ -353,7 +354,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 				repaint();	
 			}
 		}
-		if(e.getSource() == nextBtn_3) {
+		if(s == nextBtn_3) {
 			nextBtn_3.setVisible(false);
 			
 			c1_1.setBounds(820,325,500,100);
@@ -418,14 +419,14 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 			repaint();
 		}
 		
-		if(e.getSource() == c1_1 || e.getSource() == c1_2 || e.getSource() == c1_3) {
+		if(s == c1_1 || s == c1_2 || s == c1_3) {
 			up.setVisible(false);
 			c1_1.setVisible(false);
 			c1_2.setVisible(false);
 			c1_3.setVisible(false);
 			d1.setVisible(false);
 			
-			if(e.getSource() == c1_1) {
+			if(s == c1_1) {
 				Feeling.pf2_SAME();// 호감도 +0
 				same.setVisible(true);
 				
@@ -433,7 +434,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 				d5.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
 				super.add(d5);
 			}
-			else if(e.getSource() == c1_2) {
+			else if(s == c1_2) {
 				Feeling.pf2_DOWN();// 호감도 -1
 				down.setVisible(true);
 				
@@ -461,7 +462,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 			repaint();	
 		}
 		
-		if(e.getSource() == end) {
+		if(s == end) {
 			up.setVisible(false);
 			same.setVisible(false);
 			down.setVisible(false);
@@ -503,12 +504,12 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 			});
 		}
 		
-		if(e.getSource() == exit) {
+		if(s == exit) {
 			super.setVisible(false);
 			isWorked = true;
 		}
 		
-		if(e.getSource() == nextBtn_4) {
+		if(s == nextBtn_4) {
 			nextBtn_4.setVisible(false);
 			d2.setVisible(false);
 			d3.setVisible(false);
@@ -538,7 +539,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 			});
 		}
 		
-		if(e.getSource() == nextBtn_5) {
+		if(s == nextBtn_5) {
 			up.setVisible(false);
 			nextBtn_5.setVisible(false);
 			
@@ -604,13 +605,13 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 			repaint();
 		}
 		
-		if(e.getSource() == c2_1 || e.getSource() == c2_2 || e.getSource() == c2_3) {
+		if(s == c2_1 || s == c2_2 || s == c2_3) {
 			c2_1.setVisible(false);
 			c2_2.setVisible(false);
 			c2_3.setVisible(false);
 			d9.setVisible(false);
 			
-			if(e.getSource() == c2_1) {
+			if(s == c2_1) {
 				Feeling.pf2_DOWN();// 호감도 -1
 				down.setVisible(true);
 				
@@ -618,7 +619,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 				d10.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
 				super.add(d10);
 			}
-			else if(e.getSource() == c2_2) {
+			else if(s == c2_2) {
 				Feeling.pf2_DOWN();// 호감도 -1
 				down.setVisible(true);
 				
@@ -661,7 +662,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn_6) {
+		if(s == nextBtn_6) {
 			up.setVisible(false);
 			down.setVisible(false);
 			nextBtn_6.setVisible(false);
