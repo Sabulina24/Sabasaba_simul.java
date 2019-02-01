@@ -28,13 +28,12 @@ public class TryNotToSleep_Play extends JPanel implements ActionListener{
 		
 		g.setColor(Color.black);
 		
-		g.fillRect(0, SleepingAlgorithm.DrousyMeter-900, 1280, 900); //À­ ´«²¨Ç®
-		g.fillRect(0, 700-SleepingAlgorithm.DrousyMeter, 1280, 900); // ¹Ø ´«²¨Ç®
+		g.fillRect(0, SleepingAlgorithm.DrousyMeter-900, 1280, 900); //ìœ— ëˆˆêº¼í’€
+		g.fillRect(0, 700-SleepingAlgorithm.DrousyMeter, 1280, 900); // ë°‘ ëˆˆêº¼í’€
 		g.setColor(Color.red);
-		g.fillRect(308,267,tiredMeter*2,47);//ÇÇ·Îµµ
-		tm.start(); //Å¸ÀÌ¸Ó,ActionListner ½ÃÀÛ
-		
-		}
+		g.fillRect(308,267,tiredMeter*2,47);//í”¼ë¡œë„
+		tm.start(); //íƒ€ì´ë¨¸,ActionListner ì‹œìž‘
+	}
 	public void actionPerformed(ActionEvent e) {
 		SleepingAlgorithm.DrousyMeter+=vely;
 		tiredMeter-=velt;
@@ -45,7 +44,7 @@ public class TryNotToSleep_Play extends JPanel implements ActionListener{
 	public TryNotToSleep_Play() {
 		setLayout(null);
 		
-		JButton btnNewButton_1 = new JButton("\uB118\uC5B4\uAC00\uAE30");
+		final JButton btnNewButton_1 = new JButton("\uB118\uC5B4\uAC00\uAE30");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -59,18 +58,18 @@ public class TryNotToSleep_Play extends JPanel implements ActionListener{
 		btnNewButton_1.setVisible(false);
 		
 		
-		JLabel lblNewLabel_4 = new JLabel("0");
+		final JLabel lblNewLabel_4 = new JLabel("0");
 		lblNewLabel_4.setBounds(0, 0, 1280, 720);
 		add(lblNewLabel_4);
 		
 		
 		
-		JLabel lblNewLabel_2 = new JLabel("");
+		final JLabel lblNewLabel_2 = new JLabel("");
 		add(lblNewLabel_2);
 		
-		JButton button = new JButton("\uCEE4\uD53C \uB9C8\uC2DC\uAE30");
+		final JButton button = new JButton("\uCEE4\uD53C \uB9C8\uC2DC\uAE30");
 		button.setHorizontalAlignment(SwingConstants.RIGHT);
-		button.setIcon(new ImageIcon(Main.class.getResource("../images/2407_48.jpg")));
+		button.setIcon(new ImageIcon(getClass().getClassLoader().getResource("2407_48.jpg")));
 		button.setVerticalAlignment(SwingConstants.BOTTOM);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -84,7 +83,7 @@ public class TryNotToSleep_Play extends JPanel implements ActionListener{
 		
 		
 		
-		JButton btnNewButton = new JButton("\uC7A0 \uAE68\uAE30");
+		final JButton btnNewButton = new JButton("\uC7A0 \uAE68\uAE30");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -95,16 +94,14 @@ public class TryNotToSleep_Play extends JPanel implements ActionListener{
 					SleepingAlgorithm.DrousyMeter=0;
 					tiredMeter=0;
 					lblNewLabel_2.setBounds(0, 0, 1280, 720);
-					lblNewLabel_2.setIcon(new ImageIcon(Main.class.getResource("../images/fail.png")));
-					GoodFeeling.teacher1FeelDown();
-					GoodFeeling.teacher2FeelDown();
-					GoodFeeling.teacher3FeelDown();
+					lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("fail.png")));
+					Feeling.pf1_DOWN();
+					Feeling.pf2_DOWN();
+					Feeling.pf3_DOWN();
 					btnNewButton.setVisible(false);
 					button.setVisible(false);
 					btnNewButton_1.setVisible(true);
-					
 				}
-				
 				
 				else
 				{tiredMeter+=20;
@@ -113,10 +110,10 @@ public class TryNotToSleep_Play extends JPanel implements ActionListener{
 				if(n>=40) {
 					vely=100;
 					velt=100;
-					lblNewLabel_4.setIcon(new ImageIcon(Main.class.getResource("../images/success.png")));
-					GoodFeeling.teacher1FeelUp(); 
-					GoodFeeling.teacher2FeelUp(); 
-					GoodFeeling.teacher3FeelUp(); 
+					lblNewLabel_4.setIcon(new ImageIcon(getClass().getClassLoader().getResource("success.png")));
+					Feeling.pf1_UP(); 
+					Feeling.pf2_UP(); 
+					Feeling.pf3_UP(); 
 					
 					btnNewButton.setVisible(false);
 					button.setVisible(false);
@@ -141,13 +138,12 @@ public class TryNotToSleep_Play extends JPanel implements ActionListener{
 		add(lblNewLabel_1);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Main.class.getResource("../images/\uBCBC\uB77D\uCE58\uAE30.jpg")));
+		lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uBCBC\uB77D\uCE58\uAE30.jpg")));
 		lblNewLabel.setBounds(0, 0, 1280, 720);
 		add(lblNewLabel);
 
 	}
 }
-
 
 class SleepingAlgorithm {
 	public static int DrousyMeter=0;
@@ -158,8 +154,6 @@ class SleepingAlgorithm {
 			if(b==true)
 				DrousyMeter=0;
 			
-			return DrousyMeter;
-			
+			return DrousyMeter;	
 		}
 }
-
