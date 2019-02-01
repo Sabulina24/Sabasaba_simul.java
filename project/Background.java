@@ -7,49 +7,48 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class Background extends JPanel implements ActionListener{
+public class Background extends JPanel implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 
 	public static boolean isWorked = false;
 	
 	BufferedImage background;
-	File file1 = new File("./src/images/¿ù¿äÀÏ.jpg");
-	File file2 = new File("./src/images/È­¿äÀÏ.jpg");
-	File file3 = new File("./src/images/¼ö¿äÀÏ.jpg");
-	File file4 = new File("./src/images/¸ñ¿äÀÏ.jpg");
-	File file5 = new File("./src/images/±İ¿äÀÏ.jpg");
-	File file6 = new File("./src/images/Åä¿äÀÏ.jpg");
-	File file7 = new File("./src/images/ÀÏ¿äÀÏ.jpg");
+	URL url_1 = getClass().getClassLoader().getResource("ì›”ìš”ì¼.jpg");
+	URL url_2 = getClass().getClassLoader().getResource("í™”ìš”ì¼.jpg");
+	URL url_3 = getClass().getClassLoader().getResource("ìˆ˜ìš”ì¼.jpg");
+	URL url_4 = getClass().getClassLoader().getResource("ëª©ìš”ì¼.jpg");
+	URL url_5 = getClass().getClassLoader().getResource("ê¸ˆìš”ì¼.jpg");
+	URL url_6 = getClass().getClassLoader().getResource("í† ìš”ì¼.jpg");
+	URL url_7 = getClass().getClassLoader().getResource("ì¼ìš”ì¼.jpg");
 	
-	JButton dayStart = new JButton(new ImageIcon(Main.class.getResource("../images/dayStart.png")));
-	JButton subjectA_1 = new JButton(new ImageIcon(Main.class.getResource("../images/°ú¸ñA.png")));
-	JButton subjectA_2 = new JButton(new ImageIcon(Main.class.getResource("../images/°ú¸ñA.png")));
-	JButton subjectA_3 = new JButton(new ImageIcon(Main.class.getResource("../images/°ú¸ñA.png")));
-	JButton subjectB_1 = new JButton(new ImageIcon(Main.class.getResource("../images/°ú¸ñB.png")));
-	JButton subjectB_2 = new JButton(new ImageIcon(Main.class.getResource("../images/°ú¸ñB.png")));
-	JButton subjectB_3 = new JButton(new ImageIcon(Main.class.getResource("../images/°ú¸ñB.png")));
-	JButton subjectC_1 = new JButton(new ImageIcon(Main.class.getResource("../images/°ú¸ñC.png")));
-	JButton subjectC_2 = new JButton(new ImageIcon(Main.class.getResource("../images/°ú¸ñC.png")));
-	JButton subjectC_3 = new JButton(new ImageIcon(Main.class.getResource("../images/°ú¸ñC.png")));
-	JButton breakTime_1 = new JButton(new ImageIcon(Main.class.getResource("../images/°ø°­.png")));
-	JButton breakTime_2 = new JButton(new ImageIcon(Main.class.getResource("../images/°ø°­.png")));
-	JButton breakTime_3 = new JButton(new ImageIcon(Main.class.getResource("../images/°ø°­.png")));
-	JButton fullBreakTime = new JButton(new ImageIcon(Main.class.getResource("../images/Ç®°ø°­.png")));
+	JButton dayStart = new JButton(new ImageIcon(getClass().getClassLoader().getResource("dayStart.png")));
+	JButton subjectA_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³¼ëª©A.png")));
+	JButton subjectA_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³¼ëª©A.png")));
+	JButton subjectA_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³¼ëª©A.png")));
+	JButton subjectB_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³¼ëª©B.png")));
+	JButton subjectB_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³¼ëª©B.png")));
+	JButton subjectB_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³¼ëª©B.png")));
+	JButton subjectC_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³¼ëª©C.png")));
+	JButton subjectC_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³¼ëª©C.png")));
+	JButton subjectC_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³¼ëª©C.png")));
+	JButton breakTime_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³µê°•.png")));
+	JButton breakTime_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³µê°•.png")));
+	JButton breakTime_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ê³µê°•.png")));
+	JButton fullBreakTime = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í’€ê³µê°•.png")));
 	
-	private ImageIcon dayStartEnteredImage = new ImageIcon(Main.class.getResource("../images/dayStart_clk.png"));
-	private ImageIcon dayStartBasicImage = new ImageIcon(Main.class.getResource("../images/dayStart.png"));
+	private ImageIcon dayStartEnteredImage = new ImageIcon(getClass().getClassLoader().getResource("dayStart_clk.png"));
+	private ImageIcon dayStartBasicImage = new ImageIcon(getClass().getClassLoader().getResource("dayStart.png"));
 	
-	public Background()
-	{
+	public Background() {
 		super.setLayout(null);
 		
 		dayStart.setBounds(240,480,400,100);
@@ -57,17 +56,14 @@ public class Background extends JPanel implements ActionListener{
 		dayStart.setContentAreaFilled(false);
 		dayStart.setFocusPainted(false);
 		dayStart.addActionListener(this);
-		dayStart.addMouseListener(new MouseAdapter()
-		{
+		dayStart.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseEntered(MouseEvent e)
-			{
+			public void mouseEntered(MouseEvent e) {
 				dayStart.setIcon(dayStartEnteredImage);
 				dayStart.setCursor(new Cursor(Cursor.HAND_CURSOR));
 			}
 			@Override
-			public void mouseExited(MouseEvent e)
-			{
+			public void mouseExited(MouseEvent e) {
 				dayStart.setIcon(dayStartBasicImage);
 				dayStart.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 			}
@@ -165,151 +161,116 @@ public class Background extends JPanel implements ActionListener{
 		fullBreakTime.setVisible(false);
 	}
 	
-	public void getBackground(int a)
-	{
-		if(a == 0) // ¿ù¿äÀÏ
-		{
-			try
-			{
-				background = ImageIO.read(file1);
+	public void getBackground(int a) {
+		if(a == 0) { // ì›”ìš”ì¼
+			try {
+				background = ImageIO.read(url_1);
 			} catch (IOException e) {}
 			
 			super.add(dayStart);
 			repaint();
 		}
-		else if(a == 1) // È­¿äÀÏ
-		{
-			try
-			{
-				background = ImageIO.read(file2);
+		else if(a == 1) { // í™”ìš”ì¼
+			try {
+				background = ImageIO.read(url_2);
 			} catch (IOException e) {}
 			super.add(dayStart);
 			repaint();
 		}
-		else if(a == 2)
-		{
-			try
-			{
-				background = ImageIO.read(file3);
+		else if(a == 2) {
+			try {
+				background = ImageIO.read(url_3);
 			} catch (IOException e) {}
 			super.add(dayStart);
 			repaint();
 		}
-		else if(a == 3)
-		{
-			try
-			{
-				background = ImageIO.read(file4);
+		else if(a == 3) {
+			try	{
+				background = ImageIO.read(url_4);
 			} catch (IOException e) {}
 			super.add(dayStart);
 			repaint();
 		}
-		else if(a == 4)
-		{
-			try
-			{
-				background = ImageIO.read(file5);
+		else if(a == 4) {
+			try	{
+				background = ImageIO.read(url_5);
 			} catch (IOException e) {}
 			super.add(dayStart);
 			repaint();
 		}
 	}
 	
-	public void getFirstClass(int x)
-	{
-		if(x == 1 || x == 2 || x == 3) // °ú¸ñ A
-		{
+	public void getFirstClass(int x) {
+		if(x == 1 || x == 2 || x == 3) { // ê³¼ëª© A	
 			subjectA_1.setVisible(true);
 		}
-		else if(x == 6 || x == 7 || x == 8) // °ú¸ñ B
-		{
+		else if(x == 6 || x == 7 || x == 8) { // ê³¼ëª© B
 			subjectB_1.setVisible(true);
 		}
-		else if(x == 11 || x == 12 || x == 13) // °ú¸ñ C
-		{
+		else if(x == 11 || x == 12 || x == 13) { // ê³¼ëª© C
 			subjectC_1.setVisible(true);
 		}
-		else if(x == 0) // °ø°­
-		{
+		else if(x == 0) { // ê³µê°•
 			breakTime_1.setVisible(true);
 		}
 	}
 	
-	public void getSecondClass(int x)
-	{
-		if(x == 1 || x == 2 || x == 3) // °ú¸ñ A
-		{
+	public void getSecondClass(int x) {
+		if(x == 1 || x == 2 || x == 3) { // ê³¼ëª© A
 			subjectA_2.setVisible(true);
 		}
-		else if(x == 6 || x == 7 || x == 8) // °ú¸ñ B
-		{
+		else if(x == 6 || x == 7 || x == 8) { // ê³¼ëª© B
 			subjectB_2.setVisible(true);
 		}
-		else if(x == 11 || x == 12 || x == 13) // °ú¸ñ C
-		{
+		else if(x == 11 || x == 12 || x == 13) { // ê³¼ëª© C
 			subjectC_2.setVisible(true);
 		}
-		else if(x == 0) // °ø°­
-		{
+		else if(x == 0) { // ê³µê°•
 			breakTime_2.setVisible(true);
 		}
 	}
 	
-	public void getThirdClass(int x)
-	{
-		if(x == 1 || x == 2 || x == 3) // °ú¸ñ A
-		{
+	public void getThirdClass(int x) {
+		if(x == 1 || x == 2 || x == 3) { // ê³¼ëª© A
 			subjectA_3.setVisible(true);
 		}
-		else if(x == 6 || x == 7 || x == 8) // °ú¸ñ B
-		{
+		else if(x == 6 || x == 7 || x == 8) { // ê³¼ëª© B
 			subjectB_3.setVisible(true);
 		}
-		else if(x == 11 || x == 12 || x == 13) // °ú¸ñ C
-		{
+		else if(x == 11 || x == 12 || x == 13) { // ê³¼ëª© C
 			subjectC_3.setVisible(true);
 		}
-		else if(x == 0) // °ø°­
-		{
+		else if(x == 0) { // ê³µê°•
 			breakTime_3.setVisible(true);
 		}
 	}
 	
-	public void getHoliday()
-	{
+	public void getHoliday() {
 		fullBreakTime.setVisible(true);
 	}
 	
-	public void getSaturday()
-	{
-		try
-		{
-			background = ImageIO.read(file6);
+	public void getSaturday() {
+		try {
+			background = ImageIO.read(url_6);
 		} catch (IOException e) {}
 		super.add(dayStart);
 		repaint();
 	}
 	
-	public void getSunday()
-	{
-		try
-		{
-			background = ImageIO.read(file7);
+	public void getSunday() {
+		try {
+			background = ImageIO.read(url_7);
 		} catch (IOException e) {}
 		super.add(dayStart);
 		repaint();
 	}
 	
-	public void paintComponent(Graphics g)
-	{
+	public void paintComponent(Graphics g) {
 		g.drawImage(background, 0, 0, null);
 	}
 	
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-		if(e.getSource() == dayStart)
-		{
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == dayStart) {
 			super.setVisible(false);
 			isWorked = true;
 		}
