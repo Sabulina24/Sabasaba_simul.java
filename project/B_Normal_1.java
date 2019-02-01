@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -25,8 +24,8 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 	public static boolean isWorked = false;
 	
 	BufferedImage backGround;
-	URL url_1 = getClass().getResource("./images/강의실복도.jpg");	// 1번째 시도
-	File file_2 = new File("./images/강의실복도_B.jpg"); // 2번째 시도
+	URL url_1 = getClass().getClassLoader().getResource("강의실복도.jpg");	
+	URL url_2 = getClass().getClassLoader().getResource("강의실복도_B.jpg"); 
 	
 	JButton nextBtn_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
 	JButton nextBtn_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
@@ -40,15 +39,15 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 	JButton same = new JButton(new ImageIcon(getClass().getClassLoader().getResource("호감도 유지.png")));
 	JButton down = new JButton(new ImageIcon(getClass().getClassLoader().getResource("호감도 하락.png")));
 
-	JButton c1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
-	JButton c2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
-	JButton c3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
-	JButton c1_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
-	JButton c1_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
-	JButton c1_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
-	JButton c2_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
-	JButton c2_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
-	JButton c2_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("버튼1.png")));
+	JButton c1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("선택지_B01.png")));
+	JButton c2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("선택지_B02.png")));
+	JButton c3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("선택지_B03.png")));
+	JButton c1_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("선택지_B01_1.png")));
+	JButton c1_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("선택지_B01_2.png")));
+	JButton c1_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("선택지_B01_3.png")));
+	JButton c2_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("선택지_B02_1.png")));
+	JButton c2_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("선택지_B02_2.png")));
+	JButton c2_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("선택지_B02_3.png")));
 	
 	JLabel name = new JLabel("교수님B");
 	JLabel label_1 = new JLabel("(수업을 마치고 나오는 길에 복도에서 교수님과 마주쳤다!)");
@@ -150,7 +149,6 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 		// 다음 화면 실행
 	}
 	
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		end.setBounds(1000,400,300,60);	// end버튼 설정
 		end.setBorderPainted(false);
@@ -172,7 +170,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 		
 		if(e.getSource() == nextBtn_1) {	// 버튼을 눌렀을 때 이벤트 시작
 			try {
-				backGround = ImageIO.read(file_2);	// 배경 변경
+				backGround = ImageIO.read(url_2);	// 배경 변경
 				repaint();
 			} catch (IOException e1) {}
 			nextBtn_1.setVisible(false);	// 버튼 숨기기
@@ -319,7 +317,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 				d3.setBounds(30, 550, 1200, 100);
 				d3.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
 				
-				super.add(d3);
+				super.add(d2);
 				super.add(d3);
 				
 				nextBtn_4.setBounds(1000,400,300,60);
@@ -477,7 +475,7 @@ public class B_Normal_1 extends JPanel implements ActionListener {
 			d4.setVisible(false);
 			end.setVisible(false);
 			try	{
-				backGround = ImageIO.read(file_2);
+				backGround = ImageIO.read(url_2);
 				repaint();
 			} catch (IOException e1) {}
 			label_2.setBounds(30, 480, 1200, 100);
