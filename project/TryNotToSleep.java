@@ -18,7 +18,7 @@ public class TryNotToSleep extends JPanel{
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(Main.class.getResource("../images/\uBCBC\uB77D\uCE58\uAE30\uC124\uBA85.PNG")));
+		lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uBCBC\uB77D\uCE58\uAE30\uC124\uBA85.PNG")));
 		lblNewLabel.setBounds(0, 0, 1280, 720);
 		add(lblNewLabel);
 
@@ -30,10 +30,8 @@ public class TryNotToSleep extends JPanel{
 				isWorked = true;
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon(Main.class.getResource("../images/\uB2E4\uC74C.PNG")));
+		btnNewButton.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uB2E4\uC74C.PNG")));
 		btnNewButton.setBounds(920, 516, 171, 84);
 		add(btnNewButton);
 	}
-	
-	
 }
