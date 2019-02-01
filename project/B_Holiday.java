@@ -183,6 +183,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e){
+		Object s = e.getSource();
 		nextBtnEnd.setBounds(1000,400,300,60);
 		nextBtnEnd.setBorderPainted(false);
 		nextBtnEnd.setContentAreaFilled(false);
@@ -201,7 +202,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			}
 		});
 		
-		if(e.getSource() == nextBtn1){
+		if(s == nextBtn1){
 			nextBtn1.setVisible(false);
 			label1.setVisible(false);
 			label2.setVisible(false);
@@ -236,7 +237,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn2){
+		if(s == nextBtn2){
 			nextBtn2.setVisible(false);
 			
 			c1_1.setBounds(820,325,500,100);
@@ -304,7 +305,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c1_1 || e.getSource() == c1_2 || e.getSource() == c1_3){
+		if(s == c1_1 || s == c1_2 || s == c1_3){
 			try{
 				background = ImageIO.read(url_2);
 			} catch (IOException e1) {}
@@ -319,7 +320,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			name.setFont(new Font("맑은 고딕", Font.BOLD, 30));
 			super.add(name);
 			
-			if(e.getSource() == c1_1 || e.getSource() == c1_2){
+			if(s == c1_1 || s == c1_2){
 				d60.setBounds(30, 480, 1200, 100);
 				d60.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
 				super.add(d60);
@@ -372,7 +373,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn3){
+		if(s == nextBtn3){
 			nextBtn3.setVisible(false);
 			d60.setVisible(false);
 			
@@ -409,7 +410,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn4){
+		if(s == nextBtn4){
 			nextBtn4.setVisible(false);
 			d61.setVisible(false);
 			
@@ -446,7 +447,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn5){
+		if(s == nextBtn5){
 			nextBtn5.setVisible(false);
 			label5.setVisible(false);
 			label6.setVisible(false);
@@ -482,7 +483,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn6){
+		if(s == nextBtn6){
 			nextBtn6.setVisible(false);
 			label9.setVisible(false);
 			
@@ -513,7 +514,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn7){
+		if(s == nextBtn7){
 			nextBtn7.setVisible(false);
 			
 			c2_1.setBounds(820,325,500,100);
@@ -581,13 +582,13 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c2_1 || e.getSource() == c2_2 || e.getSource() == c2_3){
+		if(s == c2_1 || s == c2_2 || s == c2_3){
 			c2_1.setVisible(false);
 			c2_2.setVisible(false);
 			c2_3.setVisible(false);
 			d62.setVisible(false);
 			
-			if(e.getSource() == c2_1){
+			if(s == c2_1){
 				//호감도 +1
 				Feeling.pf2_UP();
 				up.setVisible(true);
@@ -599,7 +600,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 				d64.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
 				super.add(d64);
 			}
-			else if(e.getSource() == c2_2){
+			else if(s == c2_2){
 				//호감도 +0
 				Feeling.pf2_SAME();
 				same.setVisible(true);
@@ -644,7 +645,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn8){
+		if(s == nextBtn8){
 			nextBtn8.setVisible(false);
 			up.setVisible(false);
 			same.setVisible(false);
@@ -681,7 +682,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn9){
+		if(s == nextBtn9){
 			nextBtn9.setVisible(false);
 			
 			c3_1.setBounds(820,325,500,100);
@@ -750,13 +751,13 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c3_1 || e.getSource() == c3_2 || e.getSource() == c3_3){
+		if(s == c3_1 || s == c3_2 || s == c3_3){
 			c3_1.setVisible(false);
 			c3_2.setVisible(false);
 			c3_3.setVisible(false);
 			d68.setVisible(false);
 			
-			if(e.getSource() == c3_1){
+			if(s == c3_1){
 				//호감도 +1
 				Feeling.pf2_UP();
 				up.setVisible(true);
@@ -788,7 +789,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 					}
 				});
 			}
-			else if(e.getSource() == c3_2){
+			else if(s == c3_2){
 				//호감도 +0
 				Feeling.pf2_SAME();
 				same.setVisible(true);
@@ -842,7 +843,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn10){
+		if(s == nextBtn10){
 			up.setVisible(false);
 			nextBtn10.setVisible(false);
 			d69.setVisible(false);
@@ -893,11 +894,11 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == doIt || e.getSource() == notDoIt){
+		if(s == doIt || s == notDoIt){
 			doIt.setVisible(false);
 			notDoIt.setVisible(false);
 			
-			if(e.getSource() == doIt){
+			if(s == doIt){
 				d71.setBounds(30, 480, 1200, 100);
 				d71.setFont(new Font("맑은 고딕", Font.PLAIN, 40));
 				super.add(d71);
@@ -950,7 +951,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn13){
+		if(s == nextBtn13){
 			nextBtn13.setVisible(false);
 			
 			c3_1_1.setBounds(820,325,500,100);
@@ -1019,14 +1020,14 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == c3_1_1 || e.getSource() == c3_1_2 || e.getSource() == c3_1_3){
+		if(s == c3_1_1 || s == c3_1_2 || s == c3_1_3){
 			c3_1_1.setVisible(false);
 			c3_1_2.setVisible(false);
 			c3_1_3.setVisible(false);
 			d71.setVisible(false);
 			d72.setVisible(false);
 			
-			if(e.getSource() == c3_1_2){
+			if(s == c3_1_2){
 				Feeling.pf2_UP();//호감도 +1
 				up.setVisible(true);
 				
@@ -1066,7 +1067,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtn11){
+		if(s == nextBtn11){
 			nextBtn11.setVisible(false);
 			up.setVisible(false);
 			same.setVisible(false);
@@ -1086,7 +1087,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtnEnd){
+		if(s == nextBtnEnd){
 			nextBtnEnd.setVisible(false);
 			label10.setVisible(false);
 			label11.setVisible(false);
@@ -1125,7 +1126,7 @@ public class B_Holiday extends JPanel implements ActionListener{
 			repaint();
 		}
 		
-		if(e.getSource() == nextBtnExit){
+		if(s == nextBtnExit){
 			super.setVisible(false);
 			isWorked = true;
 		}
