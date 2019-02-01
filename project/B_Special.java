@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -18,809 +18,809 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class B_Special extends JPanel implements ActionListener{
-	private static final long serialVersionUID = 1L;
+		private static final long serialVersionUID = 1L;
 
-	public static boolean isWorked = false;
-	
-	BufferedImage background;
-	File file1 = new File("./src/images/±³¼ö´Ô¹æ.jpg");
-	File file2 = new File("./src/images/±³¼ö´Ô¹æ_B.jpg");
-	
-	JButton nextBtn1 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn2 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn3 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn4 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn5 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn6 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn7 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn8 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn9 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn10 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn11 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtn12 = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton nextBtnEnd = new JButton(new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png")));
-	JButton up = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ »ó½Â.png")));
-	JButton same = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ À¯Áö.png")));
-	JButton down = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ ÇÏ¶ô.png")));
-	JButton up_special = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ »ó½Â_special.png")));
-	JButton down_special = new JButton(new ImageIcon(Main.class.getResource("../images/È£°¨µµ ÇÏ¶ô_special.png")));
-	
-	JButton c1_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_1_1.png")));
-	JButton c1_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_1_2.png")));
-	JButton c1_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_1_3.png")));
-	JButton c2_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_2_1.png")));
-	JButton c2_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_2_2.png")));
-	JButton c2_3 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_2_3.png")));
-	JButton c3_1 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_3_1.png")));
-	JButton c3_2 = new JButton(new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_3_2.png")));
-	
-	JLabel name = new JLabel("±³¼ö´ÔB");
-	JLabel label1 = new JLabel("(Àú¹ø ½Ã°£ ±³¼ö´Ô°úÀÇ ¾à¼ÓÀ» ÁöÅ°±â À§ÇØ ");
-	JLabel label2 = new JLabel("¼ö¾÷ ¸¶Ä¡°í ¹Ù·Î ±³¼ö´Ô ¹æÀ» Ã£¾Æ°¬´Ù.)");
-	JLabel label3 = new JLabel("(±³¼ö´Ô²² ¹º°¡¸¦ µå·Á¾ß ÇÒ °Å °°´Ù. ¹» µå¸®Áö?)");
-	JLabel label4 = new JLabel("(Å¹¿ùÇÑ ¼±ÅÃÀÌ´Ù. ÀÚÄ©ÇÏ¸é ±è¿µ¶õ¹ı ¶§¹®¿¡");
-	JLabel label5 = new JLabel("¿¹¹ÎÇÏ½Ç ¼öµµ ÀÖ´Ù.)");
-	JLabel label6 = new JLabel("(±³¼ö´ÔÀº ±è¿µ¶õ¹ı ¶§¹®¿¡ ¿¹¹ÎÇÏ¼Å¼­ ÀÎ»óÀ»");
-	JLabel label7 = new JLabel("Âô±×¸®¸ç ±Ø±¸ °ÅÀıÇÏ¼Ì´Ù..)");
-	JLabel label8 = new JLabel("(Àü ½Ã°£¿¡ ¸ô¶ú´ø ³»¿ëÀ» ¹°À¸¸é¼­ Áö±İ²¯");
-	JLabel label9 = new JLabel("¸ô¶ú´ø ¹®Á¦µéÀÌ Á¶±İ¾¿ ÇØ°áµÇ¾ú´Ù.)");
-	JLabel label10 = new JLabel("(°Ô´Ù°¡ ±³¼ö´Ô ¿¬±¸ºĞ¾ß¿¡ °ü½ÉÀ» º¸ÀÌÀÚ");
-	JLabel label11 = new JLabel("¾ÆÁÖ ÈíÁ·ÇØÇÏ½Ã¸ç ±æ°Ô ¼³¸íÀ» ÇÏ¼Ì´Ù.)");
-	JLabel label12 = new JLabel("(ÀÌ¾ß±â°¡ ¸·¹ÙÁö¿¡ ´Ù´Ù¸¦ ÁîÀ½,°©ÀÚ±â");
-	JLabel label13 = new JLabel("ÈŞ´ëÆùÀÌ ¿ï·È´Ù.)");
-	JLabel label14 = new JLabel("(½½Â½º¸´Ï ´Ù¸¥ ±³¼ö´ÔµéÀÇ Á¶±³·ÎºÎÅÍ");
-	JLabel label15 = new JLabel("±ŞÈ÷ ¿¬¶ôÀ» ´Ş¶ó´Â ³»¿ëÀÌ´Ù! ¹«½¼ÀÏÀÌÁö?)");
-	JLabel label16 = new JLabel("(±³¼ö´Ô²² ±ŞÇÏ°Ô ÀÎ»ç¸¦ ÇÏ°í ¹æÀ» ¶ÙÃÄ³ª°¬´Ù.)");
-	JLabel label17 = new JLabel("(¹«½ÃÇÏ°í ±³¼ö´Ô°úÀÇ ´ëÈ­¸¦ ¸¶Àú ÀÌ¾î³ª°¬´Ù.");
-	JLabel label18 = new JLabel("±ä ´ëÈ­°¡ ³¡³ª°í ÃµÃµÈ÷ ¹æÀ» ³ª¿Ô´Ù.)");
-	
-	String[] dialogue = ProfessorDialogue.getDialogue_B(); // ±³¼ö´ÔB ´ë»ç¸¦ ÇÑ ÁÙ¾¿ ²÷¾î¼­ String ¹è¿­¿¡ ÀúÀå
-	JLabel d56 = new JLabel(dialogue[56]);
-	JLabel d57 = new JLabel(dialogue[57]);
-	JLabel d58 = new JLabel(dialogue[58]);
-	JLabel d59 = new JLabel(dialogue[59]);
-	
-	private ImageIcon nextBtnEnteredImage = new ImageIcon(Main.class.getResource("../images/¹öÆ°1_Å¬¸¯.png"));
-	private ImageIcon nextBtnBasicImage = new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png"));
-	private ImageIcon c1_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_1_1_clk.png"));
-	private ImageIcon c1_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_1_1.png"));
-	private ImageIcon c1_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_1_2_clk.png"));
-	private ImageIcon c1_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_1_2.png"));
-	private ImageIcon c1_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_1_3_clk.png"));
-	private ImageIcon c1_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_1_3.png"));
-	private ImageIcon c2_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_2_1_clk.png"));
-	private ImageIcon c2_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_2_1.png"));
-	private ImageIcon c2_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_2_2_clk.png"));
-	private ImageIcon c2_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_2_2.png"));
-	private ImageIcon c2_3EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_2_3_clk.png"));
-	private ImageIcon c2_3BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_2_3.png"));
-	private ImageIcon c3_1EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_3_1_clk.png"));
-	private ImageIcon c3_1BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_3_1.png"));
-	private ImageIcon c3_2EnteredImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_3_2_clk.png"));
-	private ImageIcon c3_2BasicImage = new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_±³¼ö´Ô¹æ_3_2.png"));
-	
-	public B_Special()
-	{
-		try
+		public static boolean isWorked = false;
+		
+		BufferedImage background;
+		URL url_1 = getClass().getClassLoader().getResource("êµìˆ˜ë‹˜ë°©.jpg");
+		URL url_2 = getClass().getClassLoader().getResource("êµìˆ˜ë‹˜ë°©_B.jpg");
+		
+		JButton nextBtn1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn4 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn5 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn6 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn7 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn8 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn9 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn10 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn11 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtn12 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton nextBtnEnd = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png")));
+		JButton up = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìƒìŠ¹.png")));
+		JButton same = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìœ ì§€.png")));
+		JButton down = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ í•˜ë½.png")));
+		JButton up_special = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìƒìŠ¹_special.png")));
+		JButton down_special = new JButton(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ í•˜ë½_special.png")));
+		
+		JButton c1_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_1_1.png")));
+		JButton c1_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_1_2.png")));
+		JButton c1_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_1_3.png")));
+		JButton c2_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_2_1.png")));
+		JButton c2_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_2_2.png")));
+		JButton c2_3 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_2_3.png")));
+		JButton c3_1 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_3_1.png")));
+		JButton c3_2 = new JButton(new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_3_2.png")));
+		
+		JLabel name = new JLabel("êµìˆ˜ë‹˜B");
+		JLabel label1 = new JLabel("(ì €ë²ˆ ì‹œê°„ êµìˆ˜ë‹˜ê³¼ì˜ ì•½ì†ì„ ì§€í‚¤ê¸° ìœ„í•´ ");
+		JLabel label2 = new JLabel("ìˆ˜ì—… ë§ˆì¹˜ê³  ë°”ë¡œ êµìˆ˜ë‹˜ ë°©ì„ ì°¾ì•„ê°”ë‹¤.)");
+		JLabel label3 = new JLabel("(êµìˆ˜ë‹˜ê»˜ ë­”ê°€ë¥¼ ë“œë ¤ì•¼ í•  ê±° ê°™ë‹¤. ë­˜ ë“œë¦¬ì§€?)");
+		JLabel label4 = new JLabel("(íƒì›”í•œ ì„ íƒì´ë‹¤. ìì¹«í•˜ë©´ ê¹€ì˜ë€ë²• ë•Œë¬¸ì—");
+		JLabel label5 = new JLabel("ì˜ˆë¯¼í•˜ì‹¤ ìˆ˜ë„ ìˆë‹¤.)");
+		JLabel label6 = new JLabel("(êµìˆ˜ë‹˜ì€ ê¹€ì˜ë€ë²• ë•Œë¬¸ì— ì˜ˆë¯¼í•˜ì…”ì„œ ì¸ìƒì„");
+		JLabel label7 = new JLabel("ì°¡ê·¸ë¦¬ë©° ê·¹êµ¬ ê±°ì ˆí•˜ì…¨ë‹¤..)");
+		JLabel label8 = new JLabel("(ì „ ì‹œê°„ì— ëª°ëë˜ ë‚´ìš©ì„ ë¬¼ìœ¼ë©´ì„œ ì§€ê¸ˆê»");
+		JLabel label9 = new JLabel("ëª°ëë˜ ë¬¸ì œë“¤ì´ ì¡°ê¸ˆì”© í•´ê²°ë˜ì—ˆë‹¤.)");
+		JLabel label10 = new JLabel("(ê²Œë‹¤ê°€ êµìˆ˜ë‹˜ ì—°êµ¬ë¶„ì•¼ì— ê´€ì‹¬ì„ ë³´ì´ì");
+		JLabel label11 = new JLabel("ì•„ì£¼ í¡ì¡±í•´í•˜ì‹œë©° ê¸¸ê²Œ ì„¤ëª…ì„ í•˜ì…¨ë‹¤.)");
+		JLabel label12 = new JLabel("(ì´ì•¼ê¸°ê°€ ë§‰ë°”ì§€ì— ë‹¤ë‹¤ë¥¼ ì¦ˆìŒ,ê°‘ìê¸°");
+		JLabel label13 = new JLabel("íœ´ëŒ€í°ì´ ìš¸ë ¸ë‹¤.)");
+		JLabel label14 = new JLabel("(ìŠ¬ì©ë³´ë‹ˆ ë‹¤ë¥¸ êµìˆ˜ë‹˜ë“¤ì˜ ì¡°êµë¡œë¶€í„°");
+		JLabel label15 = new JLabel("ê¸‰íˆ ì—°ë½ì„ ë‹¬ë¼ëŠ” ë‚´ìš©ì´ë‹¤! ë¬´ìŠ¨ì¼ì´ì§€?)");
+		JLabel label16 = new JLabel("(êµìˆ˜ë‹˜ê»˜ ê¸‰í•˜ê²Œ ì¸ì‚¬ë¥¼ í•˜ê³  ë°©ì„ ë›°ì³ë‚˜ê°”ë‹¤.)");
+		JLabel label17 = new JLabel("(ë¬´ì‹œí•˜ê³  êµìˆ˜ë‹˜ê³¼ì˜ ëŒ€í™”ë¥¼ ë§ˆì € ì´ì–´ë‚˜ê°”ë‹¤.");
+		JLabel label18 = new JLabel("ê¸´ ëŒ€í™”ê°€ ëë‚˜ê³  ì²œì²œíˆ ë°©ì„ ë‚˜ì™”ë‹¤.)");
+		
+		String[] dialogue = ProfessorLines.getDialogue_B(); // êµìˆ˜ë‹˜B ëŒ€ì‚¬ë¥¼ í•œ ì¤„ì”© ëŠì–´ì„œ String ë°°ì—´ì— ì €ì¥
+		JLabel d56 = new JLabel(dialogue[56]);
+		JLabel d57 = new JLabel(dialogue[57]);
+		JLabel d58 = new JLabel(dialogue[58]);
+		JLabel d59 = new JLabel(dialogue[59]);
+		
+		private ImageIcon nextBtnEnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1_í´ë¦­.png"));
+		private ImageIcon nextBtnBasicImage = new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png"));
+		private ImageIcon c1_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_1_1_clk.png"));
+		private ImageIcon c1_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_1_1.png"));
+		private ImageIcon c1_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_1_2_clk.png"));
+		private ImageIcon c1_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_1_2.png"));
+		private ImageIcon c1_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_1_3_clk.png"));
+		private ImageIcon c1_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_1_3.png"));
+		private ImageIcon c2_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_2_1_clk.png"));
+		private ImageIcon c2_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_2_1.png"));
+		private ImageIcon c2_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_2_2_clk.png"));
+		private ImageIcon c2_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_2_2.png"));
+		private ImageIcon c2_3EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_2_3_clk.png"));
+		private ImageIcon c2_3BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_2_3.png"));
+		private ImageIcon c3_1EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_3_1_clk.png"));
+		private ImageIcon c3_1BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_3_1.png"));
+		private ImageIcon c3_2EnteredImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_3_2_clk.png"));
+		private ImageIcon c3_2BasicImage = new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_êµìˆ˜ë‹˜ë°©_3_2.png"));
+		
+		public B_Special()
 		{
-			background = ImageIO.read(file1);
-		} catch (IOException e) {}
-		
-		super.setLayout(null);
-		
-		label1.setBounds(30, 480, 1200, 100);
-		label1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-		label2.setBounds(30, 550, 1200, 100);
-		label2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-		
-		nextBtn1.setBounds(1000,400,300,60);
-		nextBtn1.setBorderPainted(false);
-		nextBtn1.setContentAreaFilled(false);
-		nextBtn1.setFocusPainted(false);
-		
-		super.add(label1);
-		super.add(label2);
-		super.add(nextBtn1);
-		nextBtn1.addActionListener(this);
-		nextBtn1.addMouseListener(new MouseAdapter()
-		{
-			@Override
-			public void mouseEntered(MouseEvent e)
-			{
-				nextBtn1.setIcon(nextBtnEnteredImage);
-				nextBtn1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-			}
-			@Override
-			public void mouseExited(MouseEvent e)
-			{
-				nextBtn1.setIcon(nextBtnBasicImage);
-				nextBtn1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-			}
-		});
-		
-		up.setBounds(160,100,100,250);
-		up.setBorderPainted(false);
-		up.setContentAreaFilled(false);
-		up.setFocusPainted(false);
-		same.setBounds(160,100,100,250);
-		same.setBorderPainted(false);
-		same.setContentAreaFilled(false);
-		same.setFocusPainted(false);
-		down.setBounds(160,100,100,250);
-		down.setBorderPainted(false);
-		down.setContentAreaFilled(false);
-		down.setFocusPainted(false);
-		up_special.setBounds(300,100,100,250);
-		up_special.setBorderPainted(false);
-		up_special.setContentAreaFilled(false);
-		up_special.setFocusPainted(false);
-		down_special.setBounds(300,100,100,250);
-		down_special.setBorderPainted(false);
-		down_special.setContentAreaFilled(false);
-		down_special.setFocusPainted(false);
-		
-		super.add(up);
-		super.add(same);
-		super.add(down);
-		super.add(up_special);
-		super.add(down_special);
-		up.setVisible(false);
-		same.setVisible(false);
-		down.setVisible(false);
-		up_special.setVisible(false);
-		down_special.setVisible(false);
-	}
-	
-	public void paintComponent(Graphics g)
-	{
-		g.drawImage(background, 0, 0, null);
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-		nextBtnEnd.setBounds(1000,400,300,60);
-		nextBtnEnd.setBorderPainted(false);
-		nextBtnEnd.setContentAreaFilled(false);
-		nextBtnEnd.setFocusPainted(false);
-		nextBtnEnd.addActionListener(this);
-		nextBtnEnd.addMouseListener(new MouseAdapter()
-		{
-			@Override
-			public void mouseEntered(MouseEvent e)
-			{
-				nextBtnEnd.setIcon(nextBtnEnteredImage);
-				nextBtnEnd.setCursor(new Cursor(Cursor.HAND_CURSOR));
-			}
-			@Override
-			public void mouseExited(MouseEvent e)
-			{
-				nextBtnEnd.setIcon(nextBtnBasicImage);
-				nextBtnEnd.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-			}
-		});
-		
-		if(e.getSource() == nextBtn1)
-		{
-			nextBtn1.setVisible(false);
-			label1.setVisible(false);
-			label2.setVisible(false);
-			
 			try
 			{
-				background = ImageIO.read(file2);
-			} catch (IOException e1) {}
+				background = ImageIO.read(url_1);
+			} catch (IOException e) {}
 			
-			name.setBounds(30, 385, 300, 100);
-			name.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 30));
-			super.add(name);
-			d56.setBounds(30, 480, 1200, 100);
-			d56.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(d56);
+			super.setLayout(null);
 			
-			nextBtn2.setBounds(1000,400,300,60);
-			nextBtn2.setBorderPainted(false);
-			nextBtn2.setContentAreaFilled(false);
-			nextBtn2.setFocusPainted(false);
+			label1.setBounds(30, 480, 1200, 100);
+			label1.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+			label2.setBounds(30, 550, 1200, 100);
+			label2.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
 			
-			super.add(nextBtn2);
-			nextBtn2.addActionListener(this);
-			nextBtn2.addMouseListener(new MouseAdapter()
+			nextBtn1.setBounds(1000,400,300,60);
+			nextBtn1.setBorderPainted(false);
+			nextBtn1.setContentAreaFilled(false);
+			nextBtn1.setFocusPainted(false);
+			
+			super.add(label1);
+			super.add(label2);
+			super.add(nextBtn1);
+			nextBtn1.addActionListener(this);
+			nextBtn1.addMouseListener(new MouseAdapter()
 			{
 				@Override
 				public void mouseEntered(MouseEvent e)
 				{
-					nextBtn2.setIcon(nextBtnEnteredImage);
-					nextBtn2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					nextBtn1.setIcon(nextBtnEnteredImage);
+					nextBtn1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				}
 				@Override
 				public void mouseExited(MouseEvent e)
 				{
-					nextBtn2.setIcon(nextBtnBasicImage);
-					nextBtn2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					nextBtn1.setIcon(nextBtnBasicImage);
+					nextBtn1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 				}
 			});
 			
-			repaint();
-		}
-		
-		if(e.getSource() == nextBtn2)
-		{
-			nextBtn2.setVisible(false);
+			up.setBounds(160,100,100,250);
+			up.setBorderPainted(false);
+			up.setContentAreaFilled(false);
+			up.setFocusPainted(false);
+			same.setBounds(160,100,100,250);
+			same.setBorderPainted(false);
+			same.setContentAreaFilled(false);
+			same.setFocusPainted(false);
+			down.setBounds(160,100,100,250);
+			down.setBorderPainted(false);
+			down.setContentAreaFilled(false);
+			down.setFocusPainted(false);
+			up_special.setBounds(300,100,100,250);
+			up_special.setBorderPainted(false);
+			up_special.setContentAreaFilled(false);
+			up_special.setFocusPainted(false);
+			down_special.setBounds(300,100,100,250);
+			down_special.setBorderPainted(false);
+			down_special.setContentAreaFilled(false);
+			down_special.setFocusPainted(false);
 			
-			c1_1.setBounds(820,325,500,100);
-			c1_1.setBorderPainted(false);
-			c1_1.setContentAreaFilled(false);
-			c1_1.setFocusPainted(false);
-			
-			super.add(c1_1);
-			c1_1.setVisible(true);
-			c1_1.addActionListener(this);
-			c1_1.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					c1_1.setIcon(c1_1EnteredImage);
-					c1_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					c1_1.setIcon(c1_1BasicImage);
-					c1_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			
-			c1_2.setBounds(820,450,500,100);
-			c1_2.setBorderPainted(false);
-			c1_2.setContentAreaFilled(false);
-			c1_2.setFocusPainted(false);
-			
-			super.add(c1_2);
-			c1_2.setVisible(true);
-			c1_2.addActionListener(this);
-			c1_2.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					c1_2.setIcon(c1_2EnteredImage);
-					c1_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					c1_2.setIcon(c1_2BasicImage);
-					c1_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			
-			c1_3.setBounds(820,575,500,100);
-			c1_3.setBorderPainted(false);
-			c1_3.setContentAreaFilled(false);
-			c1_3.setFocusPainted(false);
-			
-			super.add(c1_3);
-			c1_3.setVisible(true);
-			c1_3.addActionListener(this);
-			c1_3.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					c1_3.setIcon(c1_3EnteredImage);
-					c1_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					c1_3.setIcon(c1_3BasicImage);
-					c1_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			repaint();
-		}
-		
-		if(e.getSource() == c1_1 || e.getSource() == c1_2 || e.getSource() == c1_3)
-		{
-			c1_1.setVisible(false);
-			c1_2.setVisible(false);
-			c1_3.setVisible(false);
-			d56.setVisible(false);
-			
-			if(e.getSource() == c1_1 || e.getSource() == c1_3)
-			{
-				GoodFeeling.teacher2FeelDown();//È£°¨µµ -1
-				down.setVisible(true);
-				
-				d57.setBounds(30, 480, 1200, 100);
-				d57.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(d57);
-				d58.setBounds(30, 550, 1200, 100);
-				d58.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(d58);
-			}
-			else
-			{
-				GoodFeeling.teacher2FeelUp();//È£°¨µµ +1
-				up.setVisible(true);
-				
-				d59.setBounds(30, 480, 1200, 100);
-				d59.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(d59);
-			}
-	
-			nextBtn3.setBounds(1000,400,300,60);
-			nextBtn3.setBorderPainted(false);
-			nextBtn3.setContentAreaFilled(false);
-			nextBtn3.setFocusPainted(false);
-			
-			super.add(nextBtn3);
-			nextBtn3.addActionListener(this);
-			nextBtn3.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					nextBtn3.setIcon(nextBtnEnteredImage);
-					nextBtn3.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					nextBtn3.setIcon(nextBtnBasicImage);
-					nextBtn3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			repaint();
-		}
-		
-		if(e.getSource() == nextBtn3)
-		{
-			nextBtn3.setVisible(false);
-			d57.setVisible(false);
-			d58.setVisible(false);
-			d59.setVisible(false);
+			super.add(up);
+			super.add(same);
+			super.add(down);
+			super.add(up_special);
+			super.add(down_special);
 			up.setVisible(false);
 			same.setVisible(false);
 			down.setVisible(false);
-			
-			label3.setBounds(30, 480, 1200, 100);
-			label3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label3);
-			
-			nextBtn4.setBounds(1000,400,300,60);
-			nextBtn4.setBorderPainted(false);
-			nextBtn4.setContentAreaFilled(false);
-			nextBtn4.setFocusPainted(false);
-			
-			super.add(nextBtn4);
-			nextBtn4.addActionListener(this);
-			nextBtn4.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					nextBtn4.setIcon(nextBtnEnteredImage);
-					nextBtn4.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					nextBtn4.setIcon(nextBtnBasicImage);
-					nextBtn4.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
+			up_special.setVisible(false);
+			down_special.setVisible(false);
 		}
 		
-		if(e.getSource() == nextBtn4)
+		public void paintComponent(Graphics g)
 		{
-			nextBtn4.setVisible(false);
-			
-			c2_1.setBounds(820,325,500,100);
-			c2_1.setBorderPainted(false);
-			c2_1.setContentAreaFilled(false);
-			c2_1.setFocusPainted(false);
-			
-			super.add(c2_1);
-			c2_1.setVisible(true);
-			c2_1.addActionListener(this);
-			c2_1.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					c2_1.setIcon(c2_1EnteredImage);
-					c2_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					c2_1.setIcon(c2_1BasicImage);
-					c2_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			
-			c2_2.setBounds(820,450,500,100);
-			c2_2.setBorderPainted(false);
-			c2_2.setContentAreaFilled(false);
-			c2_2.setFocusPainted(false);
-			
-			super.add(c2_2);
-			c2_2.setVisible(true);
-			c2_2.addActionListener(this);
-			c2_2.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					c2_2.setIcon(c2_2EnteredImage);
-					c2_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					c2_2.setIcon(c2_2BasicImage);
-					c2_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			
-			c2_3.setBounds(820,575,500,100);
-			c2_3.setBorderPainted(false);
-			c2_3.setContentAreaFilled(false);
-			c2_3.setFocusPainted(false);
-			
-			super.add(c2_3);
-			c2_3.setVisible(true);
-			c2_3.addActionListener(this);
-			c2_3.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					c2_3.setIcon(c2_3EnteredImage);
-					c2_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					c2_3.setIcon(c2_3BasicImage);
-					c2_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			
-			repaint();
+			g.drawImage(background, 0, 0, null);
 		}
-		
-		if(e.getSource() == c2_1 || e.getSource() == c2_2 || e.getSource() == c2_3)
+
+		public void actionPerformed(ActionEvent e)
 		{
-			c2_1.setVisible(false);
-			c2_2.setVisible(false);
-			c2_3.setVisible(false);
-			label3.setVisible(false);
-			
-			if(e.getSource() == c2_1 || e.getSource() == c2_2)
+			nextBtnEnd.setBounds(1000,400,300,60);
+			nextBtnEnd.setBorderPainted(false);
+			nextBtnEnd.setContentAreaFilled(false);
+			nextBtnEnd.setFocusPainted(false);
+			nextBtnEnd.addActionListener(this);
+			nextBtnEnd.addMouseListener(new MouseAdapter()
 			{
-				GoodFeeling.teacher2FeelDown();//È£°¨µµ -1
-				down.setVisible(true);
+				@Override
+				public void mouseEntered(MouseEvent e)
+				{
+					nextBtnEnd.setIcon(nextBtnEnteredImage);
+					nextBtnEnd.setCursor(new Cursor(Cursor.HAND_CURSOR));
+				}
+				@Override
+				public void mouseExited(MouseEvent e)
+				{
+					nextBtnEnd.setIcon(nextBtnBasicImage);
+					nextBtnEnd.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				}
+			});
+			
+			if(e.getSource() == nextBtn1)
+			{
+				nextBtn1.setVisible(false);
+				label1.setVisible(false);
+				label2.setVisible(false);
 				
-				label6.setBounds(30, 480, 1200, 100);
-				label6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(label6);
-				label7.setBounds(30, 550, 1200, 100);
-				label7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(label7);
+				try
+				{
+					background = ImageIO.read(url_2);
+				} catch (IOException e1) {}
+				
+				name.setBounds(30, 385, 300, 100);
+				name.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.BOLD, 30));
+				super.add(name);
+				d56.setBounds(30, 480, 1200, 100);
+				d56.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(d56);
+				
+				nextBtn2.setBounds(1000,400,300,60);
+				nextBtn2.setBorderPainted(false);
+				nextBtn2.setContentAreaFilled(false);
+				nextBtn2.setFocusPainted(false);
+				
+				super.add(nextBtn2);
+				nextBtn2.addActionListener(this);
+				nextBtn2.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						nextBtn2.setIcon(nextBtnEnteredImage);
+						nextBtn2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						nextBtn2.setIcon(nextBtnBasicImage);
+						nextBtn2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				
+				repaint();
 			}
-			else
+			
+			if(e.getSource() == nextBtn2)
 			{
-				GoodFeeling.teacher2FeelUp();//È£°¨µµ +1
+				nextBtn2.setVisible(false);
+				
+				c1_1.setBounds(820,325,500,100);
+				c1_1.setBorderPainted(false);
+				c1_1.setContentAreaFilled(false);
+				c1_1.setFocusPainted(false);
+				
+				super.add(c1_1);
+				c1_1.setVisible(true);
+				c1_1.addActionListener(this);
+				c1_1.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						c1_1.setIcon(c1_1EnteredImage);
+						c1_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						c1_1.setIcon(c1_1BasicImage);
+						c1_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				
+				c1_2.setBounds(820,450,500,100);
+				c1_2.setBorderPainted(false);
+				c1_2.setContentAreaFilled(false);
+				c1_2.setFocusPainted(false);
+				
+				super.add(c1_2);
+				c1_2.setVisible(true);
+				c1_2.addActionListener(this);
+				c1_2.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						c1_2.setIcon(c1_2EnteredImage);
+						c1_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						c1_2.setIcon(c1_2BasicImage);
+						c1_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				
+				c1_3.setBounds(820,575,500,100);
+				c1_3.setBorderPainted(false);
+				c1_3.setContentAreaFilled(false);
+				c1_3.setFocusPainted(false);
+				
+				super.add(c1_3);
+				c1_3.setVisible(true);
+				c1_3.addActionListener(this);
+				c1_3.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						c1_3.setIcon(c1_3EnteredImage);
+						c1_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						c1_3.setIcon(c1_3BasicImage);
+						c1_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				repaint();
+			}
+			
+			if(e.getSource() == c1_1 || e.getSource() == c1_2 || e.getSource() == c1_3)
+			{
+				c1_1.setVisible(false);
+				c1_2.setVisible(false);
+				c1_3.setVisible(false);
+				d56.setVisible(false);
+				
+				if(e.getSource() == c1_1 || e.getSource() == c1_3)
+				{
+					Feeling.pf2_DOWN();//í˜¸ê°ë„ -1
+					down.setVisible(true);
+					
+					d57.setBounds(30, 480, 1200, 100);
+					d57.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(d57);
+					d58.setBounds(30, 550, 1200, 100);
+					d58.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(d58);
+				}
+				else
+				{
+					Feeling.pf2_UP();//í˜¸ê°ë„ +1
+					up.setVisible(true);
+					
+					d59.setBounds(30, 480, 1200, 100);
+					d59.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(d59);
+				}
+		
+				nextBtn3.setBounds(1000,400,300,60);
+				nextBtn3.setBorderPainted(false);
+				nextBtn3.setContentAreaFilled(false);
+				nextBtn3.setFocusPainted(false);
+				
+				super.add(nextBtn3);
+				nextBtn3.addActionListener(this);
+				nextBtn3.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						nextBtn3.setIcon(nextBtnEnteredImage);
+						nextBtn3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						nextBtn3.setIcon(nextBtnBasicImage);
+						nextBtn3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				repaint();
+			}
+			
+			if(e.getSource() == nextBtn3)
+			{
+				nextBtn3.setVisible(false);
+				d57.setVisible(false);
+				d58.setVisible(false);
+				d59.setVisible(false);
+				up.setVisible(false);
+				same.setVisible(false);
+				down.setVisible(false);
+				
+				label3.setBounds(30, 480, 1200, 100);
+				label3.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(label3);
+				
+				nextBtn4.setBounds(1000,400,300,60);
+				nextBtn4.setBorderPainted(false);
+				nextBtn4.setContentAreaFilled(false);
+				nextBtn4.setFocusPainted(false);
+				
+				super.add(nextBtn4);
+				nextBtn4.addActionListener(this);
+				nextBtn4.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						nextBtn4.setIcon(nextBtnEnteredImage);
+						nextBtn4.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						nextBtn4.setIcon(nextBtnBasicImage);
+						nextBtn4.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+			}
+			
+			if(e.getSource() == nextBtn4)
+			{
+				nextBtn4.setVisible(false);
+				
+				c2_1.setBounds(820,325,500,100);
+				c2_1.setBorderPainted(false);
+				c2_1.setContentAreaFilled(false);
+				c2_1.setFocusPainted(false);
+				
+				super.add(c2_1);
+				c2_1.setVisible(true);
+				c2_1.addActionListener(this);
+				c2_1.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						c2_1.setIcon(c2_1EnteredImage);
+						c2_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						c2_1.setIcon(c2_1BasicImage);
+						c2_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				
+				c2_2.setBounds(820,450,500,100);
+				c2_2.setBorderPainted(false);
+				c2_2.setContentAreaFilled(false);
+				c2_2.setFocusPainted(false);
+				
+				super.add(c2_2);
+				c2_2.setVisible(true);
+				c2_2.addActionListener(this);
+				c2_2.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						c2_2.setIcon(c2_2EnteredImage);
+						c2_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						c2_2.setIcon(c2_2BasicImage);
+						c2_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				
+				c2_3.setBounds(820,575,500,100);
+				c2_3.setBorderPainted(false);
+				c2_3.setContentAreaFilled(false);
+				c2_3.setFocusPainted(false);
+				
+				super.add(c2_3);
+				c2_3.setVisible(true);
+				c2_3.addActionListener(this);
+				c2_3.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						c2_3.setIcon(c2_3EnteredImage);
+						c2_3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						c2_3.setIcon(c2_3BasicImage);
+						c2_3.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				
+				repaint();
+			}
+			
+			if(e.getSource() == c2_1 || e.getSource() == c2_2 || e.getSource() == c2_3)
+			{
+				c2_1.setVisible(false);
+				c2_2.setVisible(false);
+				c2_3.setVisible(false);
+				label3.setVisible(false);
+				
+				if(e.getSource() == c2_1 || e.getSource() == c2_2)
+				{
+					Feeling.pf2_DOWN();//í˜¸ê°ë„ -1
+					down.setVisible(true);
+					
+					label6.setBounds(30, 480, 1200, 100);
+					label6.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(label6);
+					label7.setBounds(30, 550, 1200, 100);
+					label7.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(label7);
+				}
+				else
+				{
+					Feeling.pf2_UP();//í˜¸ê°ë„ +1
+					up.setVisible(true);
+					
+					label4.setBounds(30, 480, 1200, 100);
+					label4.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(label4);
+					label5.setBounds(30, 550, 1200, 100);
+					label5.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(label5);
+				}
+				
+				nextBtn5.setBounds(1000,400,300,60);
+				nextBtn5.setBorderPainted(false);
+				nextBtn5.setContentAreaFilled(false);
+				nextBtn5.setFocusPainted(false);
+				
+				super.add(nextBtn5);
+				nextBtn5.addActionListener(this);
+				nextBtn5.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						nextBtn5.setIcon(nextBtnEnteredImage);
+						nextBtn5.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						nextBtn5.setIcon(nextBtnBasicImage);
+						nextBtn5.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				repaint();
+			}
+			
+			if(e.getSource() == nextBtn5)
+			{
+				up.setVisible(false);
+				down.setVisible(false);
+				nextBtn5.setVisible(false);
+				label4.setVisible(false);
+				label5.setVisible(false);
+				label6.setVisible(false);
+				label7.setVisible(false);
+				
+				name.setVisible(false);
+				try
+				{
+					background = ImageIO.read(url_1);
+				} catch (IOException e1) {}
+				
+				label8.setBounds(30, 480, 1200, 100);
+				label8.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(label8);
+				label9.setBounds(30, 550, 1200, 100);
+				label9.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(label9);
+				
+				nextBtn6.setBounds(1000,400,300,60);
+				nextBtn6.setBorderPainted(false);
+				nextBtn6.setContentAreaFilled(false);
+				nextBtn6.setFocusPainted(false);
+				
+				super.add(nextBtn6);
+				nextBtn6.addActionListener(this);
+				nextBtn6.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						nextBtn6.setIcon(nextBtnEnteredImage);
+						nextBtn6.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						nextBtn6.setIcon(nextBtnBasicImage);
+						nextBtn6.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				repaint();
+			}
+			
+			if(e.getSource() == nextBtn6)
+			{
+				nextBtn6.setVisible(false);
+				label8.setVisible(false);
+				label9.setVisible(false);
+				
+				Feeling.pf2_UP();//í˜¸ê°ë„ +1
 				up.setVisible(true);
 				
-				label4.setBounds(30, 480, 1200, 100);
-				label4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(label4);
-				label5.setBounds(30, 550, 1200, 100);
-				label5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(label5);
-			}
-			
-			nextBtn5.setBounds(1000,400,300,60);
-			nextBtn5.setBorderPainted(false);
-			nextBtn5.setContentAreaFilled(false);
-			nextBtn5.setFocusPainted(false);
-			
-			super.add(nextBtn5);
-			nextBtn5.addActionListener(this);
-			nextBtn5.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					nextBtn5.setIcon(nextBtnEnteredImage);
-					nextBtn5.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					nextBtn5.setIcon(nextBtnBasicImage);
-					nextBtn5.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			repaint();
-		}
-		
-		if(e.getSource() == nextBtn5)
-		{
-			up.setVisible(false);
-			down.setVisible(false);
-			nextBtn5.setVisible(false);
-			label4.setVisible(false);
-			label5.setVisible(false);
-			label6.setVisible(false);
-			label7.setVisible(false);
-			
-			name.setVisible(false);
-			try
-			{
-				background = ImageIO.read(file1);
-			} catch (IOException e1) {}
-			
-			label8.setBounds(30, 480, 1200, 100);
-			label8.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label8);
-			label9.setBounds(30, 550, 1200, 100);
-			label9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label9);
-			
-			nextBtn6.setBounds(1000,400,300,60);
-			nextBtn6.setBorderPainted(false);
-			nextBtn6.setContentAreaFilled(false);
-			nextBtn6.setFocusPainted(false);
-			
-			super.add(nextBtn6);
-			nextBtn6.addActionListener(this);
-			nextBtn6.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					nextBtn6.setIcon(nextBtnEnteredImage);
-					nextBtn6.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					nextBtn6.setIcon(nextBtnBasicImage);
-					nextBtn6.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			repaint();
-		}
-		
-		if(e.getSource() == nextBtn6)
-		{
-			nextBtn6.setVisible(false);
-			label8.setVisible(false);
-			label9.setVisible(false);
-			
-			GoodFeeling.teacher2FeelUp();//È£°¨µµ +1
-			up.setVisible(true);
-			
-			label10.setBounds(30, 480, 1200, 100);
-			label10.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label10);
-			label11.setBounds(30, 550, 1200, 100);
-			label11.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label11);
-			
-			nextBtn7.setBounds(1000,400,300,60);
-			nextBtn7.setBorderPainted(false);
-			nextBtn7.setContentAreaFilled(false);
-			nextBtn7.setFocusPainted(false);
-			
-			super.add(nextBtn7);
-			nextBtn7.addActionListener(this);
-			nextBtn7.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					nextBtn7.setIcon(nextBtnEnteredImage);
-					nextBtn7.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					nextBtn7.setIcon(nextBtnBasicImage);
-					nextBtn7.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			repaint();
-		}
-		
-		if(e.getSource() == nextBtn7)
-		{
-			nextBtn7.setVisible(false);
-			label10.setVisible(false);
-			label11.setVisible(false);
-			up.setVisible(false);
-			
-			try
-			{
-				background = ImageIO.read(file1);
-			} catch (IOException e1) {}
-			
-			label12.setBounds(30, 480, 1200, 100);
-			label12.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label12);
-			label13.setBounds(30, 550, 1200, 100);
-			label13.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label13);
-			
-			nextBtn8.setBounds(1000,400,300,60);
-			nextBtn8.setBorderPainted(false);
-			nextBtn8.setContentAreaFilled(false);
-			nextBtn8.setFocusPainted(false);
-			
-			super.add(nextBtn8);
-			nextBtn8.addActionListener(this);
-			nextBtn8.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					nextBtn8.setIcon(nextBtnEnteredImage);
-					nextBtn8.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					nextBtn8.setIcon(nextBtnBasicImage);
-					nextBtn8.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			repaint();
-		}
-		
-		if(e.getSource() == nextBtn8)
-		{
-			nextBtn8.setVisible(false);
-			label12.setVisible(false);
-			label13.setVisible(false);
-			
-			label14.setBounds(30, 480, 1200, 100);
-			label14.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label14);
-			label15.setBounds(30, 550, 1200, 100);
-			label15.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-			super.add(label15);
-			
-			nextBtn9.setBounds(1000,400,300,60);
-			nextBtn9.setBorderPainted(false);
-			nextBtn9.setContentAreaFilled(false);
-			nextBtn9.setFocusPainted(false);
-			
-			super.add(nextBtn9);
-			nextBtn9.addActionListener(this);
-			nextBtn9.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					nextBtn9.setIcon(nextBtnEnteredImage);
-					nextBtn9.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					nextBtn9.setIcon(nextBtnBasicImage);
-					nextBtn9.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			repaint();
-		}
-		
-		if(e.getSource() == nextBtn9)
-		{
-			nextBtn9.setVisible(false);
-			
-			c3_1.setBounds(820,325,500,100);
-			c3_1.setBorderPainted(false);
-			c3_1.setContentAreaFilled(false);
-			c3_1.setFocusPainted(false);
-			
-			super.add(c3_1);
-			c3_1.setVisible(true);
-			c3_1.addActionListener(this);
-			c3_1.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					c3_1.setIcon(c3_1EnteredImage);
-					c3_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					c3_1.setIcon(c3_1BasicImage);
-					c3_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			
-			c3_2.setBounds(820,575,500,100);
-			c3_2.setBorderPainted(false);
-			c3_2.setContentAreaFilled(false);
-			c3_2.setFocusPainted(false);
-			
-			super.add(c3_2);
-			c3_2.setVisible(true);
-			c3_2.addActionListener(this);
-			c3_2.addMouseListener(new MouseAdapter()
-			{
-				@Override
-				public void mouseEntered(MouseEvent e)
-				{
-					c3_2.setIcon(c3_2EnteredImage);
-					c3_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				}
-				@Override
-				public void mouseExited(MouseEvent e)
-				{
-					c3_2.setIcon(c3_2BasicImage);
-					c3_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-				}
-			});
-			
-			repaint();
-		}
-		
-		if(e.getSource() == c3_1 || e.getSource() == c3_2)
-		{
-			c3_1.setVisible(false);
-			c3_2.setVisible(false);
-			label14.setVisible(false);
-			label15.setVisible(false);
-			
-			if(e.getSource() == c3_1)
-			{
-				//È£°¨µµ -1 ±³¼ö´ÔA,C +1
-				GoodFeeling.teacher2FeelDown();
-				GoodFeeling.teacher1FeelUp();
-				GoodFeeling.teacher3FeelUp();
-				down.setVisible(true);
-				up_special.setVisible(true);
+				label10.setBounds(30, 480, 1200, 100);
+				label10.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(label10);
+				label11.setBounds(30, 550, 1200, 100);
+				label11.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(label11);
 				
-				label16.setBounds(30, 480, 1200, 100);
-				label16.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(label16);
-			}
-			else
-			{
-				//È£°¨µµ +1 ±³¼ö´ÔA,C -1
-				GoodFeeling.teacher2FeelUp();
-				GoodFeeling.teacher1FeelDown();
-				GoodFeeling.teacher3FeelDown();
-				up.setVisible(true);
-				down_special.setVisible(true);
+				nextBtn7.setBounds(1000,400,300,60);
+				nextBtn7.setBorderPainted(false);
+				nextBtn7.setContentAreaFilled(false);
+				nextBtn7.setFocusPainted(false);
 				
-				label17.setBounds(30, 480, 1200, 100);
-				label17.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(label17);
-				label18.setBounds(30, 550, 1200, 100);
-				label18.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
-				super.add(label18);
+				super.add(nextBtn7);
+				nextBtn7.addActionListener(this);
+				nextBtn7.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						nextBtn7.setIcon(nextBtnEnteredImage);
+						nextBtn7.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						nextBtn7.setIcon(nextBtnBasicImage);
+						nextBtn7.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				repaint();
 			}
 			
-			super.add(nextBtnEnd);
-			repaint();
+			if(e.getSource() == nextBtn7)
+			{
+				nextBtn7.setVisible(false);
+				label10.setVisible(false);
+				label11.setVisible(false);
+				up.setVisible(false);
+				
+				try
+				{
+					background = ImageIO.read(url_2);
+				} catch (IOException e1) {}
+				
+				label12.setBounds(30, 480, 1200, 100);
+				label12.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(label12);
+				label13.setBounds(30, 550, 1200, 100);
+				label13.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(label13);
+				
+				nextBtn8.setBounds(1000,400,300,60);
+				nextBtn8.setBorderPainted(false);
+				nextBtn8.setContentAreaFilled(false);
+				nextBtn8.setFocusPainted(false);
+				
+				super.add(nextBtn8);
+				nextBtn8.addActionListener(this);
+				nextBtn8.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						nextBtn8.setIcon(nextBtnEnteredImage);
+						nextBtn8.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						nextBtn8.setIcon(nextBtnBasicImage);
+						nextBtn8.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				repaint();
+			}
+			
+			if(e.getSource() == nextBtn8)
+			{
+				nextBtn8.setVisible(false);
+				label12.setVisible(false);
+				label13.setVisible(false);
+				
+				label14.setBounds(30, 480, 1200, 100);
+				label14.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(label14);
+				label15.setBounds(30, 550, 1200, 100);
+				label15.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+				super.add(label15);
+				
+				nextBtn9.setBounds(1000,400,300,60);
+				nextBtn9.setBorderPainted(false);
+				nextBtn9.setContentAreaFilled(false);
+				nextBtn9.setFocusPainted(false);
+				
+				super.add(nextBtn9);
+				nextBtn9.addActionListener(this);
+				nextBtn9.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						nextBtn9.setIcon(nextBtnEnteredImage);
+						nextBtn9.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						nextBtn9.setIcon(nextBtnBasicImage);
+						nextBtn9.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				repaint();
+			}
+			
+			if(e.getSource() == nextBtn9)
+			{
+				nextBtn9.setVisible(false);
+				
+				c3_1.setBounds(820,325,500,100);
+				c3_1.setBorderPainted(false);
+				c3_1.setContentAreaFilled(false);
+				c3_1.setFocusPainted(false);
+				
+				super.add(c3_1);
+				c3_1.setVisible(true);
+				c3_1.addActionListener(this);
+				c3_1.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						c3_1.setIcon(c3_1EnteredImage);
+						c3_1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						c3_1.setIcon(c3_1BasicImage);
+						c3_1.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				
+				c3_2.setBounds(820,575,500,100);
+				c3_2.setBorderPainted(false);
+				c3_2.setContentAreaFilled(false);
+				c3_2.setFocusPainted(false);
+				
+				super.add(c3_2);
+				c3_2.setVisible(true);
+				c3_2.addActionListener(this);
+				c3_2.addMouseListener(new MouseAdapter()
+				{
+					@Override
+					public void mouseEntered(MouseEvent e)
+					{
+						c3_2.setIcon(c3_2EnteredImage);
+						c3_2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+					}
+					@Override
+					public void mouseExited(MouseEvent e)
+					{
+						c3_2.setIcon(c3_2BasicImage);
+						c3_2.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+					}
+				});
+				
+				repaint();
+			}
+			
+			if(e.getSource() == c3_1 || e.getSource() == c3_2)
+			{
+				c3_1.setVisible(false);
+				c3_2.setVisible(false);
+				label14.setVisible(false);
+				label15.setVisible(false);
+				
+				if(e.getSource() == c3_1)
+				{
+					//í˜¸ê°ë„ -1 êµìˆ˜ë‹˜A,C +1
+					Feeling.pf2_DOWN();
+					Feeling.pf1_UP();
+					Feeling.pf3_UP();
+					down.setVisible(true);
+					up_special.setVisible(true);
+					
+					label16.setBounds(30, 480, 1200, 100);
+					label16.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(label16);
+				}
+				else
+				{
+					//í˜¸ê°ë„ +1 êµìˆ˜ë‹˜A,C -1
+					Feeling.pf2_UP();
+					Feeling.pf1_DOWN();
+					Feeling.pf3_DOWN();
+					up.setVisible(true);
+					down_special.setVisible(true);
+					
+					label17.setBounds(30, 480, 1200, 100);
+					label17.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(label17);
+					label18.setBounds(30, 550, 1200, 100);
+					label18.setFont(new Font("ë§‘ì€ ê³ ë”•", Font.PLAIN, 40));
+					super.add(label18);
+				}
+				
+				super.add(nextBtnEnd);
+				repaint();
+			}
+			
+			if(e.getSource() == nextBtnEnd)
+			{
+				super.setVisible(false);
+				isWorked = true;
+			}
 		}
-		
-		if(e.getSource() == nextBtnEnd)
-		{
-			super.setVisible(false);
-			isWorked = true;
-		}
-	}
+	
 }
