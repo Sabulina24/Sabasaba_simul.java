@@ -16,58 +16,54 @@ public class A_Normal_1 extends JPanel
 
 	public static boolean isWorked = false;
 	
-	String[] d = ProfessorDialogue.getDialogue_A_Normal1();
+	String[] d = ProfessorLines.getDialogue_A_Normal1();
 	private int i=0;
 	private int t=0;
 	private int k=0;
-	private Image background=new ImageIcon(Main.class.getResource("../images/°­ÀÇ½Ç¾È_A.jpg")).getImage();
-    private JLabel label1= new JLabel("±³¼ö´Ô A");
+	private Image background=new ImageIcon(getClass().getClassLoader().getResource("ê°•ì˜ì‹¤ì•ˆ_A.jpg")).getImage();
+    private JLabel label1= new JLabel("êµìˆ˜ë‹˜ A");
     private JLabel label2= new JLabel(d[2*k]);
     private JLabel label3= new JLabel(d[2*k+1]);
-    private JLabel downlabel=new JLabel(new ImageIcon(Main.class.getResource("../images/È£°¨µµ ÇÏ¶ô.png")));
-    private JLabel uplabel=new JLabel(new ImageIcon(Main.class.getResource("../images/È£°¨µµ »ó½Â.png")));
+    private JLabel downlabel=new JLabel(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ í•˜ë½.png")));
+    private JLabel uplabel=new JLabel(new ImageIcon(getClass().getClassLoader().getResource("í˜¸ê°ë„ ìƒìŠ¹.png")));
 	
 
-    private ImageIcon exitbuttonBasicImage=new ImageIcon(Main.class.getResource("../images/images6.png"));
-    private ImageIcon nextbuttonEntered=new ImageIcon(Main.class.getResource("../images/¹öÆ°1_Å¬¸¯.png"));
-    private ImageIcon nextbuttonbasic=new ImageIcon(Main.class.getResource("../images/¹öÆ°1.png"));
+    private ImageIcon exitbuttonBasicImage=new ImageIcon(getClass().getClassLoader().getResource("images6.png"));
+    private ImageIcon nextbuttonEntered=new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1_í´ë¦­.png"));
+    private ImageIcon nextbuttonbasic=new ImageIcon(getClass().getClassLoader().getResource("ë²„íŠ¼1.png"));
     
-    private ImageIcon button1Image=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö1¹ø .png"));
-    private ImageIcon button2Image=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö2.png"));
+    private ImageIcon button1Image=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€1ë²ˆ .png"));
+    private ImageIcon button2Image=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€2.png"));
     
-    private ImageIcon button1ImageEntered=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö1Å¬¸¯.png"));
-    private ImageIcon button2ImageEntered=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö2Å¬¸¯.png"));
+    private ImageIcon button1ImageEntered=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€1í´ë¦­.png"));
+    private ImageIcon button2ImageEntered=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€2í´ë¦­.png"));
     
-    private ImageIcon button1ImageEntered2=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö1Å¬¸¯.png"));
-    private ImageIcon button2ImageEntered2=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö2Å¬¸¯.png"));
-    
-    
-    private ImageIcon button1_1Image=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö1_1.png"));
-    private ImageIcon button2_1Image=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö2_1.png"));
-    private ImageIcon button3_1Image=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö3_1.png"));
-    private ImageIcon button1_1ImageEntered=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯1_1.png"));
-    private ImageIcon button2_1ImageEntered=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯2_1.png"));
-    private ImageIcon button3_1ImageEntered=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯3_1.png"));
-    
-    private ImageIcon button1_1ImageEntered2=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯1_1.png"));
-    private ImageIcon button2_1ImageEntered2=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯2_1.png"));
-    private ImageIcon button3_1ImageEntered2=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯3_1.png"));
-    
-    private ImageIcon button1_2Image=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö1_2.png"));
-    private ImageIcon button2_2Image=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö2_2.png"));
-    private ImageIcon button3_2Image=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö3_2.png"));
-    private ImageIcon button1_2ImageEntered=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯1_2.png"));
-    private ImageIcon button2_2ImageEntered=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯2_2.png"));
-    private ImageIcon button3_2ImageEntered=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯3_2.png"));
-    
-    private ImageIcon button1_2ImageEntered2=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯1_2.png"));
-    private ImageIcon button2_2ImageEntered2=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯2_2.png"));
-    private ImageIcon button3_2ImageEntered2=new ImageIcon(Main.class.getResource("../images/¼±ÅÃÁö_Å¬¸¯3_2.png"));
+    private ImageIcon button1ImageEntered2=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€1í´ë¦­.png"));
+    private ImageIcon button2ImageEntered2=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€2í´ë¦­.png"));
     
     
+    private ImageIcon button1_1Image=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€1_1.png"));
+    private ImageIcon button2_1Image=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€2_1.png"));
+    private ImageIcon button3_1Image=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€3_1.png"));
+    private ImageIcon button1_1ImageEntered=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­1_1.png"));
+    private ImageIcon button2_1ImageEntered=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­2_1.png"));
+    private ImageIcon button3_1ImageEntered=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­3_1.png"));
     
+    private ImageIcon button1_1ImageEntered2=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­1_1.png"));
+    private ImageIcon button2_1ImageEntered2=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­2_1.png"));
+    private ImageIcon button3_1ImageEntered2=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­3_1.png"));
     
-   
+    private ImageIcon button1_2Image=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€1_2.png"));
+    private ImageIcon button2_2Image=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€2_2.png"));
+    private ImageIcon button3_2Image=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€3_2.png"));
+    private ImageIcon button1_2ImageEntered=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­1_2.png"));
+    private ImageIcon button2_2ImageEntered=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­2_2.png"));
+    private ImageIcon button3_2ImageEntered=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­3_2.png"));
+    
+    private ImageIcon button1_2ImageEntered2=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­1_2.png"));
+    private ImageIcon button2_2ImageEntered2=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­2_2.png"));
+    private ImageIcon button3_2ImageEntered2=new ImageIcon(getClass().getClassLoader().getResource("ì„ íƒì§€_í´ë¦­3_2.png"));
+    
     private JButton nextbutton=new JButton(nextbuttonbasic);
     private JButton button1=new JButton(button1Image);
     private JButton button2=new JButton(button2Image);
@@ -79,21 +75,19 @@ public class A_Normal_1 extends JPanel
     private JButton button2_2=new JButton(button2_2Image);
     private JButton button3_2=new JButton(button3_2Image);
     
-    
+  
 	public A_Normal_1(){	
-	
-        setLayout(null);
+		setLayout(null);
 		
-		
-			downlabel.setBounds(160,100,100,250);
+		downlabel.setBounds(160,100,100,250);
 		   
-		    super.add(downlabel);
-		    downlabel.setVisible(false);
+		super.add(downlabel);
+		downlabel.setVisible(false);
 			
-		    uplabel.setBounds(160,100,100,250);
+		uplabel.setBounds(160,100,100,250);
 			   
-		    super.add(uplabel);
-		    uplabel.setVisible(false);
+		super.add(uplabel);
+		uplabel.setVisible(false);
 		
 		nextbutton.setBounds(1000, 400, 300, 60);
 		nextbutton.setBorderPainted(false);
@@ -171,7 +165,6 @@ public class A_Normal_1 extends JPanel
 		});
 		
 		
-		
 		super.add(nextbutton);
 		
 		button1.setBounds(820, 325, 500, 100);
@@ -200,7 +193,7 @@ public class A_Normal_1 extends JPanel
                 button2.setVisible(false);
                 
                 uplabel.setVisible(true);
-                 GoodFeeling.teacher1FeelUp();
+                 Feeling.pf1_UP();
                	
             	nextbutton.setVisible(true);
             	 button1.setIcon(button1ImageEntered2);
@@ -236,7 +229,7 @@ public class A_Normal_1 extends JPanel
                	button1.setVisible(false);
                 button2.setVisible(false);
              
-               GoodFeeling.teacher1FeelDown();
+                Feeling.pf1_DOWN();
                downlabel.setVisible(true);
                nextbutton.setVisible(true);
 			}
@@ -270,7 +263,7 @@ public class A_Normal_1 extends JPanel
         		button3_1.setVisible(false);
 				
 				uplabel.setVisible(true);
-                GoodFeeling.teacher1FeelUp();
+				Feeling.pf1_UP();
 				
 				button1_1.setIcon(button1_1ImageEntered2);
 				i++;
@@ -303,7 +296,7 @@ public class A_Normal_1 extends JPanel
         		button2_1.setVisible(false);
         		button3_1.setVisible(false);
 				
-        		 GoodFeeling.teacher1FeelDown();
+        		Feeling.pf1_DOWN();
                  downlabel.setVisible(true);
 				
 				button2_1.setIcon(button2_1ImageEntered2);
@@ -336,7 +329,7 @@ public class A_Normal_1 extends JPanel
         		button2_1.setVisible(false);
         		button3_1.setVisible(false);
 				
-        		 GoodFeeling.teacher1FeelDown();
+        		Feeling.pf1_DOWN();
                  downlabel.setVisible(true);
 				
 				button1_1.setIcon(button3_1ImageEntered2);
@@ -370,7 +363,7 @@ public class A_Normal_1 extends JPanel
         		button2_2.setVisible(false);
         		button3_2.setVisible(false);
 				
-        		 GoodFeeling.teacher1FeelUp();
+        		Feeling.pf1_UP();
                  uplabel.setVisible(true);
 				
                  button1_2.setIcon(button1_2ImageEntered2);
@@ -404,7 +397,7 @@ public class A_Normal_1 extends JPanel
         		button2_2.setVisible(false);
         		button3_2.setVisible(false);
 				
-        		 GoodFeeling.teacher1FeelDown();
+        		Feeling.pf1_DOWN();
                  downlabel.setVisible(true);
 				
                  button2_2.setIcon(button2_2ImageEntered2);
@@ -440,7 +433,7 @@ public class A_Normal_1 extends JPanel
         		button2_2.setVisible(false);
         		button3_2.setVisible(false);
 				
-        		 GoodFeeling.teacher1FeelDown();
+        		Feeling.pf1_DOWN();
                  downlabel.setVisible(true);
 				
                  button3_2.setIcon(button3_2ImageEntered2);
@@ -452,27 +445,24 @@ public class A_Normal_1 extends JPanel
 		super.add(button3_2);
 		
 		label1.setBounds(30, 385, 300, 100);
-		label1.setFont((new Font("¸¼Àº °íµñ",Font.BOLD,30)));
+		label1.setFont((new Font("ë§‘ì€ ê³ ë”•",Font.BOLD,30)));
 		super.add(label1);
-		label2.setFont((new Font("¸¼Àº °íµñ",Font.PLAIN,40)));
+		label2.setFont((new Font("ë§‘ì€ ê³ ë”•",Font.PLAIN,40)));
 		label2.setBounds(30, 480, 1200, 100);
 		super.add(label2);
-		label3.setFont((new Font("¸¼Àº °íµñ",Font.PLAIN,40)));
+		label3.setFont((new Font("ë§‘ì€ ê³ ë”•",Font.PLAIN,40)));
 		label3.setBounds(30, 550, 1200, 100);
 		add(label3);
 		
 	    	}
-	public void paint(Graphics g)
-	{
+	public void paint(Graphics g){
 		g.drawImage(background, 0, 0, null);
 		paintComponents(g);
 		repaint();
 	}
 	
-	public void End()
-	{
+	public void End(){
 		isWorked = true;
 		super.setVisible(false);
 	}
-
 }
