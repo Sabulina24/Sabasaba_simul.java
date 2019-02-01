@@ -3,6 +3,9 @@ package project;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import javazoom.jl.player.Player;
 
@@ -16,10 +19,19 @@ public class Music extends Thread {
 	public Music(String name, boolean isLoop) {
 		try {
 			this.isLoop=isLoop;
-			file=new File(getClass().getClassLoader().getResource(name).toURI());
-			fis=new FileInputStream(file);
-			bis=new BufferedInputStream(fis);
-			player=new Player(bis);
+			
+			file = new File("outFile.java");
+			InputStream in = Main.class.getClassLoader().getResourceAsStream(name);
+			OutputStream out = new FileOutputStream(file);
+			byte[] buf = new byte[1024];
+			int len = 0;
+			while((len = in.read(buf))>0) {
+				out.write(buf, 0, len);
+			}
+			out.close();
+			in.close();
+			//file=new File(getClass().getClassLoader().getResource(name).toURI());
+			player=new Player(new BufferedInputStream(new FileInputStream(file)));
 		} 
 		catch(Exception e) {
 			System.out.println(e.getMessage());
