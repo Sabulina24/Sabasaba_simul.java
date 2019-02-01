@@ -73,17 +73,33 @@ public class profA extends JPanel {
 				Meter=DrinkingAlgorithm.Drink(a);
 				
 				
-				if(Meter<5){
+				if(Meter<5)
+					{
 							lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("0-5.png")));
-				}
-				else if(Meter>=5&&Meter<10){
+							
+					
+					}
+				else if(Meter>=5&&Meter<10)
+					
+					{
 						lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("5-10.png")));
-				}
-				else if(Meter>=10&&Meter<15){
+						
+					
+					}
+				else if(Meter>=10&&Meter<15)
+					
+					{
 						lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("10-15.png")));
-				}
-				else if(Meter>=15&&Meter<20){
+						
+					
+					}
+				else if(Meter>=15&&Meter<20)
+				{
+						
+						
 					lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("19.png")));
+					
+				
 				}
 				if(DrinkingAlgorithm.Mood<3)
 					label_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("19.png")));
@@ -101,7 +117,7 @@ public class profA extends JPanel {
 				
 				if(Meter<5&&DrinkingAlgorithm.Mood>=10) {
 					lblNewLabel_2.setBounds(0, 0, 1280, 720);
-					lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("win1.png")));
+					lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("win1.PNG")));
 					Feeling.pf1_UP(); //교수 a호감도 상승
 					btnNewButton.setVisible(false);
 					button_2.setVisible(false);
@@ -124,33 +140,54 @@ public class profA extends JPanel {
 				
 				Meter=DrinkingAlgorithm.Drink(a);
 				
-				if(Meter<5){
-					lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uC220\uC790\uB9AC(\uB9C8\uC2EC)_A.jpg")));//********************
-					lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("0-5.png")));
-					add(btnNewButton);
-				}
-				else if(Meter>=5&&Meter<10){
-					lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uC220\uC790\uB9AC(\uB9C8\uC2EC)_A.jpg")));//**************	
-					lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("5-10.png")));
-				}
-				else if(Meter>=10&&Meter<15){
-					lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uC220\uC790\uB9AC(\uB9C8\uC2EC)_A.jpg")));//********
-					lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("10-15.png")));
-				}
-				else if(Meter>=15&&Meter<20){
-					lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uC220\uC790\uB9AC(\uB9C8\uC2EC)_A.jpg")));//**
+				if(Meter<5)
+					{
+							lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uC220\uC790\uB9AC(\uB9C8\uC2EC)_A.jpg")));//********************
+							
+							lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("0-5.png")));
+							
+				add(btnNewButton);
+					
+					}
+				else if(Meter>=5&&Meter<10)
+					
+					{
+							lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uC220\uC790\uB9AC(\uB9C8\uC2EC)_A.jpg")));//**************
+							
+						lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("5-10.png")));
+						
+					
+					}
+				else if(Meter>=10&&Meter<15)
+					
+					{
+							lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uC220\uC790\uB9AC(\uB9C8\uC2EC)_A.jpg")));//********
+							
+						
+						lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("10-15.png")));
+						
+					
+					}
+				else if(Meter>=15&&Meter<20)
+				{
+						lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uC220\uC790\uB9AC(\uB9C8\uC2EC)_A.jpg")));//**
+						
 					lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("19.png")));
+					
+				
+					
 				}
-				else if(Meter>=20){
+				else if(Meter>=20)
+					{
 					lblNewLabel_2.setBounds(0, 0, 1280, 720);
-					lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("lose1.png")));//지는 화면
+					lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("lose1.PNG")));//지는 화면
 					Feeling.pf1_DOWN(); //교수 a호감도 감소
 					btnNewButton.setVisible(false); //마시기 버튼 안보이게한다
 					button.setVisible(false); //안마시기 버튼 안보이게한다
 					button_2.setVisible(false); //내리기 버튼 안보이게한다
 					
 					button_1.setVisible(true); //결과화면으로 넘어가는 버튼 보이게한다
-				}
+					}
 				
 			if(DrinkingAlgorithm.Mood<3)
 				label_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("19.png")));
@@ -168,7 +205,7 @@ public class profA extends JPanel {
 			
 			if(Meter<5&&DrinkingAlgorithm.Mood>=10) {
 				lblNewLabel_2.setBounds(0, 0, 1280, 720);
-				lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("win1.png")));
+				lblNewLabel_2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("win1.PNG")));
 				Feeling.pf1_UP(); //교수 a호감도 상승
 				btnNewButton.setVisible(false); //마시기 버튼 안보이게한다
 				button.setVisible(false); //안마시기 버튼 안보이게한다
@@ -196,12 +233,15 @@ public class profA extends JPanel {
 				
 				DrinkingAlgorithm.HangoverCure=true;
 				
+				
 				DrinkingAlgorithm.DrunkMeter=DrinkingAlgorithm.Drink(a);
 				
 			if(DrinkingAlgorithm.DrunkMeter>=0&&DrinkingAlgorithm.DrunkMeter<5) 
 					lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("0-5.png")));
 					
+		
 			else if(DrinkingAlgorithm.DrunkMeter>=5&&DrinkingAlgorithm.DrunkMeter<10)
+			
 					lblNewLabel_1.setIcon(new ImageIcon(getClass().getClassLoader().getResource("5-10.png")));
 			
 			else if(DrinkingAlgorithm.DrunkMeter>=10&&DrinkingAlgorithm.DrunkMeter<15) 
@@ -223,15 +263,19 @@ public class profA extends JPanel {
 		label.setBounds(1055, 253, 213, 55);
 		add(label);
 		
+		
+		
 		JLabel label_1 = new JLabel("\uAD50\uC218\uB2D8 \uAE30\uBD84");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setBounds(78, 253, 213, 55);
 		add(label_1);
+		
 		
 		lblNewLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("\uC220\uC790\uB9AC(\uC548\uB9C8\uC2EC)_A.jpg")));//******
 		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 0, 1280, 720);
 		add(lblNewLabel);
+
 	}
 }
